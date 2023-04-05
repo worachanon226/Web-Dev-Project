@@ -40,21 +40,18 @@ namespace backend.Controllers
             return Ok(user.Id);
         }
 
-        //     [HttpPost("login")]
-        //     public async Task<ActionResult<string>> Login(Models.UserDto request)
-        //     {
-        //         if (user.Id != request.Id)
-        //         {
-        //             return BadRequest("User not found.");
-        //         }
+        [HttpPost("login")]
+        public async Task<ActionResult<string>> Login(Models.UserDto request)
+        {
+            var user = _service.GetAsync(request.Id);
+            if (user == null)
+                return BadRequest("User not found.");
 
-        //         if (!VertifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-        //         {
-        //             return BadRequest("Wrong password.");
-        //         }
-        //         string token = CreateToken(user);
-        //         return Ok(token);
-        //     }
+            if (!VertifyPasswordHash(request.Password, user.Result.PasswordHash, user.Result.PasswordSalt))
+                return BadRequest("Wrong password.");
+
+            return Ok("Login successful.");
+        }
 
         //     private string CreateToken(Models.User user)
         //     {
@@ -86,14 +83,14 @@ namespace backend.Controllers
             }
         }
 
-        // private bool VertifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
-        // {
-        //     using (var hmac = new HMACSHA512(passwordSalt))
-        //     {
-        //         var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-        //         return computedHash.SequenceEqual(passwordHash);
-        //     }
+        private bool VertifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+        {
+            using (var hmac = new HMACSHA512(passwordSalt))
+            {
+                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                return computedHash.SequenceEqual(passwordHash);
+            }
 
-        //     }
+        }
     }
 }
