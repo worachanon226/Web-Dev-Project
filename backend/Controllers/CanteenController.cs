@@ -24,12 +24,23 @@ public class CanteenController : ControllerBase
     {
         Id = "001",
         Name = "Canteen1",
+
         Stores = new List<Models.Store>
         {
             new Models.Store
             {
                 Id = "001",
                 Name = "Store1",
+                Menus = new List<Models.Menu>()
+                {
+                    new Models.Menu { Id = "001", Name = "Menu A", Price = 40 },
+                    new Models.Menu { Id = "002", Name = "Menu B", Price = 45 }
+                }
+            },
+            new Models.Store
+            {
+                Id = "002",
+                Name = "Store2",
                 Menus = new List<Models.Menu>()
                 {
                     new Models.Menu { Id = "001", Name = "Menu A", Price = 40 },
@@ -42,11 +53,12 @@ public class CanteenController : ControllerBase
     [HttpPost("register")]
     public async Task<ActionResult<Models.Canteen>> Register(Models.Canteen request)
     {
-        Models.Canteen canteen = new Models.Canteen();
+        List<Models.Canteen> canteens = new List<Models.Canteen>();
 
-        canteen = request;
+        canteens.Add(canteen1);
 
-        await _service.CreateAsync(canteen);
+        for (var i = 0; i < canteens.Count; i++)
+            await _service.CreateAsync(canteens[i]);
 
         return Ok("");
     }
