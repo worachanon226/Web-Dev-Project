@@ -30,4 +30,7 @@ public class DatabaseService
 
     public async Task CreateAsync(Models.Canteen? newCanteen) =>
         await _canteenCollection.InsertOneAsync(newCanteen);
+
+    public async Task<List<Models.Canteen>> GetCanteens() =>
+        await _canteenCollection.Find(_ => true).ToListAsync();
 }

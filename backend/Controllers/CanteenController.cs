@@ -63,4 +63,12 @@ public class CanteenController : ControllerBase
         return Ok("");
     }
 
+    public async Task<ActionResult<Models.Canteen>> GetCanteensData()
+    {
+        List<Models.Canteen> canteens = new List<Models.Canteen>();
+        canteens = await _service.GetCanteens();
+
+        return Ok(canteens);
+    }
+
 }
