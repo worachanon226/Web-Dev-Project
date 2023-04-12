@@ -1,8 +1,4 @@
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
 using backend.Services;
 
 namespace backend.Controllers;
