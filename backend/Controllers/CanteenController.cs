@@ -69,4 +69,14 @@ public class CanteenController : ControllerBase
         return Ok("");
     }
 
+    [HttpGet("getCanteensData")]
+    public async Task<ActionResult<List<Models.Canteen>>> GetCanteensData()
+    {
+        List<Models.Canteen> canteens = new List<Models.Canteen>();
+
+        canteens = await _service.GetCanteens();
+
+        return Ok("");
+    }
+
 }

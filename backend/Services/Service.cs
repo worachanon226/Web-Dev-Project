@@ -28,8 +28,6 @@ public class DatabaseService
     public async Task<Models.User> GetAsync(string id) =>
         await _userCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
-    public async Task<Models.Canteen> GetCanteenAsync(string name) =>
-        await _canteenCollection.Find(x => x.Name == name).FirstOrDefaultAsync();
 
     public async Task<bool> IsCanteenExist(string name) =>
         await _canteenCollection.Find(x => x.Name == name).AnyAsync();
@@ -42,4 +40,6 @@ public class DatabaseService
 
     public async Task<List<Models.Canteen>> GetCanteens() =>
         await _canteenCollection.Find(_ => true).ToListAsync();
+    public async Task<Models.Canteen> GetCanteenAsync(string name) =>
+        await _canteenCollection.Find(x => x.Name == name).FirstOrDefaultAsync();
 }
