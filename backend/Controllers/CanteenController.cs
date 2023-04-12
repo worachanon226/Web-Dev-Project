@@ -44,7 +44,8 @@ public class CanteenController : ControllerBase
                 Menus = new List<Models.Menu>()
                 {
                     new Models.Menu { Id = "001", Name = "Menu A", Price = 40 },
-                    new Models.Menu { Id = "002", Name = "Menu B", Price = 45 }
+                    new Models.Menu { Id = "002", Name = "Menu B", Price = 45 },
+                    new Models.Menu { Id = "003", Name = "Menu C", Price = 50 }
                 }
             }
         }
@@ -58,17 +59,14 @@ public class CanteenController : ControllerBase
         canteens.Add(canteen1);
 
         for (var i = 0; i < canteens.Count; i++)
-            await _service.CreateAsync(canteens[i]);
+        {
+            if (_service.IsCanteenExist(canteens[i].Name).Result)
+                await _service.UpdateCanteen(canteens[i].Name, canteens[i]);
+            else
+                await _service.CreateAsync(canteens[i]);
+        }
 
         return Ok("");
-    }
-
-    public async Task<ActionResult<Models.Canteen>> GetCanteensData()
-    {
-        List<Models.Canteen> canteens = new List<Models.Canteen>();
-        canteens = await _service.GetCanteens();
-
-        return Ok(canteens);
     }
 
 }
