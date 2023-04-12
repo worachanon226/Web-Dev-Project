@@ -40,6 +40,7 @@ public class DatabaseService
 
     public async Task<List<Models.Canteen>> GetCanteens() =>
         await _canteenCollection.Find(_ => true).ToListAsync();
+        
     public async Task<Models.Canteen> GetCanteenAsync(string name) =>
         await _canteenCollection.Find(x => x.Name == name).FirstOrDefaultAsync();
 }

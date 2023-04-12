@@ -25,12 +25,18 @@ namespace backend.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<Models.User>> Register(Models.UserDto request)
         {
-            Models.User user = new Models.User();
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
-            user.Id = request.Id;
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            Models.User user = new Models.User()
+            {
+                Id = request.Id,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+                Name = request.Name,
+                Lastname = request.Lastname,
+                Email = request.Email,
+                Phone = request.Phone,
+            };
 
             if (!_service.IsExist(user.Id).Result)
                 await _service.CreateAsync(user);
