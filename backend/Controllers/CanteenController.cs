@@ -3,6 +3,9 @@ using backend.Services;
 
 namespace backend.Controllers;
 
+
+[Route("[controller]")]
+[ApiController]
 public class CanteenController : ControllerBase
 {
 

@@ -8,7 +8,7 @@ using backend.Services;
 namespace backend.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace backend.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Models.User>> Register(Models.UserDto request)
+        public async Task<ActionResult<Models.User>> Register(Models.UserRegister request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
@@ -43,42 +43,30 @@ namespace backend.Controllers
             else
                 return BadRequest("This user is already registed.");
 
-            return Ok(user.Id);
+            return Ok("Registed Successful.");
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(Models.UserDto request)
+        public async Task<ActionResult<Models.User>> Login(Models.UserLogin request)
         {
-            var user = _service.GetAsync(request.Id);
+            var user = await _service.GetUserId(request.Id);
             if (user == null)
                 return BadRequest("User not found.");
 
-            if (!VertifyPasswordHash(request.Password, user.Result.PasswordHash, user.Result.PasswordSalt))
+            if (!VertifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
                 return BadRequest("Wrong password.");
 
-            return Ok("Login successful.");
+            var usage = new Models.Usage()
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Lastname = user.Lastname,
+                Email = user.Email,
+                Phone = user.Phone,
+            };
+
+            return Ok(usage);
         }
-
-        //     private string CreateToken(Models.User user)
-        //     {
-        //         List<Claim> claims = new List<Claim>{
-        //             new Claim(ClaimTypes.Name, user.Id)
-        //         };
-
-        //         var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
-
-        //         var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
-        //         var token = new JwtSecurityToken(
-        //             claims: claims,
-        //             expires: DateTime.Now.AddDays(1),
-        //             signingCredentials: cred
-        //         );
-
-        //         var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-
-        //         return jwt;
-        //     }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {

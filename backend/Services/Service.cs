@@ -24,9 +24,9 @@ public class DatabaseService
 
 
     //User Service
-    public async Task<List<Models.User>> GetAsync() =>
+    public async Task<List<Models.User>> GetUsers() =>
         await _userCollection.Find(_ => true).ToListAsync();
-    public async Task<Models.User> GetAsync(string id) =>
+    public async Task<Models.User> GetUserId(string id) =>
         await _userCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
     public async Task CreateAsync(Models.User newUser) =>
         await _userCollection.InsertOneAsync(newUser);

@@ -3,6 +3,9 @@ using backend.Services;
 
 namespace backend.Controllers;
 
+
+[Route("[controller]")]
+[ApiController]
 public class TaskController : ControllerBase
 {
 
@@ -31,7 +34,7 @@ public class TaskController : ControllerBase
         };
 
         await _service.CreateTask(task);
-        return Ok("Task is created.");
+        return Ok(task);
     }
 
     [HttpPost("setAvailable")]
