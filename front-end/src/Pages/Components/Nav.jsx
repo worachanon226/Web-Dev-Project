@@ -4,6 +4,8 @@ function Nav() {
   return (
     <>
     <Link to="/">Nav</Link>
+
+    {/* อ่ย่าลบ Outlet */}
     <Outlet/>
     </>
   )
