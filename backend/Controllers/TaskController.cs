@@ -44,4 +44,25 @@ public class TaskController : ControllerBase
         return Ok("Task is set " + b + ".");
     }
 
+    [HttpPost("addMenu")]
+    public async Task<ActionResult> AddMenu(string id, Models.MenuTask menu)
+    {
+        await _service.AddMenu(id, menu);
+        return Ok("Menu is already added.");
+    }
+
+    [HttpGet("getTask")]
+    public async Task<ActionResult<Models.Task>> GetTask(string id)
+    {
+        var task = await _service.GetTask(id);
+        return Ok(task);
+    }
+
+    [HttpGet("getTasks")]
+    public async Task<ActionResult<List<Models.Task>>> GetTasks()
+    {
+        List<Models.Task> tasks = await _service.GetTasks();
+        return Ok(tasks);
+    }
+
 }
