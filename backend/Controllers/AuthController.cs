@@ -34,7 +34,6 @@ namespace backend.Controllers
                 PasswordSalt = passwordSalt,
                 Name = request.Name,
                 Lastname = request.Lastname,
-                Email = request.Email,
                 Phone = request.Phone,
             };
 
@@ -61,7 +60,6 @@ namespace backend.Controllers
                 Id = user.Id,
                 Name = user.Name,
                 Lastname = user.Lastname,
-                Email = user.Email,
                 Phone = user.Phone,
             };
 
@@ -77,8 +75,11 @@ namespace backend.Controllers
             }
         }
 
-        private bool VertifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+        private bool VertifyPasswordHash(string password, byte[]? passwordHash, byte[]? passwordSalt)
         {
+            if (passwordHash == null || passwordSalt == null)
+                return false;
+
             using (var hmac = new HMACSHA512(passwordSalt))
             {
                 var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));

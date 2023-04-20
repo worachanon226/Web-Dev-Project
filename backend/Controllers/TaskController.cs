@@ -65,4 +65,11 @@ public class TaskController : ControllerBase
         return Ok(tasks);
     }
 
+    [HttpDelete("deleteMenu")]
+    public async Task<ActionResult> DeleteMenu(string TaskId, string MenuId)
+    {
+        await _service.DeleteMenu(TaskId, MenuId);
+        return Ok("Deleted.");
+    }
+
 }
