@@ -6,6 +6,7 @@ import Host from "./Pages/Host"
 import Login from "./Pages/Login"
 import Guest from './Pages/Guest';
 import Nav from './Pages/Components/Nav';
+
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="host" element={<Host />} />
           <Route path="guest" element={<Guest />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

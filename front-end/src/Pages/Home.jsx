@@ -5,8 +5,12 @@ function Home() {
     height:"40%",
     width: "30%",
     textAlign: "center",
-    background:"red",
-    padding:"100px 0"
+    background:"#fa8072",
+    boxShadow: '0px 2px 9px #FDE0F0',
+    color:"white",
+    fontSize:"20px",
+    padding:"80px 0",
+    borderRadius:"15px"
   };
   return (
     <div
