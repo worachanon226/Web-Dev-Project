@@ -5,12 +5,9 @@ function Guest() {
   let containerStyle = {
     display: "flex",
     justifyContent: "center",
-    // height: "50%",
     width: "100%",
-    background:'blue',
     flexWrap:'wrap',
     cursor:'grid',
-    padding:'30px'
 
   }
     ;
@@ -50,8 +47,8 @@ function Guest() {
     },
   ]);
   return (
-    <div style={{background:'red', height:'100%'}}>
-    <h2>Online Host</h2>
+    <div style={{height:'100%'}}>
+    <h2 style={{textAlign:'center', fontSize:'20px',marginTop:'1rem'}}>Online Host</h2>
 
     <div style={containerStyle}>
       {host.map((e) => (

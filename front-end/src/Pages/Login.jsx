@@ -1,22 +1,46 @@
-import React, { useState } from 'react'
-
-
+import React, { useState } from "react";
+import API from "../Controller/API"
 function Login() {
+  let {endpoint,path} = API
+  let submitHandler = (event) => {
+    event.preventDefault();
+    let id = event.target[0].value
+    let password = event.target[1].value
+    let res = fetch(endpoint.concat(path.Login),{
+      headers: { 'Content-Type': 'application/json' },
+      method:"POST",
+      body:{id,password},
+    }).then((res)=>{console.log(res);})
+  }
   return (
-    <div style={{ width: '100%' , display:'flex',justifyContent: 'center' }}>
-      <form style={{ display: 'flex', flexDirection: 'column', background: '#FA8072', alignItems: 'center', width: '40%', }}>
+    <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", }}>
+      <form onSubmit={submitHandler}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          background: "#FA8072",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "40%",
+          height: "40%"
+        }}
+      >
         <h3>Sign In</h3>
-        <div style={{    padding: '0.5rem' }}>
-
-          <div className="mb-3" style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ padding: "0.5rem" }}>
+          <div
+            className="mb-3"
+            style={{ display: "flex", flexDirection: "column" }}
+          >
             <label>Email address</label>
             <input
-              type="email"
               className="form-control"
               placeholder="Enter email"
             />
           </div>
-          <div className="mb-3" style={{ display: 'flex', flexDirection: 'column' }}>
+          <div
+            className="mb-3"
+            style={{ display: "flex", flexDirection: "column" }}
+          >
             <label>Password</label>
             <input
               type="password"
@@ -47,43 +71,7 @@ function Login() {
         </p>
       </form>
     </div>
-  )
+  );
 }
-//   const [email, setEmail] = useState('');
-//   const [pass, setPass] = useState('');
 
-//   const handleSubmit = e => {
-//     e.preventDafault();
-//     console.log(email);
-//   }
-
-//   let card = {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//     justifyContent: "center",
-//     borderRadius: "10px",
-//     background: "#FF8066",
-//     width:'22rem',
-//     padding: "1.2rem",
-
-
-//   }
-
-
-//   return (
-//     <>
-//       <form onSubmit={handleSubmit}>
-//         <div style={card}>
-//           <label htmlFor="email">Email</label>
-//           <input value={email} type='email' placeholder='youremail@gmail.com' id='email' name='email'></input>
-//           <label for='password'>Password</label>
-//           <input value={email} type='password' placeholder='********' id='password' name='password'></input>
-//           <button>Login</button>
-//         </div>
-//       </form>
-//     </>
-//   )
-// }
-
-export default Login
+export default Login;
