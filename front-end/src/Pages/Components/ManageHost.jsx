@@ -1,9 +1,9 @@
 import React from 'react'
 
-const manageHost = (data) => {
+const ManageHost = (data) => {
   return (
-    <div>manageHost</div>
+    <div>ManageHost</div>
   )
 }
 
-export default manageHost
+export default ManageHost

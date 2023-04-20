@@ -1,7 +1,9 @@
 let API ={
-    host:"localhost",
+    endpoint:"localhost",
     path:{
-        createHost:"/createHost",
+        register:"/Auth/register",
+        login:"/Auth/login",
+        createTask:"/Task/create",
         closeHost:"/closeHost",
         joinHost:"/joinHost",
         createMenu:"/createMenu",

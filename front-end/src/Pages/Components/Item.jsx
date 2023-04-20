@@ -11,6 +11,7 @@ let  Item = (data) => {
   return (
     <div style={boxStyle}>
       <p>{data.name}</p>
+      <p>{data.store}</p>
       <p>{data.owner}</p>
       <Link to={data.name} >JOIN</Link>
     </div>

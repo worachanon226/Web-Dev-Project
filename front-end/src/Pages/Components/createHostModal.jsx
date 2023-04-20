@@ -19,6 +19,7 @@ function AddHostModal({ callback }) {
       <button onClick={() => setIsOpen(true)}>ADD</button>
       <Modal
         isOpen={modalIsOpen}
+        ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
         style={customStyles}
         contentLabel="Example Modal"
@@ -33,11 +34,11 @@ function AddHostModal({ callback }) {
         <button onClick={() => setIsOpen(false)}>close</button>
         <button
           onClick={() => {
-            callback([1,2,3])
+            callback()
             setIsOpen(false);
           }}
         >
-          close
+          ADD
         </button>
       </Modal>
     </div>
