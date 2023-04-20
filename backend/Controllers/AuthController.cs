@@ -34,7 +34,6 @@ namespace backend.Controllers
                 PasswordSalt = passwordSalt,
                 Name = request.Name,
                 Lastname = request.Lastname,
-                Email = request.Email,
                 Phone = request.Phone,
             };
 
@@ -61,7 +60,6 @@ namespace backend.Controllers
                 Id = user.Id,
                 Name = user.Name,
                 Lastname = user.Lastname,
-                Email = user.Email,
                 Phone = user.Phone,
             };
 
