@@ -59,11 +59,23 @@ public class DatabaseService
     public async Task AddMenu(string id, Models.MenuTask menu)
     {
         var task = await _taskCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
-        if (task != null)
-        {
-            task.Menus.Add(menu);
-        }
+        if (task == null)
+            return;
 
+        task.Menus.Add(menu);
         await _taskCollection.ReplaceOneAsync(x => x.Id == id, task);
+    }
+
+    public async Task DeleteMenu(string Taskid, string Menuid)
+    {
+        var task = await _taskCollection.Find(x => x.Id == Taskid).FirstOrDefaultAsync();
+        if (task == null)
+        {
+            return;
+        }
+        task.Menus.RemoveAll(x => x.Id == Menuid);
+
+        await _taskCollection.ReplaceOneAsync(x => x.Id == Taskid, task);
+
     }
 }
