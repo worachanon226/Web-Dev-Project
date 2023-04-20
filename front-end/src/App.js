@@ -12,11 +12,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Nav />}>
-          <Route index element={<Login />} />
+          <Route index element={<Home />} />
           <Route path="/host" element={<Host />} />
           <Route path="/host/:hostid" element={<ManageHost />} />
           <Route path="/guest" element={<Guest />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import API from "../Controller/API";
 function Home() {
   let linkStyle = {
     height:"40%",
@@ -19,6 +20,11 @@ function Home() {
         width: "100%",
       }}
     >
+      <button onClick={()=>{
+        let res = fetch(API.endpoint+"/Auth").then((ress)=>{
+          console.log(ress);
+        })
+      }}>555</button>
       <div
         style={{
           display: "flex",
