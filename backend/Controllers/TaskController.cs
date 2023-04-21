@@ -65,11 +65,27 @@ public class TaskController : ControllerBase
         return Ok(tasks);
     }
 
+    [HttpGet("getMenusTask")]
+    public async Task<ActionResult<List<Models.MenuTask>>> GetMenusTask(string id)
+    {
+        List<Models.MenuTask> menus = await _service.GetMenusTask(id);
+        return Ok(menus);
+    }
+
     [HttpDelete("deleteMenu")]
     public async Task<ActionResult> DeleteMenu(string TaskId, string MenuId)
     {
         await _service.DeleteMenu(TaskId, MenuId);
         return Ok("Deleted.");
+    }
+
+    [HttpDelete("deleteTask")]
+    public ActionResult DeleteTask(string id)
+    {
+        var st = _service.DeleteTask(id);
+        if (!st)
+            return BadRequest("ID's invalid.");
+        return Ok("Task is deleted.");
     }
 
 }

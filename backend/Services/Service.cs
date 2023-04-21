@@ -76,6 +76,28 @@ public class DatabaseService
         task.Menus.RemoveAll(x => x.Id == Menuid);
 
         await _taskCollection.ReplaceOneAsync(x => x.Id == Taskid, task);
+    }
 
+    public async Task<List<Models.MenuTask>> GetMenusTask(string id)
+    {
+        var task = await _taskCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        List<Models.MenuTask> list = new List<Models.MenuTask>();
+        if (task == null)
+            return list;
+
+        for (int i = 0; i < task.Menus.Count; i++)
+            if (task.Menus[i].IsConfirm)
+                list.Add(task.Menus[i]);
+
+        return list;
+    }
+
+    public bool DeleteTask(string id)
+    {
+        if (!(_taskCollection.Find(x => x.Id == id).AnyAsync()).Result)
+            return false;
+
+        _taskCollection.DeleteOne(x => x.Id == id);
+        return true;
     }
 }
