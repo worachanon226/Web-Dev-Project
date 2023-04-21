@@ -66,12 +66,6 @@ namespace backend.Controllers
             return Ok(usage);
         }
 
-        [HttpGet("")]
-        public ActionResult Test()
-        {
-            return Ok("200");
-        }
-
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new HMACSHA512())
