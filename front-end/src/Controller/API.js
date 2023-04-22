@@ -4,6 +4,8 @@ let API ={
         register:"/Auth/register",
         login:"/Auth/login",
         createTask:"/Task/create",
+        getTask:"/Task/getTask",
+        getTasks:"/Task/getTasks",
         closeHost:"/closeHost",
         joinHost:"/joinHost",
         createMenu:"/createMenu",
