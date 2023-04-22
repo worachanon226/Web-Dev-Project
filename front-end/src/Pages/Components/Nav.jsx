@@ -26,7 +26,7 @@ function Nav() {
     <div style={{ "display": "flex", "justifyContent": "space-between", "alignItems": "center"}}>
 
             <Link to="/" className='navbar'>
-                <h1 style={{fontSize:'1.5em'}}to="/" >Hew-Hew</h1>
+                <h1 style={{fontSize:'1.5em',color:'white'}}to="/" >Hew-Hew</h1>
             </Link>
 
             <Link to="/login">
