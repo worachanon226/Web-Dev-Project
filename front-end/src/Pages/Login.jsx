@@ -6,6 +6,8 @@ function Login() {
   let { endpoint, path } = API
   let submitHandler = async (event) => {
     event.preventDefault();
+    console.log(event.target[0].value);
+    console.log(event.target[1].value);
     let id = event.target[0].value
     let password = event.target[1].value
     let res = await fetch(endpoint.concat(path.login), {
@@ -22,27 +24,27 @@ function Login() {
   }
 
   return (
-    <div class="container mt-5 w-75">
-      <div class="row border rounded">
-        <div class="col">
-          <img class="img-fluid" src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg"></img>
+    <div className="container mt-5 w-75">
+      <div className="row border rounded">
+        <div className="col">
+          <img className="img-fluid" src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg"></img>
         </div>
-        <div class="col-4 text-center align-self-center">
-          <p class="h2">Login</p>
+        <div className="col-4 text-center align-self-center">
+          <p className="h2">Login</p>
           <form onSubmit={submitHandler}>
-            <div class="form-floating mb-3">
-              <input type="id" class="form-control" id="floatingInput" />
+            <div className="form-floating mb-3">
+              <input type="id" className="form-control" id="floatingInput" />
               <label htmlFor="id">User ID</label>
             </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" />
+            <div className="form-floating mb-3">
+              <input type="password" className="form-control" id="floatingPassword" />
               <label htmlFor="pwd">Password</label>
             </div>
-            <button type="button" class="btn btn-danger mb-3">Submit</button>
+            <button type="submit" className="btn btn-danger mb-3">Submit</button>
           </form>
           <div>
             <a>Don't have an account? </a>
-            <a class="text-decoration-none text-primary" href="/Signup">Create</a>
+            <a className="text-decoration-none text-primary" href="/Signup">Create</a>
           </div>
         </div>
 
