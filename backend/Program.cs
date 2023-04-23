@@ -23,6 +23,8 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseHttpLogging();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
