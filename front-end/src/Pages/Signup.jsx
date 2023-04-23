@@ -16,7 +16,7 @@ function Singup() {
   let submitHandler = (event) => {
     event.preventDefault()
     let [id, name, last, password, cpass, phone] = event.target
-
+    console.log(id.value,name.value,last.value,password.value,cpass.value);
     let res = fetch(endpoint.concat(path.register), {
       headers: { 'Content-Type': 'application/json' },
       method: "POST",
@@ -65,7 +65,7 @@ function Singup() {
               <label htmlFor="phone">Phone Number</label>
             </div>
 
-            <button type="button" className="btn btn-danger mb-3" disabled id="submit">Submit</button>
+            <button type="submit" className="btn btn-danger mb-3" disabled id="submit">Submit</button>
 
           </form>
 
