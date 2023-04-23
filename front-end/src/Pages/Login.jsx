@@ -6,8 +6,6 @@ function Login() {
   let { endpoint, path } = API
   let submitHandler = async (event) => {
     event.preventDefault();
-    console.log(event.target[0].value);
-    console.log(event.target[1].value);
     let id = event.target[0].value
     let password = event.target[1].value
     let res = await fetch(endpoint.concat(path.login), {
