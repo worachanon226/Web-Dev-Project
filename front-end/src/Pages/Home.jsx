@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import API from "../Controller/API";
 function Home() {
   let linkStyle = {
     height:"40%",
