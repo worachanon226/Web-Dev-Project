@@ -30,10 +30,10 @@ function Nav() {
 
                     <div class="d-flex">
                         <div class="nav-item me-2">
-                            <a type="button" class="btn btn-outline-secondary" href="/Signup">Sign Up</a>
+                            <a type="button" class="btn btn btn-outline-secondary" href="/Signup">Sign Up</a>
                         </div>
                         <div class="nav-item">
-                            <a type="button" class="btn btn-success" href="/login">Login</a>
+                            <a type="button" class="btn btn btn-success" href="/login">Login</a>
                         </div>
 
                     </div>
