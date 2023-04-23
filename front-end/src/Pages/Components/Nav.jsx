@@ -3,8 +3,8 @@ import { Outlet, Link } from "react-router-dom";
 import { AiFillHome } from 'react-icons/ai';
 import { IoFastFood } from 'react-icons/io5';
 import { SiGnuprivacyguard } from 'react-icons/si';
-import './style/Nav.css'
 import { useEffect } from 'react';
+import './style/Nav.css'
 import $ from 'jquery';
 
 
@@ -49,13 +49,13 @@ const Nav = () => {
 
   return (
     <>
-      <nav style={{ display: 'flex', justifyContent: 'space-between' , alignItems: "center" }} className="navbar navbar-expand-lg navbar-mainbg">
+      <nav style={{ display: 'flex', justifyContent: 'space-between' , alignItems: "center",height:'63px' }} className="navbar navbar-expand-lg navbar-mainbg">
 
         <Link className="navbar-brand navbar-logo" to="/" exact>
           Hew-Hew
         </Link>
 
-        <div style={{display:'flex' , width : '35%'}}>
+        <div style={{display:'flex' , width : '23%'}}>
           <button
             className="navbar-toggler"
             onClick={function () {
@@ -84,18 +84,19 @@ const Nav = () => {
                   <Link to="/" exact style={{ display: 'flex', alignItems: "center" }}>
                     <i
                       className="fas fa-tachometer-alt" >
-                     <AiFillHome style={{ margin: '1px',gap:'10px'}} /> 
+                     <AiFillHome /> 
                     </i>
                     <h2>Home</h2>
                   </Link>
-                  
               </li>
+
+  
 
               <li className="nav-item" >
                 <Link to="/service" exact style={{ display: 'flex',  alignItems: "center" }}>
                   <i
                     className="far fa-clone">
-                    <IoFastFood style={{ margin: '1px' ,}} />
+                    <IoFastFood />
                   </i>
                   <h2> Services</h2>
                 </Link>
@@ -105,9 +106,9 @@ const Nav = () => {
                 <Link to="/login" exact style={{ display: 'flex', alignItems: "center" }}>
                   <i
                     className="far fa-copy">
-                    <SiGnuprivacyguard style={{ margin: '2px' }} />
+                    <SiGnuprivacyguard />
                   </i>
-                  <h2> Sing Up</h2>
+                  <h2> Sign Up</h2>
                 </Link>
               </li>
             </ul>

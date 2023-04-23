@@ -1,20 +1,9 @@
 import React from "react";
+import './style/Home.css'
 import { Link } from "react-router-dom";
 
 
 function Home() {
-  let linkStyle = {
-    height:"40%",
-    width: "20%",
-    textAlign: "center",
-    background:"#fa8072",
-    boxShadow: '0px 2px 9px #FDE0F0',
-    color:"white",
-    fontSize:"20px",
-    padding:"80px 0",
-    borderRadius:"15px",
-
-  }
   
   return (
     <div
@@ -37,15 +26,27 @@ function Home() {
         }}
       >
        
-        <Link style={linkStyle} to="host">
-          HOST
-        </Link>
-        <Link style={linkStyle} to="guest">
-          JOIN
-        </Link>
-
+    <div className="container">
+    <div className="card">
+      <div className="box">
+        <div className="content">
+          <Link to="Host">HOST</Link>
+        </div>
       </div>
     </div>
+
+    <div className="card">
+      <div className="box">
+        <div className="content">
+          <Link to="guest">JOIN</Link>
+        </div>
+      </div>
+    </div>
+   
+      </div>
+      </div>
+      </div>
+
   );
 }
 

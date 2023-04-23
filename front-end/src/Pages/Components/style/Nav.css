@@ -1,4 +1,7 @@
-
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff; /* fallback for old browsers */
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +10,16 @@ i {
   margin-right: 10px;
 }
 .navbar-logo {
-  font-size: 30px;
-  margin-left: 3rem;
+  font-size: 1.5rem;
+  padding: 35px;
   color: #fff;
   pointer-events: none;
 }
 
 .navbar-mainbg {
   background-color: #FA8072;
-  box-shadow: 1px 2px 9px #F4AAB9
+  /* box-shadow: 1px 2px 9px #F4AAB9; */
+  padding: 0px;
 }
 #navbarSupportedContent {
   overflow: hidden;
@@ -26,18 +30,19 @@ i {
   margin: 0px;
 }
 #navbarSupportedContent ul li a i {
-  margin-right: 10px;
+  margin-right: 15px;
+  
 }
 #navbarSupportedContent li {
   list-style-type: none;
   float: left;
 }
 #navbarSupportedContent ul li a {
-  color: rgba(39, 26, 26, 0.5);
+  color: rgba(255, 255, 255, 0.894);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   display: block;
-  padding: 20px 50px;
+  padding: 20px 20px;
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   position: relative;
@@ -59,7 +64,6 @@ i {
   vertical-align: middle;
   font-weight: 900;
   transition: 0.5s;
-  align-items: center;
 }
 #navbarSupportedContent .active > a:not(:only-child):after {
   transform: rotate(90deg);
@@ -68,12 +72,12 @@ i {
 .hori-selector {
   display: inline-block;
   position: absolute;
-  height: 100%;  /*100*/
+  height: 100%;
   top: 0px;
   left: 0px;
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background-color: #f8eae8;
+  background-color: #fff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-top: 10px;
@@ -81,10 +85,9 @@ i {
 .hori-selector .right,
 .hori-selector .left {
   position: absolute;
-  width: 35px;
-  height: 30px;
-  border-radius: 40%;
-  background-color: #f8eae8;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
   bottom: 10px;
 }
 .hori-selector .right {
@@ -98,9 +101,9 @@ i {
   content: '';
   position: absolute;
   width: 50px;
-  height: 20px;
-  border-radius: 30%; /*50%*/
-  background-color: #f8eae8;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FA8072;
 }
 .hori-selector .right:before {
   bottom: 0;
@@ -110,7 +113,7 @@ i {
   bottom: 0;
   left: -25px;
 }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   #navbarSupportedContent ul li a {
     padding: 12px 30px;
   }
@@ -141,4 +144,3 @@ i {
     left: -25px;
   }
 }
-
