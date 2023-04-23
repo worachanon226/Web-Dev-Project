@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
-import { getTasks } from "../Controller/HostController";
+import { getTasks,deleteTask } from "../Controller/HostController";
+let fakeUser = {
+  id: "1",
+};
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -30,10 +33,9 @@ function Host() {
   };
 
   let [task, setTask] = useState();
-  console.log(task);
-  if(task === undefined){
+  if (task === undefined) {
     getTasks(setTask);
-    return <div>Loading</div>
+    return <div>Loading</div>;
   }
   return (
     <div style={containerStyle}>
@@ -47,11 +49,22 @@ function Host() {
       </button>
       <div style={hostListcontain}>
         {task.map((e) => (
-          <Item key={e.Name} {...e} />
+          <Item
+            key={e.id}
+            {...e}
+            control={<Control ownerId={e.userId} id={e.id} user={fakeUser} callback ={setTask}/>}
+          />
         ))}
       </div>
     </div>
   );
 }
-
+let Control = ({ ownerId, id, user,callback }) => {
+  if (ownerId === user.id) {
+    return <button onClick={ () => {
+      deleteTask(id)
+    }}>Delete</button>;
+  }
+  return;
+};
 export default Host;

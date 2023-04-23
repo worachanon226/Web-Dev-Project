@@ -3,32 +3,35 @@ let { endpoint, path } = API;
 let getTasks = async (callback) => {
   let res = await fetch(endpoint.concat(path.getTasks), {
     method: "GET",
-  })
+  });
   let response = await res.json();
   console.log(response);
-    callback(response);
-;
+  callback(response);
 };
 
 let createTask = async (data, callback) => {
-  let formData = {
-    "id": data.id,
-    "userId": data.userId,
-    "canteen": data.canteen,
-    "maxTasks": 0,
-  }
-  console.log(formData);
   let res = await fetch(endpoint.concat(path.createTask), {
     headers: { "Content-Type": "application/json" },
     method: "POST",
-    body:JSON.stringify(formData),
-  }).then((response) => response.json());
-  if (res.statusCode === 200) {
-    let resForTask = await fetch(endpoint.concat(path.getTasks), {
-      method: "GET",
-    }).then((response) => response.json());
-    callback(resForTask);
+    body: JSON.stringify(data),
+  });
+  if (res.ok) {
+    getTasks(callback);
   }
 };
-
-export { createTask, getTasks };
+let deleteTask = async (id) => {
+  const res = await fetch(
+    endpoint.concat(path.deleteTask) +
+      "?" +
+      new URLSearchParams(
+        {
+          id,
+        },
+        {
+          method: "DEL",
+        }
+      )
+  ).catch(err => {console.log("err");})
+  
+};
+export { createTask, getTasks, deleteTask };

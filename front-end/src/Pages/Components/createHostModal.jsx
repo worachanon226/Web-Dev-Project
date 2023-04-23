@@ -17,14 +17,17 @@ function AddHostModal({ callback }) {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let handleSubmit = (event) => {
-    let data = {
-      //get from context
-      id: uuidv4(),
-      userId: "1",
-      canteen: event.target[0].value,
-    };
-    createTask(data, callback);
-    setIsOpen(false);
+    if (event.target[0].value !== "" && event.target[1].value !== "") {
+      let data = {
+        //get from context
+        id: uuidv4(),
+        userId: "1",
+        canteen: event.target[0].value,
+        maxTasks: event.target[1].value,
+      };
+      createTask(data, callback);
+      setIsOpen(false);
+    }
   };
   return (
     <div>
@@ -39,6 +42,8 @@ function AddHostModal({ callback }) {
         <h2>Add</h2>
         <form style={{ padding: "10px" }} onSubmit={handleSubmit}>
           <input placeholder="Canteen" />
+          <br />
+          <input type="number" placeholder="Max Tasks" />
           <br />
           <button onClick={() => setIsOpen(false)}>close</button>
           <button type="submit"> ADD</button>

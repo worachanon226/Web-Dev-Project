@@ -6,10 +6,7 @@ let API = {
         createTask: "/Task/create",
         getTask:"/Task/getTask",
         getTasks:"/Task/getTasks",
-        closeHost: "/closeHost",
-        joinHost: "/joinHost",
-        createMenu: "/createMenu",
-        acceptMenu: "/acceptMenu"
+        deleteTask:"/Task/deleteTask"
     }
 }
 export default API
