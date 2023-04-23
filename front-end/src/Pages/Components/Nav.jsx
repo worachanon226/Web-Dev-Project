@@ -24,16 +24,16 @@ function Nav() {
     // }
     return (
         <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">Hew-Hew</a>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="/">Hew-Hew</a>
 
-                    <div class="d-flex">
-                        <div class="nav-item me-2">
-                            <a type="button" class="btn btn btn-outline-secondary" href="/Signup">Sign Up</a>
+                    <div className="d-flex">
+                        <div className="nav-item me-2">
+                            <a type="button" className="btn btn btn-outline-secondary" href="/Signup">Sign Up</a>
                         </div>
-                        <div class="nav-item">
-                            <a type="button" class="btn btn btn-success" href="/login">Login</a>
+                        <div className="nav-item">
+                            <a type="button" className="btn btn btn-success" href="/login">Login</a>
                         </div>
 
                     </div>
