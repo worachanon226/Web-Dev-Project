@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Item from "./Components/Item";
+import Task from "../Controller/test/Task.json";
+import Task2 from "../Controller/test/Task2.json";
 function Guest() {
   let containerStyle = {
     display: "flex",
@@ -10,29 +12,12 @@ function Guest() {
     width: "100%",
   };
 
-  let [host, setHost] = useState([
-    {
-      name: "A",
-      owner: "userA",
-    },
-    {
-      name: "B",
-      owner: "userB",
-    },
-    {
-      name: "C",
-      owner: "userC",
-    },
-    {
-      name: "D",
-      owner: "userD",
-    },
-  ]);
+  let [task, setTask] = useState([Task, Task2]);
   return (
     <div style={containerStyle}>
       <h2>Online Host</h2>
-      {host.map((e) => (
-        <Item key={e.name} {...e} />
+      {task.map((e) => (
+        <Item key={e.Name} {...e} />
       ))}
     </div>
   );

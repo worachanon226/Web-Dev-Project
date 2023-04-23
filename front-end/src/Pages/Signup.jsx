@@ -1,40 +1,14 @@
 import React, { useState } from 'react'
-import API from "../Controller/API"
-import axios from "axios"
+import { submitSignup } from '../Controller/AuthController'
 
 function Singup() {
-  let { endpoint, path } = API
-  let verifyPassword = () => {
-    var p = document.getElementById("pass").value;
-    var cp = document.getElementById("cpass").value;
-    if (p != cp)
-      document.getElementById("submit").disabled = true;
-    else
-      document.getElementById("submit").disabled = false;
-
-  }
-  let submitHandler = (event) => {
-    event.preventDefault()
-    let [id, name, last, password, cpass, phone] = event.target
-    console.log(id.value,name.value,last.value,password.value,cpass.value);
-    let res = fetch(endpoint.concat(path.register), {
-      headers: { 'Content-Type': 'application/json' },
-      method: "POST",
-      body: JSON.stringify({
-        Id: id.value,
-        Name: name.value,
-        Lastname: last.value,
-        Password: password.value,
-        Phone: phone.value
-      })
-    }).then((res) => { console.log(res); })
-  }
+  
   return (
     <div className="d-flex mt-5 align-self-center justify-content-center">
       <div className="container w-25 border rounded justify-content-md-center">
         <div className="col-md-auto text-center align-self-center">
           <p className="h2">Sign Up</p>
-          <form onSubmit={submitHandler}>
+          <form onSubmit={submitSignup}>
 
             <div className="form-floating mb-4">
               <input type="id" className="form-control" id="id" />

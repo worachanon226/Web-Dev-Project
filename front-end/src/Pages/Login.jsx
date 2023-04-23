@@ -1,26 +1,6 @@
-import React, { useState } from "react";
-import API from "../Controller/API"
-import axios from "axios"
-
+import React from "react";
+import { submitLogin } from "../Controller/AuthController";
 function Login() {
-  let { endpoint, path } = API
-  let submitHandler = async (event) => {
-    event.preventDefault();
-    let id = event.target[0].value
-    let password = event.target[1].value
-    let res = await fetch(endpoint.concat(path.login), {
-      headers: { 'Content-Type': 'application/json' },
-      method: "POST",
-      body: JSON.stringify({ Id: id, Password: password })
-    })
-    let ress = await res.json()
-    console.log(ress);
-
-    // axios.post(endpoint.concat(path.login),{
-    //   Id:id, Password:password 
-    // }).then((res) => {console.log(res);})
-  }
-
   return (
     <div className="d-flex mt-5 align-self-center justify-content-center">
       <div className="container w-75 row border rounded justify-content-md-center">

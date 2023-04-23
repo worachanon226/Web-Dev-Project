@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
-import API from "../Controller/API";
+import {getTasks} from "../Controller/HostController";
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -30,38 +30,15 @@ function Host() {
   };
 
   let [task, setTask] = useState([]);
-  let {endpoint,path} = API
-  let handleTask = async (data,callback) => {
-    // let res = await fetch(endpoint.concat(path.createTask))
-    setTask([
-      {
-        name: "A",
-        owner: "userA",
-        store:"a"
-      },
-      {
-        name: "B",
-        store:"b",
-        owner: "userB",
-      },
-      {
-        name: "C",
-        owner: "userC",
-        store:"c"
-      },
-      {
-        name: "D",
-        owner: "userD",
-        store:"d"
-      },
-    ])
+  if (task.length === 0) {
+    getTasks(setTask)
   }
   return (
     <div style={containerStyle}>
-      <AddHostModal callback={handleTask} />
+      <AddHostModal callback={setTask} />
       <div style={hostListcontain}>
         {task.map((e) => (
-          <Item key = {e.name}  {...e}  />
+          <Item key={e.Name} {...e} />
         ))}
       </div>
     </div>

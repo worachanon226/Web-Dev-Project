@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { createTask } from "../../Controller/HostController";
 function AddHostModal({ callback }) {
   const customStyles = {
     content: {
@@ -13,7 +14,16 @@ function AddHostModal({ callback }) {
   };
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  let handleSubmit = () => {};
+  let handleSubmit = (event) => {
+    let data = {
+      //get from context
+      id:"1",
+      userId:"1",
+      canteen:event.target[0].value
+    } 
+    createTask(data,callback)
+    setIsOpen(false)
+  };
   return (
     <div>
       <button onClick={() => setIsOpen(true)}>ADD</button>
@@ -28,18 +38,14 @@ function AddHostModal({ callback }) {
         <form style={{ padding: "10px" }} onSubmit={handleSubmit}>
           <input placeholder="Canteen" />
           <br />
-          <input placeholder="Store" />
-          <br />
-        </form>
-        <button onClick={() => setIsOpen(false)}>close</button>
+          <button onClick={() => setIsOpen(false)}>close</button>
         <button
-          onClick={() => {
-            callback()
-            setIsOpen(false);
-          }}
-        >
-          ADD
+        type="submit"
+        > ADD
         </button>
+        </form>
+        
+         
       </Modal>
     </div>
   );

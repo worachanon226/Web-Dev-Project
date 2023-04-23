@@ -10,10 +10,10 @@ let boxStyle ={
 let  Item = (data) => {
   return (
     <div style={boxStyle}>
-      <p>{data.name}</p>
-      <p>{data.store}</p>
-      <p>{data.owner}</p>
-      <Link to={data.name} >JOIN</Link>
+      <p>{data.id}</p>
+      <p>{data.canteen}</p>
+      <p>{data.userId}</p>
+      <Link to={data.id} >JOIN</Link>
     </div>
   );
 };

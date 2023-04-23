@@ -1,0 +1,13 @@
+{
+  "id": "2",
+  "userId": "2",
+  "canteen": "2",
+  "menus": [
+    { "ID": "m1", "Name": "m1", "Price": 50 },
+    { "ID": "m2", "Name": "m2", "Price": 60 }
+  ],
+  "maxTasks": 3,
+  "currentTasks": 2,
+  "available": true,
+  "totalPrice": 110
+}
