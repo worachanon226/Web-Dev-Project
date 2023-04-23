@@ -1,74 +1,123 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Outlet, Link } from "react-router-dom";
 import { AiFillHome } from 'react-icons/ai';
 import { IoFastFood } from 'react-icons/io5';
 import { SiGnuprivacyguard } from 'react-icons/si';
+import './style/Nav.css'
+import { useEffect } from 'react';
+import $ from 'jquery';
 
 
-function Nav() {
-  
-  const mystyle = {
-    color: "white",
-    backgroundColor: "#FA8072",
-    padding: "10px",
-    font: "soid",
-    fontFamily: "Arial",
-    boxShadow: '1px 2px 9px #F4AAB9',
-    padding: '10px 30px'
+const Nav = () => {
+  function animation() {
+    var tabsNewAnim = $('#navbarSupportedContent')
+    var activeItemNewAnim = tabsNewAnim.find('.active');
+    var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+    var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+    var itemPosNewAnimTop = activeItemNewAnim.position();
+    var itemPosNewAnimLeft = activeItemNewAnim.position();
+    $(".hori-selector").css({
+      "top": itemPosNewAnimTop.top + "px",
+      "left": itemPosNewAnimLeft.left + "px",
+      "height": activeWidthNewAnimHeight + "px",
+      "width": activeWidthNewAnimWidth + "px"
+    });
+    $("#navbarSupportedContent").on("click", "li", function (e) {
+      $('#navbarSupportedContent ul li').removeClass("active");
+      $(this).addClass('active');
+      var activeWidthNewAnimHeight = $(this).innerHeight();
+      var activeWidthNewAnimWidth = $(this).innerWidth();
+      var itemPosNewAnimTop = $(this).position();
+      var itemPosNewAnimLeft = $(this).position();
+      $(".hori-selector").css({
+        "top": itemPosNewAnimTop.top + "px",
+        "left": itemPosNewAnimLeft.left + "px",
+        "height": activeWidthNewAnimHeight + "px",
+        "width": activeWidthNewAnimWidth + "px"
+      });
+    });
   }
 
-  const navbarItemsStyle = {
-    display: 'flex', 
-    alignItems: 'center',
-    flexDirection: 'row', 
-    justifyItems: 'right', 
-    background: 'green'
-  }
+  useEffect(() => {
 
-  const mystyleLogin = {
-    // color: "#FA8072",
-    font: "soid",
-    fontFamily: "Arial",
-    // backgroundColor: "white",
-    borderRadius: "10px",
+    animation();
+    $(window).on('resize', function () {
+      setTimeout(function () { animation(); }, 500);
+    });
 
+  }, []);
 
-  }
   return (
     <>
-      <nav style={mystyle}>
+      <nav style={{ display: 'flex', justifyContent: 'space-between' , alignItems: "center" }} className="navbar navbar-expand-lg navbar-mainbg">
 
-        <div style={{ display: "flex", justifyContent: 'space-between' }}>
-          <Link to="/" className='navbar'>
-            <h1 style={{ fontSize: '1.5em', cursor: 'pointer', textDecoration: 'none' }} to="/" >Hew-Hew</h1>
-          </Link>
-        
-          
-          <div style={{ display: 'flex', listStyle: 'none', alignItems: 'center', justifyItems: 'flex-end', gap: '10px'}}>
+        <Link className="navbar-brand navbar-logo" to="/" exact>
+          Hew-Hew
+        </Link>
 
-            <Link style={ navbarItemsStyle} to='/'>
-              <a><AiFillHome style={{ margin: '2px' }} /></a>
-              <h2>Home</h2>
-            </Link>
+        <div style={{display:'flex' , width : '35%'}}>
+          <button
+            className="navbar-toggler"
+            onClick={function () {
+              setTimeout(function () { animation(); });
+            }}
+            type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i className="fas fa-bars text-white"></i>
+          </button>
 
-            <Link style={ navbarItemsStyle } to='/'>
-              <a><IoFastFood style={{ margin: '2px' }} /></a>
-              <h2>Service</h2>
-            </Link>
+          <div
+            className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ml-auto">
 
-            <Link style={ navbarItemsStyle } to='/login'>
-              <a><SiGnuprivacyguard style={{ margin: '2px' }} /></a>
-              <h2>Sign Up</h2>
-            </Link>
+              <div className="hori-selector">
+                <div className="left"></div>
+                <div className="right"></div>
+              </div>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+              <li className="nav-item active" >
+                  
+                  <Link to="/" exact style={{ display: 'flex', alignItems: "center" }}>
+                    <i
+                      className="fas fa-tachometer-alt" >
+                     <AiFillHome style={{ margin: '1px',gap:'10px'}} /> 
+                    </i>
+                    <h2>Home</h2>
+                  </Link>
+                  
+              </li>
+
+              <li className="nav-item" >
+                <Link to="/service" exact style={{ display: 'flex',  alignItems: "center" }}>
+                  <i
+                    className="far fa-clone">
+                    <IoFastFood style={{ margin: '1px' ,}} />
+                  </i>
+                  <h2> Services</h2>
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link to="/login" exact style={{ display: 'flex', alignItems: "center" }}>
+                  <i
+                    className="far fa-copy">
+                    <SiGnuprivacyguard style={{ margin: '2px' }} />
+                  </i>
+                  <h2> Sing Up</h2>
+                </Link>
+              </li>
+            </ul>
           </div>
-
         </div>
       </nav>
       <Outlet />
     </>
   )
 }
-
 export default Nav
 
 

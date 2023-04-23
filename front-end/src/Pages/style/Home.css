@@ -1,0 +1,11 @@
+.bghover{
+    color: aqua;
+}
+
+.bghover link{
+    height: 40%;
+    width: 20%;
+    text-align: center;
+    background-color: aquamarine;
+    
+}
