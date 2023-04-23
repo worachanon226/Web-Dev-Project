@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
-
+import {getTasks} from "../Controller/HostController";
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -30,7 +30,9 @@ function Host() {
   };
 
   let [task, setTask] = useState([]);
-  
+  if (task.length === 0) {
+    getTasks(setTask)
+  }
   return (
     <div style={containerStyle}>
       <AddHostModal callback={setTask} />
