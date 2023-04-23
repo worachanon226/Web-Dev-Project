@@ -42,7 +42,15 @@ namespace backend.Controllers
             else
                 return BadRequest("This user is already registed.");
 
-            return Ok("Registed Successful.");
+
+            var usage = new Models.Usage()
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Lastname = user.Lastname,
+                Phone = user.Phone,
+            };
+            return Ok(usage);
         }
 
         [HttpPost("login")]
