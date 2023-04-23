@@ -1,6 +1,5 @@
 import API from "./API";
 
-import Task from "./test/Task.json"
 let { endpoint, path } = API;
 let getTasks = async (callback) => {
   let res = await fetch(endpoint.concat(path.getTasks), {
