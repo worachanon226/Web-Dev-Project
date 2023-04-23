@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { createTask } from "../../Controller/HostController";
+import { v4 as uuidv4 } from "uuid";
+
 function AddHostModal({ callback }) {
   const customStyles = {
     content: {
@@ -17,12 +19,12 @@ function AddHostModal({ callback }) {
   let handleSubmit = (event) => {
     let data = {
       //get from context
-      id:"1",
-      userId:"1",
-      canteen:event.target[0].value
-    } 
-    createTask(data,callback)
-    setIsOpen(false)
+      id: uuidv4(),
+      userId: "1",
+      canteen: event.target[0].value,
+    };
+    createTask(data, callback);
+    setIsOpen(false);
   };
   return (
     <div>
@@ -39,13 +41,8 @@ function AddHostModal({ callback }) {
           <input placeholder="Canteen" />
           <br />
           <button onClick={() => setIsOpen(false)}>close</button>
-        <button
-        type="submit"
-        > ADD
-        </button>
+          <button type="submit"> ADD</button>
         </form>
-        
-         
       </Modal>
     </div>
   );

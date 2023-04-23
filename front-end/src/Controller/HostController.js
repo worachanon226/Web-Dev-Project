@@ -1,8 +1,6 @@
 import API from "./API";
-
 let { endpoint, path } = API;
 let getTasks = async (callback) => {
-    console.log("GETTTTT");
   let res = await fetch(endpoint.concat(path.getTasks), {
     method: "GET",
   })
@@ -17,12 +15,7 @@ let createTask = async (data, callback) => {
     "id": data.id,
     "userId": data.userId,
     "canteen": data.canteen,
-    "menus": [
-    ],
     "maxTasks": 0,
-    "currentTasks": 0,
-    "available": true,
-    "totalPrice": 0
   }
   console.log(formData);
   let res = await fetch(endpoint.concat(path.createTask), {
