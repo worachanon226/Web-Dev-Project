@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../Controller/API"
 import axios from "axios"
+
 function Login() {
   let { endpoint, path } = API
   let submitHandler = async (event) => {
@@ -10,7 +11,7 @@ function Login() {
     let res = await fetch(endpoint.concat(path.login), {
       headers: { 'Content-Type': 'application/json' },
       method: "POST",
-      body: JSON.stringify({ Id:id, Password:password })
+      body: JSON.stringify({ Id: id, Password: password })
     })
     let ress = await res.json()
     console.log(ress);
@@ -19,8 +20,36 @@ function Login() {
     //   Id:id, Password:password 
     // }).then((res) => {console.log(res);})
   }
+
   return (
-    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+    <div class="container mt-5 w-75">
+      <div class="row border rounded">
+        <div class="col">
+          <img class="img-fluid" src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg"></img>
+        </div>
+        <div class="col-4 text-center align-self-center">
+          <p class="h2">Login</p>
+          <form onSubmit={submitHandler}>
+            <div class="form-floating mb-3">
+              <input type="id" class="form-control" id="floatingInput" />
+              <label htmlFor="id">User ID</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" />
+              <label htmlFor="pwd">Password</label>
+            </div>
+            <button type="button" class="btn btn-danger mb-3">Submit</button>
+          </form>
+          <div>
+            <a>Don't have an account? </a>
+            <a class="text-decoration-none text-primary" href="/Signup">Create</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    /* <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
       <form onSubmit={submitHandler}
         style={{
           display: "flex",
@@ -75,8 +104,8 @@ function Login() {
           Forgot <a href="#">password?</a>
         </p>
       </form>
-    </div>
-  );
+    </div> */
+  )
 }
 
 export default Login;
