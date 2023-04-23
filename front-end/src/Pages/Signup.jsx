@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { submitSignup } from '../Controller/AuthController'
+import React from 'react'
+import { submitSignup,verifyPassword } from '../Controller/AuthController'
 
 function Singup() {
   

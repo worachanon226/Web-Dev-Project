@@ -9,7 +9,7 @@ function Login() {
         </div>
         <div className="col-md-auto text-center align-self-center">
           <p className="h2">Login</p>
-          <form onSubmit={submitHandler}>
+          <form onSubmit={submitLogin}>
 
             <div className="form-floating mb-4">
               <input type="id" className="form-control" id="floatingInput" />

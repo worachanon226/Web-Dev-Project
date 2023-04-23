@@ -31,4 +31,14 @@ let submitSignup = (event) => {
     console.log(res);
   });
 };
-export { submitLogin, submitSignup };
+
+let verifyPassword = () => {
+  var p = document.getElementById("pass").value;
+  var cp = document.getElementById("cpass").value;
+  if (p != cp)
+    document.getElementById("submit").disabled = true;
+  else
+    document.getElementById("submit").disabled = false;
+
+}
+export { submitLogin, submitSignup ,verifyPassword};
