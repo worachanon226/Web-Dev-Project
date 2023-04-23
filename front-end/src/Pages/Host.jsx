@@ -29,9 +29,11 @@ function Host() {
     margin: "10px 0",
   };
 
-  let [task, setTask] = useState([]);
-  if (task.length === 0) {
+  let [task, setTask] = useState();
+  console.log(task);
+  if(task === undefined){
     getTasks(setTask);
+    return <div>Loading</div>
   }
   return (
     <div style={containerStyle}>

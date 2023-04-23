@@ -11,9 +11,9 @@ let submitLogin = async (event) => {
     body: JSON.stringify({ id, password }),
   });
   if (res.ok) {
-    let ress = await res.json();
+    res = await res.json();
     // set token here
-    console.log(ress);
+    console.log(res);
   }
 };
 
@@ -30,8 +30,12 @@ let submitSignup = async (event) => {
       password: password.value,
       phone: phone.value,
     }),
-}).then(async (res) => await res.text());
-  console.log(res);
+  });
+  if (res.ok) {
+    res = await res.json();
+    // set token here
+    console.log(res);
+  }
 };
 
 let verifyPassword = () => {
