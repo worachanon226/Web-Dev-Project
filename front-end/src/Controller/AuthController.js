@@ -1,44 +1,43 @@
 import API from "./API";
 
 let { endpoint, path } = API;
-let submitLogin = (event) => {
+let submitLogin = async (event) => {
   event.preventDefault();
   let id = event.target[0].value;
   let password = event.target[1].value;
-  let res = fetch(endpoint.concat(path.Login), {
+  let res = await fetch(endpoint.concat(path.login), {
     headers: { "Content-Type": "application/json" },
     method: "POST",
-    body: { id, password },
-  }).then((res) => {
-    console.log(res);
+    body: JSON.stringify({ id, password }),
   });
+  if (res.ok) {
+    let ress = await res.json();
+    // set token here
+    console.log(ress);
+  }
 };
 
-let submitSignup = (event) => {
+let submitSignup = async (event) => {
   event.preventDefault();
   let [id, name, last, password, phone] = event.target;
-  let res = fetch(endpoint.concat(path.register), {
+  let res = await fetch(endpoint.concat(path.register), {
     headers: { "Content-Type": "application/json" },
     method: "POST",
-    body: {
+    body: JSON.stringify({
       id: id.value,
       name: name.value,
       lastname: last.value,
       password: password.value,
       phone: phone.value,
-    },
-  }).then((res) => {
-    console.log(res);
-  });
+    }),
+}).then(async (res) => await res.text());
+  console.log(res);
 };
 
 let verifyPassword = () => {
   var p = document.getElementById("pass").value;
   var cp = document.getElementById("cpass").value;
-  if (p != cp)
-    document.getElementById("submit").disabled = true;
-  else
-    document.getElementById("submit").disabled = false;
-
-}
-export { submitLogin, submitSignup ,verifyPassword};
+  if (p !== cp) document.getElementById("submit").disabled = true;
+  else document.getElementById("submit").disabled = false;
+};
+export { submitLogin, submitSignup, verifyPassword };
