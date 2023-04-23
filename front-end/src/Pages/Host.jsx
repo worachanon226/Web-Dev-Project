@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
-import API from "../Controller/API";
-import taskTest from "../Controller/test/Task.json";
-import taskTest2 from "../Controller/test/Task2.json";
+
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -31,25 +29,11 @@ function Host() {
     margin: "10px 0",
   };
 
-  let [task, setTask] = useState([taskTest, taskTest2]);
-  let { endpoint, path } = API;
-  let handleTask = async (data, callback) => {
-    // let res = await fetch(endpoint.concat(path.createTask), {
-    //   headers: { "Content-Type": "application/json" },
-    //   method: "POST",
-    //   //TODO:เปลี่ยน UserId ให้เอาจาก Context
-    //   body: { id:data.id, userId:"1",canteen:data.canteen },
-    // }).then(response =>response.json())
-    // if (res.statusCode === 200){
-    //   let resForTask = await fetch(endpoint.concat(path.getTasks), {
-    //     method: "GET",
-    //   }).then(response =>response.json())
-    // setTask(resForTask);
-    // }
-  };
+  let [task, setTask] = useState([]);
+  
   return (
     <div style={containerStyle}>
-      <AddHostModal callback={handleTask} />
+      <AddHostModal callback={setTask} />
       <div style={hostListcontain}>
         {task.map((e) => (
           <Item key={e.Name} {...e} />

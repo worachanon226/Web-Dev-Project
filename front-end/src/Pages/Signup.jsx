@@ -1,19 +1,10 @@
 import React, { useState } from 'react'
-import API from "../Controller/API"
+import { submitSignup } from '../Controller/AuthController'
 
 function Singup() {
-  let {endpoint,path} = API
-  let submitHandler = (event) => {
-    event.preventDefault()
-    let [id, name,last,password,phone] = event.target
-    let res = fetch(endpoint.concat(path.register),{
-      headers: { 'Content-Type': 'application/json' },
-      method:"POST",
-      body:{id:id.value,name:name.value,lastname:last.value,password:password.value,phone:phone.value},
-    }).then((res)=>{console.log(res);})
-  }
+  
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitSignup}>
     <h3>Sign Up</h3>
     <div className="mb-3">
       <label>ID</label>

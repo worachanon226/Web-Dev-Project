@@ -49,6 +49,27 @@ let acceptMenu = async (TaskID,MenuID) => {
         //do something
     }
 }
+let getTasks = async () =>{
+    let res = await fetch(endpoint.concat(path.getTasks), {
+        method: "GET",
+      }).then(response =>response.json())
+    return res.
+    }
+
+let handleTask = async (data, callback) => {
+    let res = await fetch(endpoint.concat(path.createTask), {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      //TODO:เปลี่ยน UserId ให้เอาจาก Context
+      body: { id:data.id, userId:"1",canteen:data.canteen },
+    }).then(response =>response.json())
+    if (res.statusCode === 200){
+      let resForTask = await fetch(endpoint.concat(path.getTasks), {
+        method: "GET",
+      }).then(response =>response.json())
+    setTask(resForTask);
+    }
+  };
 
 export {
     createHost,

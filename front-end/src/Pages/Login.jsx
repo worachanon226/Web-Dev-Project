@@ -1,20 +1,10 @@
-import React, { useState } from "react";
-import API from "../Controller/API"
+import React from "react";
+import { submitLogin } from "../Controller/AuthController";
 function Login() {
-  let {endpoint,path} = API
-  let submitHandler = (event) => {
-    event.preventDefault();
-    let id = event.target[0].value
-    let password = event.target[1].value
-    let res = fetch(endpoint.concat(path.Login),{
-      headers: { 'Content-Type': 'application/json' },
-      method:"POST",
-      body:{id,password},
-    }).then((res)=>{console.log(res);})
-  }
   return (
     <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-      <form onSubmit={submitHandler}
+      <form
+        onSubmit={submitLogin}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -30,10 +20,7 @@ function Login() {
             style={{ display: "flex", flexDirection: "column" }}
           >
             <label>Email address</label>
-            <input
-              className="form-control"
-              placeholder="Enter email"
-            />
+            <input className="form-control" placeholder="Enter email" />
           </div>
           <div
             className="mb-3"
