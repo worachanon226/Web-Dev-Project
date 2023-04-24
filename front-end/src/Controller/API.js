@@ -4,9 +4,12 @@ let API = {
         register: "/Auth/register",
         login: "/Auth/login",
         createTask: "/Task/create",
+        setAvailable: "/Task/setAvailable",
+        addMenu: "/Task/addMenu",
         getTask:"/Task/getTask",
         getTasks:"/Task/getTasks",
-        deleteTask:"/Task/deleteTask"
+        deleteMenu: "/Task/deleteMenu",
+        deleteTask:"/Task/deleteTask",
     }
 }
 export default API
