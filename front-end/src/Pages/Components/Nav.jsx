@@ -50,13 +50,13 @@ const Nav = () => {
   return (
     <>
     
-      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", height: '62px' }} className="navbar navbar-expand-lg navbar-mainbg">
+      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", height: '75px' }} className="navbar navbar-expand-lg navbar-mainbg">
 
         <Link  to="/" className='text' exact>
           Hew-Hew
         </Link>
 
-        <div style={{ display: 'flex', width: '35%' }}>
+        <div style={{ display: 'flex', width: '34%' }}>
           <button
             className="navbar-toggler"
             onClick={function () {
@@ -87,7 +87,7 @@ const Nav = () => {
                 <Link to="/" exact style={{ display: 'flex', alignItems: "center" }}>
                   <i
                     className="fas fa-tachometer-alt" >
-                    <AiFillHome />
+                    <AiFillHome/>
                   </i>
                   <h2>Home</h2>
                 </Link>

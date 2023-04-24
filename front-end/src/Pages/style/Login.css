@@ -101,3 +101,7 @@ label{
 .text-decoration:hover{
     color: #fd0000;
 }
+
+.navbar-toggler{
+    background-color: aqua;
+}

@@ -1,5 +1,6 @@
 .text{
   font-size: 30px;
+  text-decoration: none;
   color: #fff;
   margin-left: 50px;
 }
@@ -7,7 +8,6 @@ i {
   margin-right: 10px;
 }
 .navbar-logo {
-  font-size: 1.5rem;
   padding: 35px;
   color: #fff;
   pointer-events: none;
@@ -54,8 +54,6 @@ i {
   position: absolute;
   right: 20px;
   top: 10px;
-  font-size: 14px;
-  font-family: 'Font Awesome 5 Free';
   display: inline-block;
   padding-right: 3px;
   vertical-align: middle;
@@ -140,4 +138,10 @@ i {
     bottom: -25px;
     left: -25px;
   }
+}
+
+.nav-item h2 {
+  margin-top: 10px;
+  font-size: 15px;
+  text-align: center;
 }
