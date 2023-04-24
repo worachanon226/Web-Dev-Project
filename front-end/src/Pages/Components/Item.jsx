@@ -9,8 +9,10 @@ let boxStyle = {
 let Item = (data) => {
   return (
     <div style={boxStyle}>
-      <p>{data.canteen}</p>
+      <p>โรงอาหาร:{data.canteen}</p>
+      <p>รวม:{data.totalPrice}</p>
       <Link to={data.id}>JOIN</Link>
+      <br/>
       {data.control}
     </div>
   );
