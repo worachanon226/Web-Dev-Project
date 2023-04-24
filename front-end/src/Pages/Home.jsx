@@ -28,19 +28,19 @@ function Home() {
        
     <div className="container">
     <div className="card">
-      <div className="box">
+      <Link to="Host"><div className="box1">
         <div className="content">
-          <Link to="Host">HOST</Link>
+          <h5>HOST</h5>
         </div>
-      </div>
+      </div></Link>
     </div>
 
     <div className="card">
-      <div className="box">
+    <Link to="Host"><div className="box2">
         <div className="content">
-          <Link to="guest">JOIN</Link>
+        <h5>JOIN</h5>
         </div>
-      </div>
+      </div></Link>
     </div>
    
       </div>
