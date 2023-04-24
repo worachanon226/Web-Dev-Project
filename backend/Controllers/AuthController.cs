@@ -23,7 +23,7 @@ namespace backend.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<Models.User>> Register(Models.UserRegister request)
+        public async Task<ActionResult<Models.Usage>> Register(Models.UserRegister request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
@@ -54,7 +54,7 @@ namespace backend.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<Models.User>> Login(Models.UserLogin request)
+        public async Task<ActionResult<Models.Usage>> Login(Models.UserLogin request)
         {
             var user = await _service.GetUserId(request.Id);
             if (user == null)
