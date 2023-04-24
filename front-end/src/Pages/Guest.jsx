@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Item from "./Components/Item";
-import Task from "../Controller/test/Task.json";
-import Task2 from "../Controller/test/Task2.json";
-function Guest() {
+import { getTasks } from "../Controller/HostController";
+let fakeUser = {
+  id: "3",
+};
+function Host() {
   let containerStyle = {
     display: "flex",
     flexDirection: "column",
@@ -11,16 +13,41 @@ function Guest() {
     height: "100%",
     width: "100%",
   };
+  let hostListcontain = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    minHeight: "50%",
+    height: "fit-content",
+    width: "80%",
+    border: "2px solid",
+    borderRadius: "20px",
+    background:'green'
+  };
 
-  let [task, setTask] = useState([Task, Task2]);
+  let [task, setTask] = useState();
+  if (task === undefined) {
+    getTasks(setTask);
+    return <div>Loading</div>;
+  }
   return (
     <div style={containerStyle}>
-      <h2>Online Host</h2>
-      {task.map((e) => (
-        <Item key={e.Name} {...e} />
-      ))}
+      <button
+        onClick={() => {
+          getTasks(setTask);
+        }}
+      >
+        refresh
+      </button>
+      <div style={hostListcontain}>
+        {task.map((e) => (
+          <Item
+            key={e.id}
+            {...e}
+          />
+        ))}
+      </div>
     </div>
   );
 }
-
-export default Guest;
+export default Host;
