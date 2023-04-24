@@ -43,6 +43,12 @@ public class TaskController : ControllerBase
         await _service.SetTaskAvailable(id, b);
         return Ok("Task is set " + b + ".");
     }
+    [HttpPost("setConfirmMenu")]
+    public async Task<ActionResult> SetAvailableMenu(string TaskId,string MenuId, bool b)
+    {
+        await _service.SetMenuAvailable(TaskId,MenuId, b);
+        return Ok("Menu is set to " + b + ".");
+    }
 
     [HttpPost("addMenu")]
     public async Task<ActionResult> AddMenu(string id, Models.MenuTask menu)

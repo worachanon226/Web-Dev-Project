@@ -1,20 +1,35 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import Task from "../../Controller/test/Task.json";
+import { deleteMenu, getTask } from "../../Controller/GuestController";
+import { AddMenuModal } from "./createMenuModal";
+
 const VisitHost = () => {
-  let [menu, setMenu] = useState(Task.menus);
+  let [menu, setMenu] = useState();
   let { hostId } = useParams();
-  // let res = fetch(endpoint.concat(path.getTask), {
-  //   method: "GET",
-  //   body: {id:hostId}
-  // }).then((response) => response.json()).then(res => setMenu(res.menus))
-  
+  if (menu === undefined) {
+    getTask(hostId, setMenu);
+    return <div>Loading</div>;
+  }
   return (
-    <div>
-      {menu.map((e) => (
-        <div>{e.Name}+{e.Price}</div>
-      ))}
-    </div>
+    <>
+      <AddMenuModal callback={setMenu} taskId={hostId} />
+      <div>
+        {menu.map((e) => (
+          <div>
+            <span>{JSON.stringify(e)}</span>
+            <button
+              style={{ marginLeft: "auto", background: "red" }}
+              onClick={async () => {
+                await deleteMenu(hostId, e.id);
+                getTask(hostId, setMenu);
+              }}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

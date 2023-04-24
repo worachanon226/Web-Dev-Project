@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Item from "./Components/Item";
-import { getTasks } from "../Controller/HostController";
+import { getTasks } from "../Controller/GuestController";
 let fakeUser = {
   id: "3",
 };

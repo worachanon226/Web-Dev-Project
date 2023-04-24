@@ -30,4 +30,20 @@ let deleteTask = async (id) => {
     method: "DELETE",
   });
 };
-export { createTask,getTask, getTasks, deleteTask };
+let acceptMenu = async (taskId,menuId) => {
+  let res = await fetch(
+    endpoint.concat(path.setConfirmMenu) + "?TaskId=" + taskId + "&MenuId=" + menuId + "&b=" + "true",
+    {
+      method: "POST",
+    }
+  );
+}
+let denyMenu = async (taskId,menuId) => {
+  let res = await fetch(
+    endpoint.concat(path.setConfirmMenu) + "?TaskId=" + taskId + "&MenuId=" + menuId + "&b=" + "false",
+    {
+      method: "POST",
+    }
+  );
+};
+export { createTask, getTask, getTasks, deleteTask, acceptMenu ,denyMenu};

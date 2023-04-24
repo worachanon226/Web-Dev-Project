@@ -50,12 +50,21 @@ public class DatabaseService
         await _taskCollection.Find(x => x.Available == true).ToListAsync();
     public async Task CreateTask(Models.Task newTask) =>
         await _taskCollection.InsertOneAsync(newTask);
+
     public async Task SetTaskAvailable(string id, bool b)
     {
         var filter = Builders<Models.Task>.Filter.Eq(x => x.Id, id);
         var update = Builders<Models.Task>.Update.Set(x => x.Available, b);
         await _taskCollection.UpdateOneAsync(filter, update);
     }
+    public async Task SetMenuAvailable(string TaskId,string MenuId, bool b)
+    {
+        var filter = Builders<Models.Task>.Filter.Eq(x => x.Id, TaskId) & Builders<Models.Task>.Filter.ElemMatch(x => x.Menus, Builders<Models.MenuTask>.Filter.Eq(x => x.Id, MenuId));
+
+        var update = Builders<Models.Task>.Update.Set(x => x.Menus[0].IsConfirm,b);
+        await _taskCollection.UpdateOneAsync(filter, update);
+    }
+
     public async Task AddMenu(string id, Models.MenuTask menu)
     {
         var task = await _taskCollection.Find(x => x.Id == id).FirstOrDefaultAsync();

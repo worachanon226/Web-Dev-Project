@@ -1,37 +1,42 @@
 import API from "./API";
-let { host, path } = API;
-
-let joinHost = async (TaskID, UserID) => {
-  let req = await fetch(host.concat(path.joinHost), {
+let { endpoint, path } = API;
+let getTask = async (id, callback) => {
+  let res = await fetch(endpoint.concat(path.getTask) + "?id=" + id, {
+    method: "GET",
+  });
+  let response = await res.json();
+  callback(response.menus);
+};
+let getTasks = async (callback) => {
+  let res = await fetch(endpoint.concat(path.getTasks), {
+    method: "GET",
+  });
+  let response = await res.json();
+  callback(response);
+};
+let getMenus = async (id, callback) => {
+  let res = await fetch(endpoint.concat(path.getMenus) + "?id=" + id, {
+    method: "GET",
+  });
+  let response = await res.json();
+  console.log(response);
+  callback(response);
+};
+let addMenu = async (TaskID, data, callback) => {
+  let req = await fetch(endpoint.concat(path.addMenu) + "?id=" + TaskID, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: TaskID,
+    body: JSON.stringify(data) ,
   });
   if (req.ok) {
-    //do something
+    getTask(TaskID, callback);
   }
 };
-
-let createMenu = async (TaskID, UserID, Menu) => {
-  let req = await fetch(host.concat(path.createMenu), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: {
-      TaskID,
-      UserID,
-      Menu,
-    },
+let deleteMenu = async (taskId,menuId) => {
+  await fetch(endpoint.concat(path.deleteMenu) + "?TaskId=" + taskId + "&MenuId="+menuId, {
+    method: "DELETE",
   });
-  if (req.ok) {
-    //do something
-  }
-};
-
-export {
-    createMenu,
-    joinHost
 }
+export {getTask,getTasks,addMenu,getMenus,deleteMenu};
