@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
-import { getTasks,deleteTask } from "../Controller/HostController";
+import { getTasks, deleteTask } from "../Controller/HostController";
 let fakeUser = {
   id: "1",
 };
@@ -52,18 +52,32 @@ function Host() {
           <Item
             key={e.id}
             {...e}
-            control={<Control ownerId={e.userId} id={e.id} user={fakeUser} callback ={setTask}/>}
+            control={
+              <Control
+                ownerId={e.userId}
+                id={e.id}
+                user={fakeUser}
+                callback={setTask}
+              />
+            }
           />
         ))}
       </div>
     </div>
   );
 }
-let Control = ({ ownerId, id, user,callback }) => {
+let Control = ({ ownerId, id, user, callback }) => {
   if (ownerId === user.id) {
-    return <button onClick={ () => {
-      deleteTask(id)
-    }}>Delete</button>;
+    return (
+      <button
+        onClick={async () => {
+          await deleteTask(id);
+          getTasks(callback);
+        }}
+      >
+        Delete
+      </button>
+    );
   }
   return;
 };

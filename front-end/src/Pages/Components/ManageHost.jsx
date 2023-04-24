@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import Task from "../../Controller/test/Task.json";
-const ManageHost = (data) => {
-  let [menu, setMenu] = useState(Task.menus);
+import { getTask } from "../../Controller/HostController";
+const ManageHost = () => {
+  let [task, setTask] = useState();
   let { hostId } = useParams();
-  // let res = fetch(endpoint.concat(path.getTask), {
-  //   method: "GET",
-  //   body: {id:hostId}
-  // }).then((response) => response.json()).then(res => setMenu(res.menus))
-  
+  if (task === undefined) {
+    getTask(hostId,setTask)
+    return (
+      <div>
+        Loading
+      </div>
+    );
+  }
   return (
     <div>
-      {menu.map((e) => (
-        <div>{e.Name}+{e.Price}</div>
+      {task.menus.map((e) => (
+        <div key={e.id}>{e.id}+{e.name}+{e.price}</div>
       ))}
     </div>
   );

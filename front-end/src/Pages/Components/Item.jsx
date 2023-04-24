@@ -10,7 +10,6 @@ let  Item = (data) => {
   return (
     <div style={boxStyle}>
       <p>{data.canteen}</p>
-      {/* <p>{data.name}</p> */}
       <Link to={data.id} >JOIN</Link>
       {
         data.control

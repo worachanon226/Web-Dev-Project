@@ -3,8 +3,24 @@
   "userId": "1",
   "canteen": "1",
   "menus": [
-    { "ID": "m1", "Name": "m1", "Price": 50 },
-    { "ID": "m2", "Name": "m2", "Price": 60 }
+    {
+      "id": "gg",
+      "userId": "1",
+      "store": "A",
+      "name": "string",
+      "price": 10,
+      "isConfirm": false,
+      "comment": "string"
+    },
+    {
+      "id": "g2g",
+      "userId": "1",
+      "store": "A",
+      "name": "string",
+      "price": 10,
+      "isConfirm": false,
+      "comment": "string"
+    }
   ],
   "maxTasks": 3,
   "currentTasks": 2,
