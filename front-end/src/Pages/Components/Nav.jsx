@@ -49,13 +49,14 @@ const Nav = () => {
 
   return (
     <>
-      <nav style={{ display: 'flex', justifyContent: 'space-between' , alignItems: "center",height:'63px' }} className="navbar navbar-expand-lg navbar-mainbg">
+    
+      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", height: '62px' }} className="navbar navbar-expand-lg navbar-mainbg">
 
         <Link className="navbar-brand navbar-logo" to="/" exact>
           Hew-Hew
         </Link>
 
-        <div style={{display:'flex' , width : '23%'}}>
+        <div style={{ display: 'flex', width: '35%' }}>
           <button
             className="navbar-toggler"
             onClick={function () {
@@ -79,26 +80,37 @@ const Nav = () => {
               </button>
 
 
+
+
               <li className="nav-item active" >
-                  
-                  <Link to="/" exact style={{ display: 'flex', alignItems: "center" }}>
-                    <i
-                      className="fas fa-tachometer-alt" >
-                     <AiFillHome /> 
-                    </i>
-                    <h2>Home</h2>
-                  </Link>
+
+                <Link to="/" exact style={{ display: 'flex', alignItems: "center" }}>
+                  <i
+                    className="fas fa-tachometer-alt" >
+                    <AiFillHome />
+                  </i>
+                  <h2>Home</h2>
+                </Link>
               </li>
 
-  
 
               <li className="nav-item" >
-                <Link to="/service" exact style={{ display: 'flex',  alignItems: "center" }}>
+                <Link to="/service" exact style={{ display: 'flex', alignItems: "center" }}>
                   <i
                     className="far fa-clone">
                     <IoFastFood />
                   </i>
                   <h2> Services</h2>
+                </Link>
+              </li>
+
+              <li className="nav-item" >
+                <Link to="/service" exact style={{ display: 'flex', alignItems: "center" }}>
+                  <i
+                    className="far fa-clone">
+                    <IoFastFood />
+                  </i>
+                  <h2>Profile</h2>
                 </Link>
               </li>
 
@@ -108,7 +120,7 @@ const Nav = () => {
                     className="far fa-copy">
                     <SiGnuprivacyguard />
                   </i>
-                  <h2> Sign Up</h2>
+                  <h2>Log In</h2>
                 </Link>
               </li>
             </ul>

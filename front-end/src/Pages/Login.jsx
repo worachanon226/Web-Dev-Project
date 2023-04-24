@@ -1,78 +1,58 @@
-import React, { useState } from "react";
-import API from "../Controller/API"
+import React from "react";
+import { IoFastFood } from 'react-icons/io5';
+import './style/Login.css'
 
 function Login() {
-  let {endpoint,path} = API
-  let submitHandler = (event) => {
-    event.preventDefault();
-    let id = event.target[0].value
-    let password = event.target[1].value
-    let res = fetch(endpoint.concat(path.Login),{
-      headers: { 'Content-Type': 'application/json' },
-      method:"POST",
-      body:{id,password},
-    }).then((res)=>{console.log(res);})
-  }
   return (
-    <div style={{ width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", }}>
-      <form onSubmit={submitHandler}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          background: "#FA8072",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "40%",
-          height: "40%"
-        }}
-      >
-        <h3>Sign In</h3>
-        <div style={{ padding: "0.5rem" }}>
-          <div
-            className="mb-3"
-            style={{ display: "flex", flexDirection: "column" }}
-          >
-            <label>Email address</label>
-            <input
-              className="form-control"
-              placeholder="Enter email"
-            />
+    <>
+      <div className="background">
+        <div className="shape" />
+        <div className="shape" />
+      </div>
+
+    
+
+      {/* <div className="col-md-auto">
+          <img className="img-fluid" src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg"></img>
+        </div> */}
+
+      <form>
+
+   
+      <h3>Login</h3>
+        <div className="form-floating mb-4">
+          <div>
+
+          <label htmlFor="id">User ID
+          <i className="far fa-clone">
+                    <IoFastFood />
+                  </i>
+          </label>
           </div>
-          <div
-            className="mb-3"
-            style={{ display: "flex", flexDirection: "column" }}
-          >
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter password"
-            />
-          </div>
+         
+          <input type="id" className="form-control" id="floatingInput" />
         </div>
-        <div className="mb-3">
-          <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Remember me
-            </label>
-          </div>
+
+        <div className="form-floating mb-4">
+
+          <label htmlFor="pwd">Password</label>
+          <input type="password" className="form-control" id="floatingPassword" />
         </div>
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+
+
+        <div className="btn">
+        <button type="submit" className="btn btn-danger mb-3">Submit</button>
         </div>
-        <p className="forgot-password text-right">
-          Forgot <a href="#">password?</a>
-        </p>
+
+        <div className="create">
+          <span>Don't have an account? </span>
+          <a className="text-decoration" href="/Signup">Create</a>
+        </div>
+
       </form>
-    </div>
-  );
+    </>
+  )
 }
 
 export default Login;
+

@@ -14,7 +14,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Nav />}>
-        {/* <Route index element={<TestNav />} /> */}
           <Route index element={<Home />} />
           <Route path="/host" element={<Host />} />
           <Route path="/host/:hostid" element={<ManageHost />} />

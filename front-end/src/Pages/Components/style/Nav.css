@@ -1,11 +1,4 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #fff; /* fallback for old browsers */
-}
-* {
-  margin: 0;
-  padding: 0;
-}
+
 i {
   margin-right: 10px;
 }
@@ -113,7 +106,7 @@ i {
   bottom: 0;
   left: -25px;
 }
-@media (max-width: 991px) {
+@media (max-width: 700px) {
   #navbarSupportedContent ul li a {
     padding: 12px 30px;
   }
