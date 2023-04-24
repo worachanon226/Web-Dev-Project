@@ -1,4 +1,4 @@
-.container {
+ .container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,9 +23,18 @@
 }
 
 .content{
-    color: #000000;
+    font-size: 20px;
     
+
 }
+
+/* .container .card:nth-child(1) .box .content a {
+  background: #2196f3;
+}
+
+.container .card:nth-child(2) .box .content a {
+  background: #e91e63;
+} */
 
 .container .card .box1 {
   position: absolute;
@@ -85,6 +94,12 @@
 }
 
 body .container .card .box1 .content a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  background: #fff;
+  color: #000;
+}
+
+body .container .card .box2 .content a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
   background: #fff;
   color: #000;
