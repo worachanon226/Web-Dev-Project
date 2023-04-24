@@ -10,46 +10,50 @@ function Login() {
         <div className="shape" />
       </div>
 
-    
+      <div className="fromcard">
 
-      {/* <div className="col-md-auto">
-          <img className="img-fluid" src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg"></img>
-        </div> */}
 
-      <form>
+        <form className="from">
 
-   
-      <h3>Login</h3>
-        <div className="form-floating mb-4">
-          <div>
 
-          <label htmlFor="id">User ID
-          <i className="far fa-clone">
-                    <IoFastFood />
-                  </i>
-          </label>
+          <h3>Login</h3>
+          <div className="form-floating mb-4">
+
+            <label htmlFor="id">User ID
+              {/* <i className="far fa-clone">
+                  <IoFastFood />
+                </i> */}
+            </label>
           </div>
-         
-          <input type="id" className="form-control" id="floatingInput" />
-        </div>
+          <div>
+            <input type="id" className="formcontrol" id="floatingInput" />
+          </div>
 
-        <div className="form-floating mb-4">
+          <div className="form-floating mb-4">
 
-          <label htmlFor="pwd">Password</label>
-          <input type="password" className="form-control" id="floatingPassword" />
-        </div>
+            <label htmlFor="id">Password
+              {/* <i className="far fa-clone">
+                <IoFastFood />
+              </i> */}
+            </label>
+          </div>
+          <div>
+            <input type="id" className="formcontrol" id="floatingInput" />
+          </div>
 
 
-        <div className="btn">
-        <button type="submit" className="btn btn-danger mb-3">Submit</button>
-        </div>
 
-        <div className="create">
-          <span>Don't have an account? </span>
-          <a className="text-decoration" href="/Signup">Create</a>
-        </div>
+          <div className="btnbg">
+            <button type="submit" className="btn btn-danger mb-3">Submit</button>
+          </div>
 
-      </form>
+          <div className="create">
+            <span>Don't have an account? </span>
+            <a className="text-decoration" href="/Signup">Create</a>
+          </div>
+
+        </form>
+      </div>
     </>
   )
 }

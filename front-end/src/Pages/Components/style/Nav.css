@@ -1,4 +1,8 @@
-
+.text{
+  font-size: 30px;
+  color: #fff;
+  margin-left: 50px;
+}
 i {
   margin-right: 10px;
 }

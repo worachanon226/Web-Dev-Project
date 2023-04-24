@@ -52,7 +52,7 @@ const Nav = () => {
     
       <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", height: '62px' }} className="navbar navbar-expand-lg navbar-mainbg">
 
-        <Link className="navbar-brand navbar-logo" to="/" exact>
+        <Link  to="/" className='text' exact>
           Hew-Hew
         </Link>
 
