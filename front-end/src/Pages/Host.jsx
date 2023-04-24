@@ -23,6 +23,7 @@ function Host() {
     width: "80%",
     border: "2px solid",
     borderRadius: "20px",
+    background:'green'
   };
   let listHost = {
     height: "10%",
