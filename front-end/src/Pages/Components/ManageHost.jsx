@@ -21,5 +21,3 @@ const ManageHost = () => {
 };
 
 export default ManageHost;
-
-export default manageHost

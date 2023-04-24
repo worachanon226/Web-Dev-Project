@@ -26,7 +26,7 @@ let createTask = async (data, callback) => {
   }
 };
 let deleteTask = async (id) => {
-  const res = await fetch(endpoint.concat(path.deleteTask) + "?id=" + id, {
+  await fetch(endpoint.concat(path.deleteTask) + "?id=" + id, {
     method: "DELETE",
   });
 };

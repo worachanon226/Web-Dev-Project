@@ -1,4 +1,4 @@
-body .container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@ body .container {
   margin-bottom: 60px;
 }
 
-body .container .card {
+.container .card {
   position: relative;
   min-width: 320px;
   height: 340px;
@@ -18,21 +18,24 @@ body .container .card {
   border-radius: 15px;
   margin: 30px;
   transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content{
     font-size: 20px;
 }
 
-body .container .card:nth-child(1) .box .content a {
+.container .card:nth-child(1) .box .content a {
   background: #2196f3;
 }
 
-body .container .card:nth-child(2) .box .content a {
+.container .card:nth-child(2) .box .content a {
   background: #e91e63;
 }
 
-body .container .card .box {
+.container .card .box {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -46,12 +49,10 @@ body .container .card .box {
   overflow: hidden;
   transition: 0.5s;
 }
-
-body .container .card .box:hover {
+.container .card .box:hover {
   transform: translateY(-50px);
 }
-
-body .container .card .box:before {
+.container .card .box:before {
   content: "";
   position: absolute;
   top: 0;
@@ -62,9 +63,7 @@ body .container .card .box:before {
 }
 
 
-
-
-body .container .card .box .content a {
+.container .card .box .content a {
   position: relative;
   display: inline-block;
   padding: 8px 20px;

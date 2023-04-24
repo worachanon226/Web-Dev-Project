@@ -1,6 +1,6 @@
-import React from "react";
-import { IoFastFood } from "react-icons/io5';
-import './style/Login.css";
+import React from "react"
+import { IoFastFood } from "react-icons/io5"
+import './style/Login.css'
 import { submitLogin } from "../Controller/AuthController";
 function Login() {
   return (

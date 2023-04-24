@@ -23,14 +23,7 @@ function Host() {
     width: "80%",
     border: "2px solid",
     borderRadius: "20px",
-    background:'green'
-  };
-  let listHost = {
-    height: "10%",
-    width: "90%",
-    border: "1px solid",
-    borderRadius: "20px",
-    margin: "10px 0",
+    background: "green",
   };
 
   let [task, setTask] = useState();
@@ -49,20 +42,24 @@ function Host() {
         refresh
       </button>
       <div style={hostListcontain}>
-        {task.map((e) => (
-          <Item
-            key={e.id}
-            {...e}
-            control={
-              <Control
-                ownerId={e.userId}
-                id={e.id}
-                user={fakeUser}
-                callback={setTask}
+        {task.map((e) => {
+          if (e.userId === fakeUser.id) {
+            return (
+              <Item
+                key={e.id}
+                {...e}
+                control={
+                  <Control
+                    ownerId={e.userId}
+                    id={e.id}
+                    user={fakeUser}
+                    callback={setTask}
+                  />
+                }
               />
-            }
-          />
-        ))}
+            );
+          }
+        })}
       </div>
     </div>
   );
