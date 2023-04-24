@@ -1,5 +1,4 @@
 import API from "./API";
-import axios from "axios";
 
 let { endpoint, path } = API;
 let getTasks = async (callback) => {
