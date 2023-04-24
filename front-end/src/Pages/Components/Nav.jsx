@@ -83,7 +83,6 @@ const Nav = () => {
 
 
               <li className="nav-item active" >
-
                 <Link to="/" exact style={{ display: 'flex', alignItems: "center" }}>
                   <i
                     className="fas fa-tachometer-alt" >

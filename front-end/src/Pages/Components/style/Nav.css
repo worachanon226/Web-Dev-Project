@@ -145,3 +145,7 @@ i {
   font-size: 15px;
   text-align: center;
 }
+
+.navbar-toggler .fas {
+  background-color: #fff;
+}
