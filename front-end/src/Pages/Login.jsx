@@ -1,7 +1,7 @@
-import React from "react";
-import { IoFastFood } from 'react-icons/io5';
+import React from "react"
+import { IoFastFood } from "react-icons/io5"
 import './style/Login.css'
-
+import { submitLogin } from "../Controller/AuthController";
 function Login() {
   return (
     <>
@@ -13,7 +13,7 @@ function Login() {
       <div className="fromcard">
 
 
-        <form className="from">
+      <form onSubmit={submitLogin}>
 
 
           <h3>Login</h3>
@@ -59,4 +59,3 @@ function Login() {
 }
 
 export default Login;
-

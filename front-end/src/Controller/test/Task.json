@@ -1,0 +1,29 @@
+{
+  "id": "1",
+  "userId": "1",
+  "canteen": "1",
+  "menus": [
+    {
+      "id": "gg",
+      "userId": "1",
+      "store": "A",
+      "name": "string",
+      "price": 10,
+      "isConfirm": false,
+      "comment": "string"
+    },
+    {
+      "id": "g2g",
+      "userId": "1",
+      "store": "A",
+      "name": "string",
+      "price": 10,
+      "isConfirm": false,
+      "comment": "string"
+    }
+  ],
+  "maxTasks": 3,
+  "currentTasks": 2,
+  "available": true,
+  "totalPrice": 110
+}
