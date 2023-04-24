@@ -3,11 +3,11 @@ import { submitLogin } from "../Controller/AuthController";
 function Login() {
   return (
     <div className="d-flex mt-5 align-self-center justify-content-center">
-      <div className="container w-75 row border rounded justify-content-md-center">
+      <div className="container w-75 row border rounded d-flex justify-content-center align-items-center vh-75 vw-50">
         <div className="col-md-auto">
           <img className="img-fluid" src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg"></img>
         </div>
-        <div className="col-md-auto text-center align-self-center">
+        <div className="col-md-75 text-center align-self-center">
           <p className="h2">Login</p>
           <form onSubmit={submitLogin}>
 
@@ -25,7 +25,7 @@ function Login() {
 
           </form>
 
-          <div>
+          <div className="mb-5">
             <a>Don't have an account? </a>
             <a className="text-decoration-none text-primary" href="/Signup">Create</a>
           </div>
