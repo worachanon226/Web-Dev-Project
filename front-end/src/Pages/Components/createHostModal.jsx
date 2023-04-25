@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
 
+import user from "../../Controller/test/User.json"
 function AddHostModal({ callback }) {
   const customStyles = {
     content: {

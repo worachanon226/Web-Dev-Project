@@ -52,16 +52,16 @@ function Host() {
       </button>
       <div style={hostListcontain}>
         {task.map((e) => {
-          if (e.userId === fakeUser.id) {
+          if (e.userId === user[0].id) {
             return (
               <Item
                 key={e.id}
-                {...e}
+                 data = {e}
                 control={
                   <Control
                     ownerId={e.userId}
                     id={e.id}
-                    user={fakeUser}
+                    user={user[0]}
                     callback={setTask}
                   />
                 }

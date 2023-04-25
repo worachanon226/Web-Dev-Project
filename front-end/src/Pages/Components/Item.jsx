@@ -14,7 +14,7 @@ let boxStyle = {
 
 };
 
-let Item = (data) => {
+let Item = ({data}) => {
   return (
     <div style={boxStyle}>
       <p style={{marginTop:'10px'}}>โรงอาหาร:{data.canteen}</p>

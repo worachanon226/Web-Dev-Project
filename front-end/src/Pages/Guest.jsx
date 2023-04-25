@@ -47,7 +47,7 @@ function Host() {
         {task.map((e) => (
           <Item
             key={e.id}
-            {...e}
+            data={e}
           />
         ))}
       </div> 
