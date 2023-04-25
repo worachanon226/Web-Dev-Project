@@ -26,16 +26,16 @@ function Host() {
     background:'green'
   };
 
-  // let [task, setTask] = useState();
-  // if (task === undefined) {
-  //   getTasks(setTask);
-  //   return <div>Loading</div>;
-  // }
+  let [task, setTask] = useState();
+  if (task === undefined) {
+    getTasks(setTask);
+    return <div>Loading</div>;
+  }
   return (
     <div style={containerStyle}>
-      {/* <button
+       <button
         onClick={() => {
-          // getTasks(setTask);
+          getTasks(setTask);
         }}
       >
         refresh
@@ -47,7 +47,7 @@ function Host() {
             {...e}
           />
         ))}
-      </div> */}
+      </div> 
     </div>
   );
 }
