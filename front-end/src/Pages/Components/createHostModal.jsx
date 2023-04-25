@@ -1,7 +1,7 @@
+// import { createTask } from "../../Controller/HostController";
 import React, { useState } from "react";
-import Modal from "react-modal";
-import { createTask } from "../../Controller/HostController";
 import { v4 as uuidv4 } from "uuid";
+import Modal from "react-modal";
 
 function AddHostModal({ callback }) {
   const customStyles = {
@@ -25,7 +25,7 @@ function AddHostModal({ callback }) {
         canteen: event.target[0].value,
         maxTasks: event.target[1].value,
       };
-      createTask(data, callback);
+      // createTask(data, callback);
       setIsOpen(false);
     }
   };

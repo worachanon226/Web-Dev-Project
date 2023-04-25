@@ -1,9 +1,9 @@
+// import { getTasks } from "../Controller/HostController";
 import React, { useState } from "react";
 import Item from "./Components/Item";
-import { getTasks } from "../Controller/HostController";
-let fakeUser = {
-  id: "3",
-};
+// let fakeUser = {
+//   id: "3",
+// };
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -25,16 +25,16 @@ function Host() {
     background:'green'
   };
 
-  let [task, setTask] = useState();
-  if (task === undefined) {
-    getTasks(setTask);
-    return <div>Loading</div>;
-  }
+  // let [task, setTask] = useState();
+  // if (task === undefined) {
+  //   getTasks(setTask);
+  //   return <div>Loading</div>;
+  // }
   return (
     <div style={containerStyle}>
-      <button
+      {/* <button
         onClick={() => {
-          getTasks(setTask);
+          // getTasks(setTask);
         }}
       >
         refresh
@@ -46,7 +46,7 @@ function Host() {
             {...e}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

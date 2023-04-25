@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { AddHostModal } from "./Components/createHostModal";
-import Item from "./Components/Item";
 import { getTasks, deleteTask } from "../Controller/HostController";
+import { AddHostModal } from "./Components/createHostModal";
+import React, { useState } from "react";
+import Item from "./Components/Item";
+
 let fakeUser = {
   id: "1",
 };

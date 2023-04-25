@@ -23,18 +23,9 @@
 }
 
 .content{
-    font-size: 20px;
-    
-
+    color: #000;
 }
 
-/* .container .card:nth-child(1) .box .content a {
-  background: #2196f3;
-}
-
-.container .card:nth-child(2) .box .content a {
-  background: #e91e63;
-} */
 
 .container .card .box1 {
   position: absolute;

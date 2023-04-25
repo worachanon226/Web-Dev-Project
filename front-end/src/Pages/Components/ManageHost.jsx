@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import { getTask } from "../../Controller/HostController";
+// import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 const ManageHost = () => {
   let [task, setTask] = useState();
-  let { hostId } = useParams();
+  // let { hostId } = useParams();
   if (task === undefined) {
-    getTask(hostId, setTask);
+    // getTask(hostId, setTask);
     return <div>Loading</div>;
   }
   return (

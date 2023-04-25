@@ -57,14 +57,14 @@ const Nav = () => {
         </Link>
 
         <div style={{ display: 'flex', width: '34%' }}>
-          <button
+          {/* <button
             className="navbar-toggler"
             onClick={function () {
               setTimeout(function () { animation(); });
             }}
             type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i className="fas fa-bars text-white"></i>
-          </button>
+          </button> */}
 
           <div
             className="collapse navbar-collapse" id="navbarSupportedContent">

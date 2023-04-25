@@ -1,50 +1,43 @@
-import React from "react"
+// import { submitLogin } from "../Controller/AuthController";
+import { RiLockPasswordFill } from 'react-icons/ri'
+import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa"
 import './style/Login.css'
-import { submitLogin } from "../Controller/AuthController";
-import {RiLockPasswordFill} from 'react-icons/ri'
+import React from "react"
 
 function Login() {
   return (
     <>
-      <div className="background">
-        <div className="shape" />
-        <div className="shape" />
-      </div>
 
       <div className="fromcard">
-
-
-      <form onSubmit={submitLogin}>
-    
+        <form>
+          {/* <form onSubmit={submitLogin}> */}
 
           <h3>Login</h3>
           <div className="form-floating">
-              <div>
-              <label  class='textlogin' htmlFor="id">
+
+            <div>
+              <label class='textlogin' htmlFor="id">
                 <FaUser size={20} gap />
                 User ID
-                </label>
-                </div>
+              </label>
+            </div>
           </div>
           <div>
             <input type="id" className="formcontrol" id="floatingInput" />
           </div>
-
 
           <div className="form-floating">
-              <div>
-              <label  class='textlogin' htmlFor="id">
+            <div>
+              <label class='textlogin' htmlFor="id">
                 <RiLockPasswordFill size={20} />
                 Password
-                </label>
-                </div>
+              </label>
+            </div>
           </div>
           <div>
             <input type="id" className="formcontrol" id="floatingInput" />
           </div>
-
-
 
           <div className="btnbg">
             <button type="submit" className="btn btn-danger mb-3">Submit</button>
@@ -52,13 +45,12 @@ function Login() {
 
           <div className="create">
             <span>Don't have an account? </span>
-            <a className="text-decoration" href="/Signup">Create</a>
+            <Link className="text-decoration" to="/signup">Create</Link>
           </div>
-
         </form>
       </div>
     </>
   )
 }
 
-export default Login;
+export default Login

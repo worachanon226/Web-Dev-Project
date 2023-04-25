@@ -1,5 +1,5 @@
 .fromcard{
-    height: 470px;
+    height: 420px;
     width: 400px;
     background-color: rgba(185, 185, 185, 0.023);
     position: absolute;
@@ -9,8 +9,8 @@
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
+    box-shadow: 0 0 15px rgba(8,7,16,0.6);
+    padding: 30px 35px;
 } 
 .fromcard {
     font-family: 'Poppins',sans-serif;
@@ -34,7 +34,7 @@
     color: rgb(7, 7, 7); 
 } 
 .formcontrol{
-    /* display: block; */
+    display: block;
     height: 50px;
     width: 100%;
     background-color: #fa807257;
