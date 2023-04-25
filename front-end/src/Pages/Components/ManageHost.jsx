@@ -10,7 +10,7 @@ const ManageHost = () => {
     return <div>Loading</div>;
   }
   return (
-    <div>
+    <div >
       {task.menus.map((e) => (
         <List key={e.id} props={e} callback = {setTask} hostId = {hostId}></List>
       ))}
