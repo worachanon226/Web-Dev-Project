@@ -60,6 +60,7 @@ function Host() {
               />
             );
           }
+          return <></>
         })}
       </div>
     </div>

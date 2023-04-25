@@ -1,9 +1,10 @@
-// import { getTasks } from "../Controller/HostController";
+
 import React, { useState } from "react";
 import Item from "./Components/Item";
-// let fakeUser = {
-//   id: "3",
-// };
+import { getTasks } from "../Controller/GuestController";
+let fakeUser = {
+  id: "3",
+};
 function Host() {
   let containerStyle = {
     display: "flex",
