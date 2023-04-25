@@ -40,7 +40,7 @@ function Login() {
           </div>
 
           <div className="btnbg">
-            <button  type="submit" className="btn btn-danger mb-3" href='/front-end/src/Pages/Home.jsx'>Submit</button>
+            <button  type="submit" className="btn btn-danger mb-3" >Submit</button>
           </div>
 
           <div className="create">
