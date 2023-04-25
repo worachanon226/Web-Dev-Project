@@ -75,9 +75,6 @@ const Nav = () => {
                 <div className="right"></div>
               </div>
 
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
 
 
 
@@ -91,6 +88,7 @@ const Nav = () => {
                   <h2>Home</h2>
                 </Link>
               </li>
+
 
 
               <li className="nav-item" >
