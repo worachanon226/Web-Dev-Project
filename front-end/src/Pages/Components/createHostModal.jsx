@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { createTask } from "../../Controller/HostController";
 import { v4 as uuidv4 } from "uuid";
 
+import user from "../../Controller/test/User.json"
 function AddHostModal({ callback }) {
   const customStyles = {
     content: {
@@ -21,7 +22,7 @@ function AddHostModal({ callback }) {
       let data = {
         //get from context
         id: uuidv4(),
-        userId: "1",
+        userId: user[0].id,
         canteen: event.target[0].value,
         maxTasks: event.target[1].value,
       };
