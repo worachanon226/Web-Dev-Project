@@ -9,10 +9,10 @@ let boxStyle = {
 let Item = ({data}) => {
   return (
     <div style={boxStyle}>
-      {/* <p>โรงอาหาร:{data.canteen}</p>
+       <p>โรงอาหาร:{data.canteen}</p>
       <p>รวม:{data.totalPrice}</p>
       <Link to={data.id}>JOIN</Link>
-      <br/> */}
+      <br/> 
 
       <div style={{overflow:"clip"}}> {JSON.stringify(data)}</div>
 

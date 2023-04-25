@@ -11,14 +11,14 @@ const VisitHost = () => {
     return <div>Loading</div>;
   }
   return (
-    <>
+    <div style={{width:'100%',height:'100%',background:'blue'}}>
       <AddMenuModal callback={setMenu} taskId={hostId} />
-      <div>
+      <div  style={{width:'60%',height:'60%',background:'red'}}>
         {menu.map((e) => (
-          <div key={e.id}>
+          <div  style={{width:'100%',height:'20%',background:'yellow'}} key={e.id}>
             <span>{JSON.stringify(e)}</span>
             <button
-              style={{ marginLeft: "auto", background: "red" }}
+              style={{ marginLeft: "auto", background: "green" }}
               onClick={async () => {
                 await deleteMenu(hostId, e.id);
                 getTask(hostId, setMenu);
@@ -29,7 +29,7 @@ const VisitHost = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
