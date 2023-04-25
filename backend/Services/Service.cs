@@ -61,7 +61,7 @@ public class DatabaseService
     {
         var filter = Builders<Models.Task>.Filter.Eq(x => x.Id, TaskId) & Builders<Models.Task>.Filter.ElemMatch(x => x.Menus, Builders<Models.MenuTask>.Filter.Eq(x => x.Id, MenuId));
 
-        var update = Builders<Models.Task>.Update.Set(x => x.Menus[0].IsConfirm,b);
+        var update = Builders<Models.Task>.Update.Set(x => x.Menus[-1].IsConfirm,b);
         await _taskCollection.UpdateOneAsync(filter, update);
     }
 

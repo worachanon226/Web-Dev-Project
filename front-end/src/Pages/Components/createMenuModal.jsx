@@ -26,7 +26,7 @@ function AddMenuModal({ callback,taskId }) {
         price: parseInt(event.target[2].value),
         amount: parseInt(event.target[3].value),
         isConfirm: false,
-        comment: "ไม่ใส่ถั่ว โบ๊ทไม่ชอบ",
+        comment:event.target[4].value ,
       };
       addMenu(taskId,data, callback);
       setIsOpen(false);

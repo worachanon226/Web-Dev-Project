@@ -15,7 +15,7 @@ const VisitHost = () => {
       <AddMenuModal callback={setMenu} taskId={hostId} />
       <div>
         {menu.map((e) => (
-          <div>
+          <div key={e.id}>
             <span>{JSON.stringify(e)}</span>
             <button
               style={{ marginLeft: "auto", background: "red" }}
