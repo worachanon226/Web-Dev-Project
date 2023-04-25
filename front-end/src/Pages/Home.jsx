@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import './style/Home.css'
-import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -36,7 +36,7 @@ function Home() {
     </div>
 
     <div className="card">
-    <Link to="Host"><div className="box2">
+    <Link to="Guest"><div className="box2">
         <div className="content">
         <h4>JOIN</h4>
         </div>

@@ -1,7 +1,8 @@
 
+import { getTasks } from "../Controller/GuestController";
+import VisitHost from "./Components/VisitHost";
 import React, { useState } from "react";
 import Item from "./Components/Item";
-import { getTasks } from "../Controller/GuestController";
 let fakeUser = {
   id: "3",
 };
@@ -13,18 +14,18 @@ function Host() {
     alignItems: "center",
     height: "100%",
     width: "100%",
+
   };
   let hostListcontain = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    minHeight: "50%",
+    minHeight: "80%",
     height: "fit-content",
     width: "80%",
-    border: "2px solid",
-    borderRadius: "20px",
-    background:'green'
+
   };
+
 
   let [task, setTask] = useState();
   if (task === undefined) {
@@ -32,8 +33,10 @@ function Host() {
     return <div>Loading</div>;
   }
   return (
+    
     <div style={containerStyle}>
-       <button
+       <button style={{fontSize:'1.25rem' , background:'pink', borderRadius:'15px',width:'8%',height:'50px', color:'white' ,
+       boxShadow:'1px 2px 10px #948484', }}
         onClick={() => {
           getTasks(setTask);
         }}
@@ -48,7 +51,9 @@ function Host() {
           />
         ))}
       </div> 
+      
     </div>
+    
   );
 }
 export default Host;

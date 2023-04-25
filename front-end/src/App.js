@@ -19,7 +19,7 @@ function App() {
           <Route path="/guest/:hostId" element={<VisitHost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+   
 
         </Route>
       </Routes>

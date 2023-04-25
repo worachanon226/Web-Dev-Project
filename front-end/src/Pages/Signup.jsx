@@ -3,7 +3,7 @@ import React from 'react'
 
 
 
-// import { submitSignup,verifyPassword } from '../Controller/AuthController'
+import { submitSignup,verifyPassword } from '../Controller/AuthController'
 
 function Signup() {
 
@@ -44,8 +44,8 @@ function Signup() {
           </div>
         </div>
         <div>
-        {/* <input onKeyUp={verifyPassword} type="password" className="formControl" id="pass" /> */}
-        <input type="password" className="formControl" id="pass" />
+        <input onKeyUp={verifyPassword} type="password" className="formControl" id="pass" />
+        {/* <input type="password" className="formControl" id="pass" /> */}
         </div>
 
         <div className="formfloating">
@@ -69,8 +69,8 @@ function Signup() {
           </div>
         </div>
         <div>
-        {/* <input onKeyUp={verifyPassword} type="password" className="formControl" id="cpass" /> */}
-          <input type="id" className="formControl" id="floatingInput" />
+        <input onKeyUp={verifyPassword} type="password" className="formControl" id="cpass" />
+          {/* <input type="id" className="formControl" id="floatingInput" /> */}
         </div>
 
         <div className="formfloating">
@@ -82,8 +82,8 @@ function Signup() {
           </div>
         </div>
         <div>
-        {/* <input onKeyUp={verifyPassword} type="password" className="formControl" id="cpass" /> */}
-          <input type="id" className="formControl" id="floatingInput" />
+        <input onKeyUp={verifyPassword} type="password" className="formControl" id="cpass" />
+          {/* <input type="id" className="formControl" id="floatingInput" /> */}
         </div>
 
 

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
 import { addMenu } from "../../Controller/GuestController";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Modal from "react-modal";
 
 function AddMenuModal({ callback,taskId }) {
   const customStyles = {

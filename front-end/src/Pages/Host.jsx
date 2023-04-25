@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Item from "./Components/Item";
 
 let fakeUser = {
-  id: "1",
+  id: "2",
 };
 function Host() {
   let containerStyle = {
@@ -24,8 +24,16 @@ function Host() {
     width: "80%",
     border: "2px solid",
     borderRadius: "20px",
-    background: "green",
+    background: "blue",
   };
+  let listHost = {
+        backgroundColor: "#FFFFFF",
+        height: "10%",
+        width: "90%",
+        border:"1px solid",
+        borderRadius: "15px",
+        margin:"15px",
+      };
 
   let [task, setTask] = useState();
   if (task === undefined) {

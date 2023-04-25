@@ -1,4 +1,4 @@
-// import { createTask } from "../../Controller/HostController";
+import { createTask } from "../../Controller/HostController";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
@@ -12,6 +12,11 @@ function AddHostModal({ callback }) {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      borderRadius: "15px",
+      background: "#FF8066",
+      height: "150px",
+      width: "22rem",
+      padding: "1.2rem"
     },
   };
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -21,11 +26,11 @@ function AddHostModal({ callback }) {
       let data = {
         //get from context
         id: uuidv4(),
-        userId: "1",
+        userId: "2",
         canteen: event.target[0].value,
         maxTasks: event.target[1].value,
       };
-      // createTask(data, callback);
+      createTask(data, callback);
       setIsOpen(false);
     }
   };
@@ -39,17 +44,29 @@ function AddHostModal({ callback }) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2>Add</h2>
-        <form style={{ padding: "10px" }} onSubmit={handleSubmit}>
-          <input placeholder="Canteen" />
-          <br />
-          <input type="number" placeholder="Max Tasks" />
-          <br />
-          <button onClick={() => setIsOpen(false)}>close</button>
-          <button type="submit"> ADD</button>
+        <h2 style={{ textAlign: "center", color: 'white', fontSize: '1.25rem' }}>Add</h2>
+
+        <form style={{ marginTop: "15px", margin: "auto", paddingTop: '10px' }} onSubmit={handleSubmit}>
+          <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', justifyContent: 'between' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <input style={{ width: "100%" }} placeholder="Canteen" />
+       
+                <button style={{ textAlign: "center", width: "50%", backgroundColor: "white", borderRadius: "5px", marginTop: '20px' }} onClick={() => setIsOpen(false)}>close</button>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: '1.5rem' }} >
+                <input style={{ width: "100%" }} placeholder="Max Tasks" />
+                <button style={{ textAlign: "center", width: "50%", backgroundColor: "white", borderRadius: "5px", marginTop: '20px' }} type="submit" >
+                  submit
+                </button>
+              </div>
+
+            </div>
+          </div>
         </form>
       </Modal>
-    </div>
+    </div >
   );
 }
 
