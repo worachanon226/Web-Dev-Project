@@ -2,6 +2,7 @@ import { getTasks, deleteTask } from "../Controller/HostController";
 import { AddHostModal } from "./Components/createHostModal";
 import React, { useState } from "react";
 import Item from "./Components/Item";
+import user from "../Controller/test/User.json"
 
 let fakeUser = {
   id: "2",
