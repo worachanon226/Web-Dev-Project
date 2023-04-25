@@ -1,12 +1,8 @@
-import { getTasks, deleteTask } from "../Controller/HostController";
-import { AddHostModal } from "./Components/createHostModal";
 import React, { useState } from "react";
+import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
+import { getTasks, deleteTask } from "../Controller/HostController";
 import user from "../Controller/test/User.json"
-
-let fakeUser = {
-  id: "2",
-};
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -25,16 +21,8 @@ function Host() {
     width: "80%",
     border: "2px solid",
     borderRadius: "20px",
-    background: "blue",
+    background: "green",
   };
-  let listHost = {
-        backgroundColor: "#FFFFFF",
-        height: "10%",
-        width: "90%",
-        border:"1px solid",
-        borderRadius: "15px",
-        margin:"15px",
-      };
 
   let [task, setTask] = useState();
   if (task === undefined) {

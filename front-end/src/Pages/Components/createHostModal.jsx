@@ -1,4 +1,5 @@
 import { createTask } from "../../Controller/HostController";
+import { IoCloseSharp } from 'react-icons/io5';
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
@@ -15,8 +16,8 @@ function AddHostModal({ callback }) {
       transform: "translate(-50%, -50%)",
       borderRadius: "15px",
       background: "#FF8066",
-      height: "150px",
-      width: "22rem",
+      height: "220px",
+      width: "30%",
       padding: "1.2rem"
     },
   };
@@ -27,7 +28,7 @@ function AddHostModal({ callback }) {
       let data = {
         //get from context
         id: uuidv4(),
-        userId: "2",
+        userId: user[0].id,
         canteen: event.target[0].value,
         maxTasks: event.target[1].value,
       };
@@ -45,29 +46,28 @@ function AddHostModal({ callback }) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 style={{ textAlign: "center", color: 'white', fontSize: '1.25rem' }}>Add</h2>
+        <div className="d-flex justify-content-end">
+          <button onClick={() => setIsOpen(false)}><IoCloseSharp size={25} /></button>
+        </div>
+        <h2 style={{ textAlign: "center", color: 'white', fontSize: '1.5rem' }}>Add</h2>
 
-        <form style={{ marginTop: "15px", margin: "auto", paddingTop: '10px' }} onSubmit={handleSubmit}>
-          <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', justifyContent: 'between' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <input style={{ width: "100%" }} placeholder="Canteen" />
-       
-                <button style={{ textAlign: "center", width: "50%", backgroundColor: "white", borderRadius: "5px", marginTop: '20px' }} onClick={() => setIsOpen(false)}>close</button>
-              </div>
+        <form style={{ marginTop: "15px" }} onSubmit={handleSubmit}>
+          <div className="d-flex gap-3 justify-content-center p-2">
+            <input className="col w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Canteen" />
+            <input className="col w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Max Tasks" />
 
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: '1.5rem' }} >
-                <input style={{ width: "100%" }} placeholder="Max Tasks" />
-                <button style={{ textAlign: "center", width: "50%", backgroundColor: "white", borderRadius: "5px", marginTop: '20px' }} type="submit" >
-                  submit
-                </button>
-              </div>
-
-            </div>
           </div>
+
+          <div className="d-flex gap-3 justify-content-center p-3">
+            <button className="rounded bg-light w-25" style={{ fontSize: '18px' }} type="submit">ADD</button>
+          </div>
+
+
+
+
         </form>
       </Modal>
-    </div >
+    </div>
   );
 }
 

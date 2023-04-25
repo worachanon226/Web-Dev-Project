@@ -1,11 +1,6 @@
-
-import { getTasks } from "../Controller/GuestController";
-import VisitHost from "./Components/VisitHost";
 import React, { useState } from "react";
 import Item from "./Components/Item";
-let fakeUser = {
-  id: "3",
-};
+import { getTasks } from "../Controller/GuestController";
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -14,18 +9,18 @@ function Host() {
     alignItems: "center",
     height: "100%",
     width: "100%",
-
   };
   let hostListcontain = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    minHeight: "80%",
+    minHeight: "50%",
     height: "fit-content",
     width: "80%",
-
+    border: "2px solid",
+    borderRadius: "20px",
+    background:'green'
   };
-
 
   let [task, setTask] = useState();
   if (task === undefined) {
@@ -33,10 +28,8 @@ function Host() {
     return <div>Loading</div>;
   }
   return (
-    
     <div style={containerStyle}>
-       <button style={{fontSize:'1.25rem' , background:'pink', borderRadius:'15px',width:'8%',height:'50px', color:'white' ,
-       boxShadow:'1px 2px 10px #948484', }}
+      <button
         onClick={() => {
           getTasks(setTask);
         }}
@@ -50,10 +43,8 @@ function Host() {
             data={e}
           />
         ))}
-      </div> 
-      
+      </div>
     </div>
-    
   );
 }
 export default Host;
