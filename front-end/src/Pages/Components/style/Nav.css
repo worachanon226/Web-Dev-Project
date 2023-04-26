@@ -8,14 +8,13 @@ i {
   margin-right: 10px;
 }
 .navbar-logo {
-  padding: 35px;
+  padding: 15px;
   color: #fff;
   pointer-events: none;
 }
 
 .navbar-mainbg {
-  background-color: #FA8072;
-  /* box-shadow: 1px 2px 9px #F4AAB9; */
+  background-color: #FA8072;;
   padding: 0px;
 }
 #navbarSupportedContent {
@@ -27,15 +26,14 @@ i {
   margin: 0px;
 }
 #navbarSupportedContent ul li a i {
-  margin-right: 15px;
-  
+  margin-right: 10px;
 }
 #navbarSupportedContent li {
   list-style-type: none;
   float: left;
 }
 #navbarSupportedContent ul li a {
-  color: rgba(255, 255, 255, 0.894);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   font-size: 15px;
   display: block;
@@ -54,6 +52,8 @@ i {
   position: absolute;
   right: 20px;
   top: 10px;
+  font-size: 14px;
+  font-family: 'Font Awesome 5 Free';
   display: inline-block;
   padding-right: 3px;
   vertical-align: middle;
@@ -98,7 +98,7 @@ i {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #FA8072;
+  background-color: #FA8072;;
 }
 .hori-selector .right:before {
   bottom: 0;
@@ -108,7 +108,7 @@ i {
   bottom: 0;
   left: -25px;
 }
-@media (max-width: 700px) {
+@media (max-width: 991px) {
   #navbarSupportedContent ul li a {
     padding: 12px 30px;
   }
@@ -139,15 +139,3 @@ i {
     left: -25px;
   }
 }
-
-.nav-item h2 {
-  margin-top: 10px;
-  font-size: 15px;
-  text-align: center;
-}
-
-.navbar-toggler .fas {
-  background-color: #fff;
-}
-
-
