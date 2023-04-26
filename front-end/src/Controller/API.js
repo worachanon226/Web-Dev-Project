@@ -1,5 +1,5 @@
 let API = {
-    endpoint: "http://localhost:5226",
+    endpoint: "http://api.paleumm.com",
     path: {
         register: "/Auth/register",
         login: "/Auth/login",
