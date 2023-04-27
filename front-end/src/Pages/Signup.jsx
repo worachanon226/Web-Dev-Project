@@ -11,8 +11,8 @@ function Signup() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          let [id, name, last, password, phone] = event.target;
-          console.log(id.value);
+          let [id, name, last, password,cpassword, phone] = event.target
+          
           submitSignup(
             {
               id: id.value,
@@ -24,7 +24,8 @@ function Signup() {
             setUser,
             navigate
           );
-        }}
+        }
+      }
       >
         <h3>Sign Up</h3>
         <div className="formfloating">
