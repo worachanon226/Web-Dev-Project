@@ -15,14 +15,14 @@ let boxStyle = {
 
 };
 
-let Item = ({data}) => {
+let Item = ({data,control}) => {
   return (
     <div style={boxStyle}>
       <p style={{marginTop:'10px'}}>โรงอาหาร:{data.canteen}</p>
       <p style={{marginTop:'10px'}}>รวม:{data.totalPrice}</p>
       <Link style={{background:'#FFFFFF', padding:'0.5rem',marginTop:'10px', borderRadius: "6px", textDecoration:'none'}}  to={data.id}>JOIN</Link>
-      <br/>
-      {data.control}
+      {control}
+      
     </div>
   );
 };

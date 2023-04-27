@@ -36,7 +36,7 @@ function Signup() {
           </div>
         
         <div>
-          <input type="id" className="formControl" id="floatingInput" />
+          <input type="id" className="formControl"  />
         </div>
 
         <div className="formfloating">
@@ -47,7 +47,7 @@ function Signup() {
           </div>
         </div>
         <div>
-          <input type="id" className="formControl" id="floatingInput" />
+          <input type="input" className="formControl"  />
         </div>
 
         <div className="formfloating">
@@ -59,14 +59,10 @@ function Signup() {
         </div>
         <div>
           <input
-            onKeyUp={verifyPassword}
-            type="password"
+            type="input"
             className="formControl"
-            id="pass"
           />
-          {/* <input type="password" className="formControl" id="pass" /> */}
         </div>
-
         <div className="formfloating">
           <div>
             <label class="textSignup" htmlFor="id">
@@ -75,7 +71,7 @@ function Signup() {
           </div>
         </div>
         <div>
-          <input type="id" className="formControl" id="floatingInput" />
+          <input type="password" className="formControl" id="pass"  />
         </div>
 
         <div className="formfloating">
@@ -92,7 +88,6 @@ function Signup() {
             className="formControl"
             id="cpass"
           />
-          {/* <input type="id" className="formControl" id="floatingInput" /> */}
         </div>
 
         <div className="formfloating">
@@ -104,12 +99,10 @@ function Signup() {
         </div>
         <div>
           <input
-            onKeyUp={verifyPassword}
-            type="password"
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
             className="formControl"
-            id="cpass"
           />
-          {/* <input type="id" className="formControl" id="floatingInput" /> */}
         </div>
 
         <div className="btnbgsignup">
@@ -127,5 +120,4 @@ function Signup() {
     </div>
   );
 }
-
 export default Signup;

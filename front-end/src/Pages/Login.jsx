@@ -43,7 +43,7 @@ function Login() {
             </div>
           </div>
           <div>
-            <input type="id" className="formcontrol" id="floatingInput" />
+            <input type="password" className="formcontrol" id="floatingInput" />
           </div>
 
           <div className="btnbg">

@@ -24,7 +24,7 @@ function AddHostModal({ callback }) {
   };
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  let handleSubmit = (event) => { console.log(user);
+  let handleSubmit = (event) => { 
     if (event.target[0].value !== "" && event.target[1].value !== "") {
       let data = {
         id: uuidv4(),
