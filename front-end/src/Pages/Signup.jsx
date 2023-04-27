@@ -3,7 +3,7 @@ import { submitSignup, verifyPassword } from "../Controller/AuthController";
 import { useNavigate } from "react-router-dom";
 import {useUserContext} from "../userContext"
 
-function Singup() {
+function Signup() {
   let navigate = useNavigate()
   let {setUser} = useUserContext()
   return (
@@ -72,7 +72,7 @@ function Singup() {
             >
               Submit
             </button>
-          </form>
+          
 
           <div>
             <a>Already have an account? </a>
@@ -80,57 +80,87 @@ function Singup() {
               Login
             </a>
           </div>
+        
+        <div>
+          <input type="id" className="formControl" id="floatingInput" />
         </div>
+
+        <div className="formfloating">
+          <div>
+            <label class='textSignup' htmlFor="id">
+      
+              First Name
+            </label>
+          </div>
+        </div>
+        <div>
+          <input type="id" className="formControl" id="floatingInput" />
+        </div>
+
+        <div className="formfloating">
+          <div>
+            <label class='textSignup' htmlFor="id">
+    
+              Last Name
+            </label>
+          </div>
+        </div>
+        <div>
+        <input onKeyUp={verifyPassword} type="password" className="formControl" id="pass" />
+        {/* <input type="password" className="formControl" id="pass" /> */}
+        </div>
+
+        <div className="formfloating">
+          <div>
+            <label class='textSignup' htmlFor="id">
+     
+              Password
+            </label>
+          </div>
+        </div>
+        <div>
+          <input type="id" className="formControl" id="floatingInput" />
+        </div>
+
+        <div className="formfloating">
+          <div>
+            <label class='textSignup' htmlFor="id">
+     
+              Confirm Password
+            </label>
+          </div>
+        </div>
+        <div>
+        <input onKeyUp={verifyPassword} type="password" className="formControl" id="cpass" />
+          {/* <input type="id" className="formControl" id="floatingInput" /> */}
+        </div>
+
+        <div className="formfloating">
+          <div>
+            <label class='textSignup' htmlFor="id">
+      
+              Phone Number
+            </label>
+          </div>
+        </div>
+        <div>
+        <input onKeyUp={verifyPassword} type="password" className="formControl" id="cpass" />
+          {/* <input type="id" className="formControl" id="floatingInput" /> */}
+        </div>
+
+
+        <div className="btnbgsignup">
+            <button type="submit" className="btn btn-danger">Submit</button>
+          </div>
+      </form>
+      <div>
+        <a>Already have an account? </a>
+        <a className="text-decoration-none text-primary" href="/login">Login</a>
       </div>
+    </div >
     </div>
-  );
-  {
-    /* <form onSubmit={submitHandler}>
-      <h3>Sign Up</h3>
-      <div className="mb-3">
-        <label>ID</label>
-        <input
-          type="text"
-          className="form-control"
-          placeholder="First name"
-        />
-      </div>
-      <div className="mb-3">
-        <label>First Name</label>
-        <input type="text" className="form-control" placeholder="Last name" />
-      </div>
-      <div className="mb-3">
-        <label>Last Name</label>
-        <input
-          className="form-control"
-        />
-      </div>
-      <div className="mb-3">
-        <label>Password</label>
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Enter password"
-        />
-      </div>
-      <div className="mb-3">
-        <label>Phone</label>
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Enter password"
-        />
-      </div>
-      <div className="d-grid">
-        <button type="submit" className="btn btn-primary">
-          REGISTER NOW
-        </button>
-      </div>
-      <p className="forgot-password text-right">
-        Already registered <a href="/sign-in">sign in?</a>
-      </p>
-    </form> */
-  }
+    </div>
+  )
 }
 
-export default Singup;
+export default Signup;

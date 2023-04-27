@@ -29,7 +29,7 @@ function Host() {
   }
   return (
     <div style={containerStyle}>
-      <button
+      <button className="d-flex rounded justify-content-center shadow-sm p-2 mb-5 rounded" style={{background:'#FA8072', width:'90px' }}
         onClick={() => {
           getTasks(setTask);
         }}

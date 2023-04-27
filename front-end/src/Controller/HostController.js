@@ -7,6 +7,7 @@ let getTasks = async (callback) => {
   });
   let response = await res.json();
   callback(response);
+  console.log(response);
 };
 let getTask = async (id, callback) => {
   let res = await fetch(endpoint.concat(path.getTask) + "?id=" + id, {

@@ -10,6 +10,7 @@ import $ from 'jquery';
 
 const Nav = () => {
   function animation() {
+
     var tabsNewAnim = $('#navbarSupportedContent')
     var activeItemNewAnim = tabsNewAnim.find('.active');
     var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
@@ -42,89 +43,72 @@ const Nav = () => {
 
     animation();
     $(window).on('resize', function () {
-      setTimeout(function () { animation(); }, 500);
+      setTimeout(function () { animation(); }, 700);
     });
 
   }, []);
 
   return (
     <>
-    
-      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", height: '62px' }} className="navbar navbar-expand-lg navbar-mainbg">
+      <nav className="navbar navbar-expand-lg navbar-mainbg">
 
-        <Link className="navbar-brand navbar-logo" to="/" exact>
+        <Link className="text" to="/" exact>
           Hew-Hew
         </Link>
 
-        <div style={{ display: 'flex', width: '35%' }}>
-          <button
-            className="navbar-toggler"
-            onClick={function () {
-              setTimeout(function () { animation(); });
-            }}
-            type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i className="fas fa-bars text-white"></i>
-          </button>
+        <button className="navbar-toggler collapsed border-0"
+          onClick={function () {
+            setTimeout(function () { animation(); });
+          }}
+          type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div
-            className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
+        <div
+          className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul className="navbar-nav ml-auto">
 
-              <div className="hori-selector">
-                <div className="left"></div>
-                <div className="right"></div>
-              </div>
+            <div className="hori-selector">
+              <div className="left"></div>
+              <div className="right"></div>
+            </div>
 
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+            <li className="nav-item active">
+              <Link className="nav-link d-flex" to="/" >
+                <i className="fas fa-tachometer-al m-1">
+                  <AiFillHome />
+                </i>
+                <h5 className='text-center'>Home</h5>
+              </Link>
+            </li>
 
+            <li className="nav-item">
+              <Link className="nav-link d-flex" to="/service" >
+                <i className="far fa-tachometer-alt m-1">
+                  <IoFastFood />
+                </i>
+                <h5 className='text-center'>Services</h5>
+              </Link>
+            </li>
 
+            <li className="nav-item">
+              <Link className="nav-link d-flex" to="/profile" >
+                <i className="far fa-clone m-1">
+                  <IoFastFood />
+                </i>
+                <h5 className='text-center'>Profile</h5>
+              </Link>
+            </li>
 
-
-              <li className="nav-item active" >
-
-                <Link to="/" exact style={{ display: 'flex', alignItems: "center" }}>
-                  <i
-                    className="fas fa-tachometer-alt" >
-                    <AiFillHome />
-                  </i>
-                  <h2>Home</h2>
-                </Link>
-              </li>
-
-
-              <li className="nav-item" >
-                <Link to="/service" exact style={{ display: 'flex', alignItems: "center" }}>
-                  <i
-                    className="far fa-clone">
-                    <IoFastFood />
-                  </i>
-                  <h2> Services</h2>
-                </Link>
-              </li>
-
-              <li className="nav-item" >
-                <Link to="/service" exact style={{ display: 'flex', alignItems: "center" }}>
-                  <i
-                    className="far fa-clone">
-                    <IoFastFood />
-                  </i>
-                  <h2>Profile</h2>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link to="/login" exact style={{ display: 'flex', alignItems: "center" }}>
-                  <i
-                    className="far fa-copy">
-                    <SiGnuprivacyguard />
-                  </i>
-                  <h2>Log In</h2>
-                </Link>
-              </li>
-            </ul>
-          </div>
+            <li className="nav-item">
+              <Link className="nav-link d-flex" to="/login" >
+                <i className="fas far fa-chart-bar m-1">
+                  <SiGnuprivacyguard />
+                </i>
+                <h5 className='text-center'>Sign Up</h5>
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
       <Outlet />
@@ -132,4 +116,3 @@ const Nav = () => {
   )
 }
 export default Nav
-

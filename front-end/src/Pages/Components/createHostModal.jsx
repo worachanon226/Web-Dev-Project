@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
 import { createTask } from "../../Controller/HostController";
+import { IoCloseSharp } from 'react-icons/io5';
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useUserContext } from "../../userContext";
+import Modal from "react-modal";
+
 function AddHostModal({ callback }) {
   let {user} = useUserContext()
   const customStyles = {
@@ -13,6 +15,11 @@ function AddHostModal({ callback }) {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      borderRadius: "15px",
+      background: "#FF8066",
+      height: "220px",
+      width: "30%",
+      padding: "1.2rem"
     },
   };
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -39,14 +46,27 @@ function AddHostModal({ callback }) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2>Add</h2>
-        <form style={{ padding: "10px" }} onSubmit={handleSubmit}>
-          <input placeholder="Canteen" />
-          <br />
-          <input type="number" placeholder="Max Tasks" />
-          <br />
-          <button onClick={() => setIsOpen(false)}>close</button>
-          <button type="submit"> ADD</button>
+        <div className="d-flex justify-content-end">
+          <button onClick={() => setIsOpen(false)}><IoCloseSharp size={25} /></button>
+        </div>
+        <h2 style={{ textAlign: "center", color: 'white', fontSize: '1.5rem' }}>Add</h2>
+
+        <form style={{ marginTop: "15px" }} onSubmit={handleSubmit}>
+          <div className="d-flex gap-3 justify-content-center p-2">
+            <input className="col w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Canteen" />
+            <input className="col w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Max Tasks" />
+
+          </div>
+
+          <div className="d-flex gap-3 justify-content-center p-3">
+            <button className="rounded bg-light w-25" style={{ fontSize: '18px' }} type="submit">ADD</button>
+          </div>
+
+          
+
+
+
+
         </form>
       </Modal>
     </div>
