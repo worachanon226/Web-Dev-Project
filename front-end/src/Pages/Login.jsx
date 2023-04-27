@@ -1,20 +1,12 @@
 // import { submitLogin } from "../Controller/AuthController";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import { FaUser } from "react-icons/fa"
-import './style/Login.css'
-import { submitLogin } from "../Controller/AuthController";
-import { useNavigate } from "react-router-dom";
-import {useUserContext} from "../userContext"
-=======
 import { FaUser } from "react-icons/fa";
 import "./style/Login.css";
 import { submitLogin } from "../Controller/AuthController";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../userContext";
 
->>>>>>> front-end-dev
 function Login() {
   let { setUser } = useUserContext();
   let navigate = useNavigate();
