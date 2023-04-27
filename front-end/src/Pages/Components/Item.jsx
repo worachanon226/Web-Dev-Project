@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import React from "react";
 let boxStyle = {
-  width:"25%",
+  width:"50%",
   height:"170px",
   display:'flex',
   flexDirection: 'column',
+  justifyContent: "center",
   alignItems: 'center',
   background: '#FF8066',
   boxShadow: '1px 2px 9px #55494C',

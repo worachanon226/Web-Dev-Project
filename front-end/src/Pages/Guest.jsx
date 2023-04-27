@@ -9,17 +9,18 @@ function Host() {
     alignItems: "center",
     height: "100%",
     width: "100%",
+
   };
   let hostListcontain = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    display:'grid',     
+    gridTemplateColumns:'1fr 1fr',
+    gridAutoRow:'200px',
+    gap:'20px',
+    justifyItems: "center",
     minHeight: "50%",
     height: "fit-content",
     width: "80%",
-    border: "2px solid",
-    borderRadius: "20px",
-    background:'green'
+    borderRadius:"20px",
   };
 
   let [task, setTask] = useState();
@@ -29,14 +30,14 @@ function Host() {
   }
   return (
     <div style={containerStyle}>
-      <button className="d-flex rounded justify-content-center shadow-sm p-2 mb-5 rounded" style={{background:'#FA8072', width:'90px' }}
+      <button className="justify-content-center shadow-sm p-2 mb-5 rounded bg-teal-200"
         onClick={() => {
           getTasks(setTask);
         }}
       >
         refresh
       </button>
-      <div style={hostListcontain}>
+      <div className="flex-row md:grid" style={hostListcontain}>
         {task.map((e) => (
           <Item
             key={e.id}
