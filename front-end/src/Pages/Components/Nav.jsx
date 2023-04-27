@@ -43,15 +43,15 @@ const Nav = () => {
 
     animation();
     $(window).on('resize', function () {
-      setTimeout(function () { animation(); }, 500);
+      setTimeout(function () { animation(); }, 700);
     });
 
   }, []);
 
   return (
     <>
-
       <nav className="navbar navbar-expand-lg navbar-mainbg">
+
         <Link className="text" to="/" exact>
           Hew-Hew
         </Link>
@@ -64,17 +64,17 @@ const Nav = () => {
           <span class="navbar-toggler-icon"></span>
         </button>
 
-
-        <div className="d-flex collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
 
             <div className="hori-selector">
-              <div className="left" />
-              <div className="right" />
+              <div className="left"></div>
+              <div className="right"></div>
             </div>
 
             <li className="nav-item active">
-              <Link className="nav-link d-flex justify-content-center" to="/" >
+              <Link className="nav-link d-flex" to="/" >
                 <i className="fas fa-tachometer-al m-1">
                   <AiFillHome />
                 </i>
@@ -83,18 +83,17 @@ const Nav = () => {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link d-flex justify-content-center" to="/service" >
-                <i className="fas fa-tachometer-al m-1">
+              <Link className="nav-link d-flex" to="/service" >
+                <i className="far fa-tachometer-alt m-1">
                   <IoFastFood />
                 </i>
                 <h5 className='text-center'>Services</h5>
               </Link>
             </li>
 
-
             <li className="nav-item">
-              <Link className="nav-link d-flex justify-content-center" to="/profile" >
-                <i className="fas fa-address-book m-1">
+              <Link className="nav-link d-flex" to="/profile" >
+                <i className="far fa-clone m-1">
                   <IoFastFood />
                 </i>
                 <h5 className='text-center'>Profile</h5>
@@ -102,8 +101,8 @@ const Nav = () => {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link d-flex justify-content-center" to="/login" >
-                <i className="fas fa-clone m-1">
+              <Link className="nav-link d-flex" to="/login" >
+                <i className="fas far fa-chart-bar m-1">
                   <SiGnuprivacyguard />
                 </i>
                 <h5 className='text-center'>Sign Up</h5>
@@ -117,4 +116,3 @@ const Nav = () => {
   )
 }
 export default Nav
-

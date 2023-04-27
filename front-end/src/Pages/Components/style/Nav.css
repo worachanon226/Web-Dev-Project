@@ -14,7 +14,8 @@ i {
 }
 
 .navbar-mainbg {
-  background-color: #FA8072;;
+  background-color: #FA8072;
+  height: 72px;
   padding: 0px;
 }
 #navbarSupportedContent {

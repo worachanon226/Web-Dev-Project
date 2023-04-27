@@ -15,7 +15,7 @@ const VisitHost = () => {
   return (
     <div className="bg-primary d-flex flex-column align-items-center w-100 h-100 flex-wrap">
       <AddMenuModal callback={setMenu} taskId={hostId} />
-      <div className="m-5 rounded" style={{ width: '60%', height: '30%', background:'#FF8066' }}>
+      <div className="m-5 rounded" style={{ width: '60%', height: '245px', background:'#FF8066' }}>
         {menu.map((e) => (
           <div className="align-self rounded flex-wrap" key={e.id}>
             <div className="d-flex align-self w-auto rounded justify-content-between m-3 text-center flex-wrap">
@@ -44,6 +44,9 @@ const VisitHost = () => {
               <GrFormAdd size={25} style={{ background: 'white', borderRadius:'10px'}}/>
             </div>
 
+            <div className="d-flex gap-3 justify-content-center">
+            <button className="rounded bg-light m-3" style={{fontSize:'18px',width:'10%',alignContent:'center'}} type="submit">ยืนยัน</button>
+          </div>
 
             {/* <span  style={{background:'purple'}}>{JSON.stringify(e)}</span>
             <button
