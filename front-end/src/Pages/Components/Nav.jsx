@@ -108,7 +108,7 @@ const Nav = () => {
                 </i>
                 <h5 className='text-center'>Sign Up</h5>
               </Link> :<button className='text-center nav-link d-flex' onClick={()=>{
-                setUser()
+                setUser(undefined)
               }} ><h3>Log out</h3></button>}
             </li>
           </ul>

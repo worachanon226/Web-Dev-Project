@@ -7,6 +7,8 @@ import Guest from "./Pages/Guest";
 import Nav from "./Pages/Components/Nav";
 import ManageHost from "./Pages/Components/ManageHost";
 import VisitHost from "./Pages/Components/VisitHost";
+import Profile from "./Pages/Profile";
+import Service from "./Pages/Service";
 import { ProtectedRoute, ProtectedRouteLogedin } from "./ProtectedRoute";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
             <Route path="host" element={<Host />} />
             <Route path="/host/:hostId" element={<ManageHost />} />
             <Route path="/guest" element={<Guest />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/service" element={<Service />} />
             <Route path="/guest/:hostId" element={<VisitHost />} />
           </Route>
           <Route element={<ProtectedRouteLogedin />}>

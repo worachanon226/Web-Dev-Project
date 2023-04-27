@@ -9,7 +9,6 @@ const ManageHost = () => {
     getTask(hostId, setTask);
     return <div>Loading</div>;
   }
-  console.log(![] == false);
   return (
     <div>
       <h1>Menu</h1>

@@ -7,13 +7,15 @@ const UserContext = createContext({});
 export let useUserContext = () => useContext(UserContext);
 
 let UserProvider = ({ children }) => {
-  const [cookies, setCookie] = useCookies(["user-cookies"]);
+  const [cookies, setCookie,removeCookie] = useCookies(["user-cookies"]);
   const [user, setUser] = useState(cookies["user-cookies"]);
   useEffect(() => {
     if(user !== undefined){
       setCookie("user-cookies",user)
     }
-    console.log(cookies);
+    if(user === undefined){
+      removeCookie("user-cookies")
+    }
   },[user]);
   const userStore = {
     user,
