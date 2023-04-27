@@ -68,7 +68,7 @@ function Host() {
 let Control = ({ ownerId, id, user, callback }) => {
   if (ownerId === user.id) {
     return (
-      <button 
+      <button style={{background:'red'}}
         onClick={async () => {
           await deleteTask(id);
           getTasks(callback);
