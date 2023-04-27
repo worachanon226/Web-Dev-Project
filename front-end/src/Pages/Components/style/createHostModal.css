@@ -1,18 +1,16 @@
 .customStyles {
-    justify-self: center;
-    align-items: center;
     top: 50%;
     left: 50%;
     right: auto;
     bottom: auto;
-    height: 220px;
-    /* transform: translate(80%,50%); */
+    height: 200px;
+    /* transform: translate(120%,120%); */
     border-radius: 15px;
-    min-width: 400px;
     height: 220px;
     width: 30%;
+    background-color: #FA8072;
+    box-shadow: 1px 2px 9px #e54f3e;
     min-width: 400px;
-    background-color: #ff8066;
 }
 
 .btAdd {
@@ -25,9 +23,16 @@
     height: 30px;
 }
 
-้.textHostModal {
+ h2 {
     display: flex;
+    justify-content: center;
     text-align: center;
     color: white;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin-right: 30px;
+}
+
+.fromInput{
+    font-size: 18px;
+    flex-flow: wrap;
 }

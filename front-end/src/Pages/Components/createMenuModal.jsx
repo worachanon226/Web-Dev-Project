@@ -1,28 +1,14 @@
 import { addMenu } from "../../Controller/GuestController";
 import { IoCloseSharp } from 'react-icons/io5';
 import React, { useState } from "react";
+import './style/createMenuModal.css';
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
 
 
 import user from "../../Controller/test/User.json";
 function AddMenuModal({ callback, taskId }) {
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      background: "#FF8066",
-      height: "320px",
-      width: "60%",
-      padding: "1.2rem",
-      borderRadius: '30px',
-      boxShadow: '1px 2px 20px #F4AAB9',
-    },
-  };
+
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let handleSubmit = (event) => {
@@ -53,15 +39,17 @@ function AddMenuModal({ callback, taskId }) {
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        style={customStyles}
+        className='customStyles'
         contentLabel="Example Modal"
       >
         <div className="d-flex justify-content-end">
         <button onClick={() => setIsOpen(false)}><IoCloseSharp size={35}/></button>
         </div>
 
-        <h2 style={{ textAlign: "center", color: 'white', fontSize: '1.75rem', padding: '5px' }}>Add</h2>
-        <form style={{ padding: "15px", }} onSubmit={handleSubmit}>
+
+        <h2 class='textMune'>Add</h2>
+        
+        <form onSubmit={handleSubmit}>
           <div class="row gap-3 mb-3">
             <input className="col w-auto rounded" style={{ fontSize: '18px' }} placeholder="Store" />
             <input className="col align-self w-auto rounded" style={{ fontSize: '18px' }} placeholder="Menu" />

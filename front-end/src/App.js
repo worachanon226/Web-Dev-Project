@@ -7,6 +7,8 @@ import Guest from "./Pages/Guest";
 import Nav from "./Pages/Components/Nav";
 import ManageHost from "./Pages/Components/ManageHost";
 import VisitHost from "./Pages/Components/VisitHost";
+import Profile from "./Pages/Profile";
+
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +21,7 @@ function App() {
           <Route path="/guest/:hostId" element={<VisitHost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-   
+          <Route path="/profile" element={<Profile />} />
 
         </Route>
       </Routes>

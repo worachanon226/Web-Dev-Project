@@ -1,11 +1,11 @@
 import { createTask } from "../../Controller/HostController";
+import user from "../../Controller/test/User.json"
 import { IoCloseSharp } from 'react-icons/io5';
 import React, { useState } from "react";
+import './style/createHostModal.css';
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
-import './style/createHostModal.css'
 
-import user from "../../Controller/test/User.json"
 function AddHostModal({ callback }) {
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -23,7 +23,7 @@ function AddHostModal({ callback }) {
     }
   };
   return (
-    <div >
+    <div className="d-flex justify-content-center">
       <button className="btAdd" onClick={() => setIsOpen(true)}>ADD</button>
       <Modal 
         isOpen={modalIsOpen}
@@ -35,12 +35,12 @@ function AddHostModal({ callback }) {
         <div className="d-flex justify-content-end ">
           <button onClick={() => setIsOpen(false)}><IoCloseSharp size={25} /></button>
         </div>
-        <h2 className="textHostModal justify-content-center">Add</h2>
+        <h2  className="textHostModal justify-content-center">Add</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="d-flex gap-3 justify-content-center p-2">
-            <input className="d-flex flex-nowrap w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Canteen" />
-            <input className="d-flex flex-nowrap w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Max Tasks" />
+          <div className="d-flex gap-3 justify-content-center p-3 fromInput">
+            <input className="d-flex w-auto rounded w-25"  placeholder="Canteen" />
+            <input className="d-flex w-auto rounded w-25"  placeholder="Max Tasks" />
           </div>
 
           <div className="d-flex gap-3 justify-content-center p-3">
