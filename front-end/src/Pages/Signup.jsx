@@ -102,6 +102,7 @@ function Signup() {
         <div>
           <input
             type="tel"
+            placeholder="0909090909"
             pattern="[0-9]{10}"
             required
             className="formControl"
