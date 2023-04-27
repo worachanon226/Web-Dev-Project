@@ -15,6 +15,7 @@ function Singup() {
             onSubmit={(event) => {
               event.preventDefault();
               let [id, name, last, password, phone] = event.target;
+              console.log(id.value);
               submitSignup({
                 id: id.value,
                 name: name.value,

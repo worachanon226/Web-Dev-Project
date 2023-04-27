@@ -4,8 +4,10 @@ import { deleteMenu, getTask } from "../../Controller/GuestController";
 import { AddMenuModal } from "./createMenuModal";
 import { useUserContext } from "../../userContext";
 const VisitHost = () => {
-  let user = useUserContext();
+  let {user} = useUserContext();
   let [menu, setMenu] = useState();
+  console.log(menu);
+  console.log(user);
   let { hostId } = useParams();
   if (menu === undefined) {
     getTask(hostId, setMenu);
@@ -21,7 +23,7 @@ const VisitHost = () => {
             key={e.id}
           >
             <span>{JSON.stringify(e)}</span>
-            {e.UserId === user.id && (
+            {e.userId === user.id && (
               <button
                 style={{ marginLeft: "auto", background: "green" }}
                 onClick={async () => {

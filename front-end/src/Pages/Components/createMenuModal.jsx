@@ -4,7 +4,7 @@ import { addMenu } from "../../Controller/GuestController";
 import { v4 as uuidv4 } from "uuid";
 import { useUserContext } from "../../userContext";
 function AddMenuModal({ callback, taskId }) {
-  let user = useUserContext()
+  let {user} = useUserContext()
   const customStyles = {
     content: {
       top: "50%",
@@ -40,7 +40,7 @@ function AddMenuModal({ callback, taskId }) {
   };
   return (
     <div>
-      <button onClick={() => setIsOpen(true)}>ADD</button>
+      <button style={{background:"yellow"}} onClick={() => setIsOpen(true)}>ADD</button>
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}

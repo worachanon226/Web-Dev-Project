@@ -4,7 +4,7 @@ import Item from "./Components/Item";
 import { getTasks, deleteTask } from "../Controller/HostController";
 import { useUserContext } from "../userContext";
 function Host() {
-  let user =useUserContext()
+  let {user} =useUserContext()
   let containerStyle = {
     display: "flex",
     flexDirection: "column",

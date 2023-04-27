@@ -4,7 +4,7 @@ import { createTask } from "../../Controller/HostController";
 import { v4 as uuidv4 } from "uuid";
 import { useUserContext } from "../../userContext";
 function AddHostModal({ callback }) {
-  let user = useUserContext()
+  let {user} = useUserContext()
   const customStyles = {
     content: {
       top: "50%",
@@ -20,7 +20,6 @@ function AddHostModal({ callback }) {
   let handleSubmit = (event) => {
     if (event.target[0].value !== "" && event.target[1].value !== "") {
       let data = {
-        //get from context
         id: uuidv4(),
         userId: user.id,
         canteen: event.target[0].value,
