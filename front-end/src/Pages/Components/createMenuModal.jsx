@@ -3,6 +3,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useUserContext } from "../../userContext";
+import Modal from "react-modal";
 function AddMenuModal({ callback, taskId }) {
   let {user} = useUserContext()
   const customStyles = {
