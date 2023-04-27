@@ -61,7 +61,7 @@ namespace backend.Controllers
                 return BadRequest("User not found.");
 
             if (!VertifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-                return BadRequest("Wrong password.");
+                return Ok("Wrong password.");
 
             var usage = new Models.Usage()
             {
