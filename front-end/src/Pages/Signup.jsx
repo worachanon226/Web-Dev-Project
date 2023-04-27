@@ -33,10 +33,10 @@ function Signup() {
               User ID
             </label>
           </div>
-          </div>
-        
+        </div>
+
         <div>
-          <input type="id" className="formControl"  />
+          <input type="id" className="formControl" />
         </div>
 
         <div className="formfloating">
@@ -47,7 +47,7 @@ function Signup() {
           </div>
         </div>
         <div>
-          <input type="input" className="formControl"  />
+          <input type="input" className="formControl" />
         </div>
 
         <div className="formfloating">
@@ -58,10 +58,7 @@ function Signup() {
           </div>
         </div>
         <div>
-          <input
-            type="input"
-            className="formControl"
-          />
+          <input type="input" className="formControl" />
         </div>
         <div className="formfloating">
           <div>
@@ -71,7 +68,12 @@ function Signup() {
           </div>
         </div>
         <div>
-          <input type="password" className="formControl" id="pass"  />
+          <input
+            onKeyUp={verifyPassword}
+            type="password"
+            className="formControl"
+            id="pass"
+          />
         </div>
 
         <div className="formfloating">
@@ -100,13 +102,14 @@ function Signup() {
         <div>
           <input
             type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required
             className="formControl"
           />
         </div>
 
         <div className="btnbgsignup">
-          <button type="submit" className="btn btn-danger">
+          <button type="submit" className="btn btn-danger" id="submit" disabled>
             Submit
           </button>
         </div>
