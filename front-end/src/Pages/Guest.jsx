@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Item from "./Components/Item";
 import { getTasks } from "../Controller/GuestController";
-let fakeUser = {
-  id: "3",
-};
 function Host() {
   let containerStyle = {
     display: "flex",
@@ -43,7 +40,7 @@ function Host() {
         {task.map((e) => (
           <Item
             key={e.id}
-            {...e}
+            data={e}
           />
         ))}
       </div>

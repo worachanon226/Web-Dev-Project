@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { addMenu } from "../../Controller/GuestController";
 import { v4 as uuidv4 } from "uuid";
-
-function AddMenuModal({ callback,taskId }) {
+import { useUserContext } from "../../userContext";
+function AddMenuModal({ callback, taskId }) {
+  let {user} = useUserContext()
   const customStyles = {
     content: {
       top: "50%",
@@ -17,24 +18,29 @@ function AddMenuModal({ callback,taskId }) {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let handleSubmit = (event) => {
-    if (event.target[0].value !== "" && event.target[1].value !== "" && event.target[2].value !== "" && event.target[3] !== "" ) {
+    if (
+      event.target[0].value !== "" &&
+      event.target[1].value !== "" &&
+      event.target[2].value !== "" &&
+      event.target[3] !== ""
+    ) {
       let data = {
         id: uuidv4(),
-        userId: "2",
+        userId: user.id,
         store: event.target[0].value,
         name: event.target[1].value,
         price: parseInt(event.target[2].value),
         amount: parseInt(event.target[3].value),
         isConfirm: false,
-        comment:event.target[4].value ,
+        comment: event.target[4].value,
       };
-      addMenu(taskId,data, callback);
+      addMenu(taskId, data, callback);
       setIsOpen(false);
     }
   };
   return (
     <div>
-      <button onClick={() => setIsOpen(true)}>ADD</button>
+      <button style={{background:"yellow"}} onClick={() => setIsOpen(true)}>ADD</button>
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
@@ -52,7 +58,7 @@ function AddMenuModal({ callback,taskId }) {
           <br />
           <input type="number" placeholder="Amount" />
           <br />
-          <input  placeholder="Comment" />
+          <input placeholder="Comment" />
           <br />
           <button onClick={() => setIsOpen(false)}>close</button>
           <button type="submit"> ADD</button>

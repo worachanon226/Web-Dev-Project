@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
 import { getTasks, deleteTask } from "../Controller/HostController";
-let fakeUser = {
-  id: "1",
-};
+import { useUserContext } from "../userContext";
 function Host() {
+  let {user} =useUserContext()
   let containerStyle = {
     display: "flex",
     flexDirection: "column",
@@ -43,16 +42,16 @@ function Host() {
       </button>
       <div style={hostListcontain}>
         {task.map((e) => {
-          if (e.userId === fakeUser.id) {
+          if (e.userId === user.id) {
             return (
               <Item
                 key={e.id}
-                {...e}
+                 data = {e}
                 control={
                   <Control
                     ownerId={e.userId}
                     id={e.id}
-                    user={fakeUser}
+                    user={user}
                     callback={setTask}
                   />
                 }
