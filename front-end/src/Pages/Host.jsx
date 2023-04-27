@@ -11,6 +11,7 @@ function Host() {
     alignItems: "center",
     height: "100%",
     width: "100%",
+
   };
   let hostListcontain = {
     display: "flex",
@@ -32,14 +33,14 @@ function Host() {
   return (
     <div style={containerStyle}>
       <AddHostModal callback={setTask} />
-      <button
+      <button className="d-flex rounded justify-content-center shadow-sm p-2 mb-5 rounded" style={{background:'#FA8072', width:'90px' }}
         onClick={() => {
           getTasks(setTask);
         }}
       >
         refresh
       </button>
-      <div style={hostListcontain}>
+      <div style={hostListcontain} >
         {task.map((e) => {
           if (e.userId === user[0].id) {
             return (
@@ -66,7 +67,7 @@ function Host() {
 let Control = ({ ownerId, id, user, callback }) => {
   if (ownerId === user.id) {
     return (
-      <button
+      <button 
         onClick={async () => {
           await deleteTask(id);
           getTasks(callback);
