@@ -1,41 +1,50 @@
 // import { submitLogin } from "../Controller/AuthController";
-import { RiLockPasswordFill } from 'react-icons/ri'
+import { RiLockPasswordFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { FaUser } from "react-icons/fa"
 import './style/Login.css'
 import { submitLogin } from "../Controller/AuthController";
 import { useNavigate } from "react-router-dom";
 import {useUserContext} from "../userContext"
+=======
+import { FaUser } from "react-icons/fa";
+import "./style/Login.css";
+import { submitLogin } from "../Controller/AuthController";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../userContext";
+
+>>>>>>> front-end-dev
 function Login() {
-  let {setUser} = useUserContext()
-  let navigate = useNavigate()
+  let { setUser } = useUserContext();
+  let navigate = useNavigate();
   return (
     <>
-
       <div className="fromcard">
-      <form onSubmit={(event)=>{
-        event.preventDefault();
-        let id = event.target[0].value;
-        let password = event.target[1].value;
-        submitLogin(id,password,setUser,navigate)
-      }}>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            let id = event.target[0].value;
+            let password = event.target[1].value;
+            submitLogin(id, password, setUser, navigate);
+          }}
+        >
           <h3>Login</h3>
-          <div className="form-floating">
-
+          <div className="form-floating mb-4">
             <div>
-              <label class='textlogin' htmlFor="id">
+              <label class="textlogin" htmlFor="id">
                 <FaUser size={20} gap />
                 User ID
               </label>
             </div>
-          </div>
-          <div>
-            <input type="id" className="formcontrol" id="floatingInput" />
+            <div>
+              <input type="id" className="formcontrol" id="floatingInput" />
+            </div>
           </div>
 
           <div className="form-floating">
             <div>
-              <label class='textlogin' htmlFor="id">
+              <label class="textlogin" htmlFor="id">
                 <RiLockPasswordFill size={20} />
                 Password
               </label>
@@ -46,17 +55,21 @@ function Login() {
           </div>
 
           <div className="btnbg">
-            <button  type="submit" className="btn btn-danger mb-3" >Submit</button>
+            <button type="submit" className="btn btn-danger mb-3">
+              Submit
+            </button>
           </div>
 
           <div className="create">
             <span>Don't have an account? </span>
-            <Link className="text-decoration" to="/signup">Create</Link>
+            <Link className="text-decoration" to="/signup">
+              Create
+            </Link>
           </div>
         </form>
       </div>
     </>
-  )
+  );
 }
 
 export default Login;

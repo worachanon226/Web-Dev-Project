@@ -49,17 +49,6 @@ const VisitHost = () => {
             <div className="d-flex gap-3 justify-content-center">
             <button className="rounded bg-light m-3" style={{fontSize:'18px',width:'10%',alignContent:'center'}} type="submit">ยืนยัน</button>
           </div>
-
-            {/* <span  style={{background:'purple'}}>{JSON.stringify(e)}</span>
-            <button
-              style={{ marginLeft: "auto", background: "green" }}
-              onClick={async () => {
-                await deleteMenu(hostId, e.id);
-                getTask(hostId, setMenu);
-              }}
-            >
-              Delete
-            </button> */}
           </div>
         ))}
       </div>
