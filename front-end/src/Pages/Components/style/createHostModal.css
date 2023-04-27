@@ -1,0 +1,33 @@
+.customStyles {
+    justify-self: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    height: 220px;
+    /* transform: translate(80%,50%); */
+    border-radius: 15px;
+    min-width: 400px;
+    height: 220px;
+    width: 30%;
+    min-width: 400px;
+    background-color: #ff8066;
+}
+
+.btAdd {
+    justify-content: center;
+    box-shadow: 1px 2px 9px #efc1bc;
+    background-color: #FA8072;
+    border-radius: 5px;
+    width: 100px;
+    margin-bottom: 30px;
+    height: 30px;
+}
+
+้.textHostModal {
+    display: flex;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+}

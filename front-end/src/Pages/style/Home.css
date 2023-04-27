@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   max-width: 1000px;
   margin-bottom: 60px;
+  margin-top: 20vh;
 } 
 
 .container .card {

@@ -1,52 +1,33 @@
-import React, { useState } from "react";
-import { AddHostModal } from "./Components/createHostModal";
-import Item from "./Components/Item";
 import { getTasks, deleteTask } from "../Controller/HostController";
+import { AddHostModal } from "./Components/createHostModal";
 import user from "../Controller/test/User.json"
+import React, { useState } from "react";
+import Item from "./Components/Item";
+import './style/Host.css'
+
 function Host() {
-  let containerStyle = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-    width: "100%",
-
-  };
-  let hostListcontain = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    minHeight: "50%",
-    height: "fit-content",
-    width: "80%",
-    border: "2px solid",
-    borderRadius: "20px",
-    background: "green",
-  };
-
   let [task, setTask] = useState();
   if (task === undefined) {
     getTasks(setTask);
     return <div>Loading</div>;
   }
   return (
-    <div style={containerStyle}>
+    <div className="containerStyle">
       <AddHostModal callback={setTask} />
-      <button className="d-flex rounded justify-content-center shadow-sm p-2 mb-5 rounded" style={{background:'#FA8072', width:'90px' }}
+      <button className="cardHost"
         onClick={() => {
           getTasks(setTask);
         }}
       >
         refresh
       </button>
-      <div style={hostListcontain} >
+      <div className='hostListcontain' >
         {task.map((e) => {
           if (e.userId === user[0].id) {
             return (
               <Item
                 key={e.id}
-                 data = {e}
+                data={e}
                 control={
                   <Control
                     ownerId={e.userId}
@@ -67,7 +48,7 @@ function Host() {
 let Control = ({ ownerId, id, user, callback }) => {
   if (ownerId === user.id) {
     return (
-      <button style={{background:'red'}}
+      <button style={{ background: 'red' }}
         onClick={async () => {
           await deleteTask(id);
           getTasks(callback);
