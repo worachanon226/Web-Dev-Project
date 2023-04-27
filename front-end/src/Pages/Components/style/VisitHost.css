@@ -1,0 +1,31 @@
+.cardout{
+    background-color: #ff8066;
+    height: 254px;
+    width: 60%;
+}
+
+.textCardOut h4{
+    align-items: center;
+    font-size: 16px;
+    width: 30%;
+    height: 3vh;
+
+}
+
+.textCardIn input{
+    font-size: 16px;
+    width: 30%;
+    height: 30px;
+}
+
+.iconVisit{
+    font-size: 30px;
+    background-color: red;
+    color: white
+}
+
+.submitVisit{
+    font-size: 18px;
+    width: 10%;
+    align-content:center ;
+}
