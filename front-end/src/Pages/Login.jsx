@@ -13,9 +13,12 @@ function Login() {
     <>
 
       <div className="fromcard">
-        <form>
-          {/* <form onSubmit={submitLogin}> */}
-
+      <form onSubmit={(event)=>{
+        event.preventDefault();
+        let id = event.target[0].value;
+        let password = event.target[1].value;
+        submitLogin(id,password,setUser,navigate)
+      }}>
           <h3>Login</h3>
           <div className="form-floating">
 
