@@ -2,7 +2,11 @@ import React from "react"
 import { IoFastFood } from "react-icons/io5"
 import './style/Login.css'
 import { submitLogin } from "../Controller/AuthController";
+import { useNavigate } from "react-router-dom";
+import {useUserContext} from "../userContext"
 function Login() {
+  let {setUser} = useUserContext()
+  let navigate = useNavigate()
   return (
     <>
       <div className="background">
@@ -16,7 +20,12 @@ function Login() {
           <img className="img-fluid" src="https://img.freepik.com/free-vector/way-concept-illustration_114360-1191.jpg"></img>
         </div> */}
 
-      <form onSubmit={submitLogin}>
+      <form onSubmit={(event)=>{
+        event.preventDefault();
+        let id = event.target[0].value;
+        let password = event.target[1].value;
+        submitLogin(id,password,setUser,navigate)
+      }}>
 
    
       <h3>Login</h3>

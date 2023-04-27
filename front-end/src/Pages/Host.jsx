@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { AddHostModal } from "./Components/createHostModal";
 import Item from "./Components/Item";
 import { getTasks, deleteTask } from "../Controller/HostController";
-import user from "../Controller/test/User.json"
+import { useUserContext } from "../userContext";
 function Host() {
+  let user =useUserContext()
   let containerStyle = {
     display: "flex",
     flexDirection: "column",
@@ -41,7 +42,7 @@ function Host() {
       </button>
       <div style={hostListcontain}>
         {task.map((e) => {
-          if (e.userId === user[0].id) {
+          if (e.userId === user.id) {
             return (
               <Item
                 key={e.id}
@@ -50,7 +51,7 @@ function Host() {
                   <Control
                     ownerId={e.userId}
                     id={e.id}
-                    user={user[0]}
+                    user={user}
                     callback={setTask}
                   />
                 }

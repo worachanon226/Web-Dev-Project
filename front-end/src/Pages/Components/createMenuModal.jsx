@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { addMenu } from "../../Controller/GuestController";
 import { v4 as uuidv4 } from "uuid";
-
-import user from "../../Controller/test/User.json";
+import { useUserContext } from "../../userContext";
 function AddMenuModal({ callback, taskId }) {
+  let user = useUserContext()
   const customStyles = {
     content: {
       top: "50%",
@@ -26,7 +26,7 @@ function AddMenuModal({ callback, taskId }) {
     ) {
       let data = {
         id: uuidv4(),
-        userId: user[1].id,
+        userId: user.id,
         store: event.target[0].value,
         name: event.target[1].value,
         price: parseInt(event.target[2].value),
