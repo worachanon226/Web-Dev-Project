@@ -7,7 +7,7 @@ import Guest from "./Pages/Guest";
 import Nav from "./Pages/Components/Nav";
 import ManageHost from "./Pages/Components/ManageHost";
 import VisitHost from "./Pages/Components/VisitHost";
-import ProtectedRoute from "./ProtectedRoute";
+import { ProtectedRoute, ProtectedRouteLogedin } from "./ProtectedRoute";
 
 function App() {
   return (
@@ -21,8 +21,10 @@ function App() {
             <Route path="/guest" element={<Guest />} />
             <Route path="/guest/:hostId" element={<VisitHost />} />
           </Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route element={<ProtectedRouteLogedin />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -9,4 +9,15 @@ const ProtectedRoute = ({ children }) => {
   }
   return  children ? children : <Outlet />;
 };
+const ProtectedRouteLogedin = ({ children }) => {
+  const { user } = useUserContext();
+  if (user) {
+    return <Navigate to="/" replace />;
+  }
+  return  children ? children : <Outlet />;
+};
 export default ProtectedRoute;
+
+
+export {ProtectedRoute,ProtectedRouteLogedin};
+

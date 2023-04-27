@@ -23,6 +23,7 @@ let submitSignup = async (data,setUserCtx,callback) => {
   });
   if (res.ok) {
     res = await res.json();
+    console.log(res);
     setUserCtx(res)
     callback("/",{replace:true})
   }

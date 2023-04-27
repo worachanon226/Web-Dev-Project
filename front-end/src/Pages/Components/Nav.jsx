@@ -6,9 +6,10 @@ import { SiGnuprivacyguard } from 'react-icons/si';
 import { useEffect } from 'react';
 import './style/Nav.css'
 import $ from 'jquery';
-
+import { useUserContext } from '../../userContext';
 
 const Nav = () => {
+  let {user,setUser } = useUserContext()
   function animation() {
 
     var tabsNewAnim = $('#navbarSupportedContent')
@@ -101,12 +102,14 @@ const Nav = () => {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link d-flex" to="/login" >
+              {!user ? <Link className="nav-link d-flex" to="/login" >
                 <i className="fas far fa-chart-bar m-1">
                   <SiGnuprivacyguard />
                 </i>
                 <h5 className='text-center'>Sign Up</h5>
-              </Link>
+              </Link> :<button className='text-center nav-link d-flex' onClick={()=>{
+                setUser()
+              }} ><h3>Log out</h3></button>}
             </li>
           </ul>
         </div>
