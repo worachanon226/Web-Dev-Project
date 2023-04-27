@@ -1,0 +1,71 @@
+
+.fromCard{
+    height: 630px;
+    width: 400px;
+    background-color: rgba(185, 185, 185, 0.023);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 55%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 15px rgba(8,7,16,0.6);
+    padding: 20px 35px;
+} 
+.fromCard {
+    font-family: 'Poppins',sans-serif;
+    color: #000000;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+.fromCard h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+} 
+
+.formControl{
+    display: block;
+    height: 32px;
+    width: 100%;
+    background-color: #fa807257;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 300;
+} 
+
+.textSignup{
+
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(7, 7, 7); 
+} 
+
+.formfloating .textSignup{
+    display: flex;
+  
+    align-items: center;
+}
+
+.formfloating div{
+    display: flex;
+}
+
+.formfloating label{
+    gap: 5px;
+    margin: 5px 0 5px ;
+    font-size: 15px;
+}
+
+.btnbgsignup{
+    margin-top: -12px;
+}
+
+.btnbgsignup .btn{
+    margin-bottom: 10px;
+}

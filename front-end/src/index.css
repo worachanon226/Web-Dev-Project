@@ -1,14 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@500&family=Signika:wght@300&display=swap');
 
 
 body {
   
   margin: 0;
-  font-family: 'Hind', sans-serif;
-font-family: 'Signika', sans-serif;
+  /* font-family: 'Hind', sans-serif;
+font-family: 'Signika', sans-serif; */
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -18,5 +18,9 @@ font-family: 'Signika', sans-serif;
 
 body,html,#root {
   height: 100vh;
-}
+} 
 
+*{
+  font-family: 'Hind', sans-serif;
+  font-family: 'Signika', sans-serif;
+}

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
 import { acceptMenu,denyMenu, getTask } from "../../Controller/HostController";
+import React, { useState } from "react";
+
 const List = ({ props, hostId, callback }) => {
   let color;
   if (props.isConfirm) {
