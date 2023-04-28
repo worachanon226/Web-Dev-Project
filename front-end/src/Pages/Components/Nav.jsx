@@ -55,10 +55,99 @@ const Nav = () => {
   let l = {
     width: "135px",
   };
+
+  let set1 = () => {
+    return (
+      <>
+        <div className="hori-selector">
+          <div className="left"></div>
+          <div className="right"></div>
+        </div>
+        <li className="nav-item  active">
+          <Link className="nav-link d-flex" to="/">
+            <i className="fas fa-tachometer-al m-1">
+              <AiFillHome />
+            </i>
+            <h5 className="text-center">Home</h5>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link d-flex" to="/service">
+            <i className="far fa-tachometer-alt m-1">
+              <IoFastFood />
+            </i>
+            <h5 className="text-center">Services</h5>
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link className="nav-link d-flex" to="/profile">
+            <i className="far fa-clone m-1">
+              <IoFastFood />
+            </i>
+            <h5 className="text-center">Profile</h5>
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link
+            onClick={() => {
+              setUser(undefined);
+            }}
+            className="nav-link d-flex"
+            to="/login"
+          >
+            <i className="fas far fa-chart-bar m-1">
+              <SiGnuprivacyguard />
+            </i>
+            <h5 className="text-center">Log Out</h5>
+          </Link>
+        </li>
+      </>
+    );
+  };
+  let set2 = () => {
+    return (
+      <>
+        <div className="hori-selector">
+          <div className="left"></div>
+          <div className="right"></div>
+        </div>
+        <li className="nav-item  active">
+          <Link className="nav-link d-flex" to="/">
+            <i className="fas fa-tachometer-al m-1">
+              <AiFillHome />
+            </i>
+            <h5 className="text-center">Home</h5>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link d-flex" to="/login">
+            <i className="fas far fa-chart-bar m-1">
+              <SiGnuprivacyguard />
+            </i>
+            <h5 className="text-center">Sign In</h5>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link d-flex" to="/signup">
+            <i className="fas far fa-chart-bar m-1">
+              <SiGnuprivacyguard />
+            </i>
+            <h5 className="text-center">Sign Up</h5>
+          </Link>
+        </li>
+      </>
+    );
+  };
   return (
     <>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"
+      ></script>
+
       <nav className="navbar navbar-expand-lg navbar-mainbg">
         <Link className="text" to="/" exact>
           Hew-Hew
@@ -82,60 +171,7 @@ const Nav = () => {
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav ml-auto">
-            <div className="hori-selector">
-              <div className="left"></div>
-              <div className="right"></div>
-            </div>
-
-            <li  className="nav-item  active">
-              <Link className="nav-link d-flex" to="/">
-                <i className="fas fa-tachometer-al m-1">
-                  <AiFillHome />
-                </i>
-                <h5 className="text-center">Home</h5>
-              </Link>
-            </li>
-
-            <li  className="nav-item">
-              <Link className="nav-link d-flex" to="/service">
-                <i className="far fa-tachometer-alt m-1">
-                  <IoFastFood />
-                </i>
-                <h5 className="text-center">Services</h5>
-              </Link>
-            </li>
-
-            <li  className="nav-item">
-              <Link className="nav-link d-flex" to="/profile">
-                <i className="far fa-clone m-1">
-                  <IoFastFood />
-                </i>
-                <h5 className="text-center">Profile</h5>
-              </Link>
-            </li>
-
-            <li  className="nav-item">
-              {!user ? (
-                <Link className="nav-link d-flex" to="/login">
-                  <i className="fas far fa-chart-bar m-1">
-                    <SiGnuprivacyguard />
-                  </i>
-                  <h5 className="text-center">Sign In</h5>
-                </Link>
-                
-              ) : (
-                <Link onClick={()=>{
-                  setUser(undefined)
-                }} className="nav-link d-flex" to="/login">
-                  <i className="fas far fa-chart-bar m-1">
-                    <SiGnuprivacyguard />
-                  </i>
-                  <h5 className="text-center">Log Out</h5>
-                </Link>
-              )}
-            </li>
-          </ul>
+          <ul className="navbar-nav ml-auto">{user ? set1() : set2()}</ul>
         </div>
       </nav>
       <Outlet />
