@@ -1,27 +1,15 @@
 import { addMenu } from "../../Controller/GuestController";
+import user from "../../Controller/test/User.json";
+import { useUserContext } from "../../userContext";
 import { IoCloseSharp } from 'react-icons/io5';
 import React, { useState } from "react";
+import './style/createMenuModal.css';
 import { v4 as uuidv4 } from "uuid";
-import { useUserContext } from "../../userContext";
 import Modal from "react-modal";
+
+
 function AddMenuModal({ callback, taskId }) {
-  let {user} = useUserContext()
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      background: "#FF8066",
-      height: "320px",
-      width: "60%",
-      padding: "1.2rem",
-      borderRadius: '30px',
-      boxShadow: '1px 2px 20px #F4AAB9',
-    },
-  };
+  let { user } = useUserContext()
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let handleSubmit = (event) => {
@@ -47,33 +35,34 @@ function AddMenuModal({ callback, taskId }) {
   };
   return (
     <div>
-      <button style={{background:"yellow"}} onClick={() => setIsOpen(true)}>ADD</button>
+      <button className="addBtn" onClick={() => setIsOpen(true)}>ADD</button>
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        style={customStyles}
+        className='customStyles d-flex flex-column justify-content-around'
         contentLabel="Example Modal"
       >
         <div className="d-flex justify-content-end">
-        <button onClick={() => setIsOpen(false)}><IoCloseSharp size={35}/></button>
+          <button onClick={() => setIsOpen(false)}><IoCloseSharp className='iconMenuModal' size={25} /></button>
         </div>
 
-        <h2 style={{ textAlign: "center", color: 'white', fontSize: '1.75rem', padding: '5px' }}>Add</h2>
-        <form style={{ padding: "15px", }} onSubmit={handleSubmit}>
-          <div class="row gap-3 mb-3">
-            <input className="col w-auto rounded" style={{ fontSize: '18px' }} placeholder="Store" />
-            <input className="col align-self w-auto rounded" style={{ fontSize: '18px' }} placeholder="Menu" />
+        <h2 class='d-flex justify-content-center textMenu'>Add</h2>
+
+        <form onSubmit={handleSubmit}>
+          <div class=" row gap-3 mb-3 textMenuModal">
+            <input className="col w-auto rounded"  placeholder="Store" />
+            <input className="col align-self w-auto rounded" placeholder="Menu" />
           </div>
 
-          <div class="row gap-3 mb-3">
-            <input className="col align-self w-auto rounded" style={{ fontSize: '18px' }} type="number" placeholder="Price" />
-            <input className="col w-auto rounded" style={{ fontSize: '18px' }} type="number" placeholder="Amount" />
-            <input className="rounded w-full" style={{ fontSize: '18px' }} placeholder="Comment" />
+          <div class="row gap-3 mb-3 textMenuModal">
+            <input className="col align-self w-auto rounded"  type="number" placeholder="Price" />
+            <input className="col w-auto rounded"  type="number" placeholder="Amount" />
+            <input className="rounded w-full"  placeholder="Comment" />
           </div>
 
           <div className="d-flex gap-3 justify-content-center">
-            <button className="rounded bg-light w-25" style={{fontSize:'18px'}} type="submit">ADD</button>
+            <button className="rounded bg-light w-25" type="submit">ADD</button>
           </div>
         </form>
 

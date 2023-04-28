@@ -1,0 +1,38 @@
+.customStylesModal {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    height: 210px;
+    width: 35%;
+    background-color: #FA8072;
+    box-shadow: 1px 2px 9px #e54f3e;
+}
+@media (max-width: 720px){
+    .customStylesModal {
+        width: 80%;
+    }
+}
+@media (max-width: 1080px){
+    .customStylesModal {
+        width: 60%;
+    }
+}
+
+.btAdd {
+    justify-content: center;
+    box-shadow: 1px 2px 9px #efc1bc;
+    background-color: #FA8072;
+    border-radius: 5px;
+    width: 100px;
+    margin-bottom: 30px;
+    height: 30px;
+   
+}
+
+.textMenuModal input{
+    font-size: 18px;
+    flex-flow: wrap;
+ 
+}

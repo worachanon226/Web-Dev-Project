@@ -1,27 +1,14 @@
 import { createTask } from "../../Controller/HostController";
+import { useUserContext } from "../../userContext";
 import { IoCloseSharp } from 'react-icons/io5';
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { useUserContext } from "../../userContext";
 import Modal from "react-modal";
+import "./style/createHostModal.css";
+
+
 function AddHostModal({ callback }) {
   let {user} = useUserContext()
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      borderRadius: "15px",
-      background: "#FF8066",
-      height: "220px",
-      width: "30%",
-      padding: "1.2rem",
-      minWidth:'400px'
-    },
-  };
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let handleSubmit = (event) => { 
@@ -37,29 +24,29 @@ function AddHostModal({ callback }) {
     }
   };
   return (
-    <div>
-      <button onClick={() => setIsOpen(true)}>ADD</button>
+    <div className="d-flex justify-content-center">
+       <button className="btAdd" onClick={() => setIsOpen(true)}>ADD</button>
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        style={customStyles}
+        className='customStylesModal'
         contentLabel="Example Modal"
       >
-        <div className="d-flex justify-content-end ">
+        <div className="d-flex flex-wrap justify-content-end ">
           <button onClick={() => setIsOpen(false)}><IoCloseSharp size={25} /></button>
         </div>
-        <h2 style={{ textAlign: "center", color: 'white', fontSize: '1.5rem' }}>Add</h2>
 
-        <form style={{ marginTop: "15px" }} onSubmit={handleSubmit}>
-          <div className="d-flex gap-3 justify-content-center p-2">
-            <input className="d-flex flex-nowrap w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Canteen" />
-            <input className="d-flex flex-nowrap w-auto rounded w-25" style={{ fontSize: '18px' }} placeholder="Max Tasks" />
+        <h2  className="textHostModal justify-content-center d-flex">Add</h2>
 
+        <form onSubmit={handleSubmit}>
+          <div className="d-flex flex-wrap gap-3 justify-content-center p-3 fromInput">
+            <input className="d-flex w-auto rounded w-25"  placeholder="Canteen" />
+            <input className="d-flex w-auto rounded w-25"  placeholder="Max Tasks" />
           </div>
 
           <div className="d-flex gap-3 justify-content-center p-3">
-            <button className="rounded bg-light w-25" style={{ fontSize: '18px' }} type="submit">ADD</button>
+            <button className="rounded bg-light w-25" type="submit">ADD</button>
           </div>
         </form>
       </Modal>

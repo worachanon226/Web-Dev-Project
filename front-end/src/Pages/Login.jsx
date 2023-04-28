@@ -1,11 +1,10 @@
-// import { submitLogin } from "../Controller/AuthController";
+import { submitLogin } from "../Controller/AuthController";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { useUserContext } from "../userContext";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import "./style/Login.css";
-import { submitLogin } from "../Controller/AuthController";
-import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../userContext";
 
 function Login() {
   let { setUser } = useUserContext();
@@ -22,7 +21,7 @@ function Login() {
           }}
         >
           <h3>Login</h3>
-          <div className="form-floating mb-4">
+          <div className="form-floating">
             <div>
               <label class="textlogin" htmlFor="id">
                 <FaUser size={20} gap />
