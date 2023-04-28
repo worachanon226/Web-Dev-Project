@@ -4,12 +4,13 @@
     width: 60%;
 }
 
-.textCardOut h4{
+.textCardOut h2{
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
     width: 30%;
-    height: 3vh;
-
+    height: auto;
+    padding: 5px;
+    background-color: white;
 }
 
 .textCardIn input{
@@ -26,7 +27,7 @@
 
 .submitVisit{
     font-size: 18px;
-    width: 10%;
+    padding: 5px 20px 5px 20px;
     align-content:center ;
 }
 

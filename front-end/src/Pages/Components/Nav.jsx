@@ -3,7 +3,6 @@ import { Outlet, Link } from "react-router-dom";
 import { AiFillHome } from 'react-icons/ai';
 import { IoFastFood } from 'react-icons/io5';
 import { SiGnuprivacyguard } from 'react-icons/si';
-import Dropdown from 'react-bootstrap/Dropdown';
 import { useEffect } from 'react';
 import './style/Nav.css'
 import $ from 'jquery';
