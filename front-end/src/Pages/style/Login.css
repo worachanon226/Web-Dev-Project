@@ -1,7 +1,8 @@
 .fromcard{
-    height: 420px;
-    width: 400px;
-    background-color: rgba(185, 185, 185, 0.023);
+    max-height: 420px;
+    max-width: 400px;
+    width: 50vw;
+    background-color: rgb(255, 254, 254);
     position: absolute;
     transform: translate(-50%,-50%);
     top: 55%;
@@ -11,14 +12,13 @@
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 15px rgba(8,7,16,0.6);
     padding: 30px 35px;
-} 
-.fromcard {
-    font-family: 'Poppins',sans-serif;
     color: #000000;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
+    backdrop-filter: blur(20px);
 } 
+
 .fromcard h3{
     font-size: 32px;
     font-weight: 500;
@@ -27,8 +27,6 @@
 } 
 
 .textlogin{
-
-    /* margin-right: 40px; */
     font-size: 16px;
     font-weight: 500;
     color: rgb(7, 7, 7); 
@@ -88,4 +86,15 @@
     gap: 5px;
     margin-top: 15px;
     font-size: 15px;
+}
+
+.background{
+    background-color: #fa807247;
+height: 100vh;
+}
+
+@media (max-width:300px) {
+    .fromcard{
+        width: 90vw;
+    }
 }

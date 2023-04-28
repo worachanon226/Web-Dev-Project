@@ -1,7 +1,6 @@
 import { deleteMenu, getTask } from "../../Controller/GuestController";
 import { useUserContext } from "../../userContext";
 import { AddMenuModal } from "./createMenuModal";
-import { IoCloseSharp } from 'react-icons/io5';
 import { useParams } from "react-router-dom";
 import React, { useState } from "react";
 import "./style/VisitHost.css";
@@ -15,35 +14,46 @@ const VisitHost = () => {
     return <div>Loading</div>;
   }
   return (
-    <div className="d-flex flex-column align-items-center w-100 flex-wrap bgVisitHost">
-    <AddMenuModal callback={setMenu} taskId={hostId} />
-    <div className="m-5 rounded cardout ">
-      {menu.map((e) => (
-        <div className="textCardOut" key={e.id}>
-          <div className="d-flex rounded justify-content-between m-3 text-center flex-wrap">
-            <h4 className="rounded">ชื่ออาหาร</h4>
-            <h4 className="rounded">จำนวน</h4>
-            <h4 className="rounded">หมายเหตุ</h4>
-            <IoCloseSharp class='iconVisit' />
-          </div>
+    <div className="d-flex flex-column align-items-center flex-wrap bgVisitHost">
+      <AddMenuModal callback={setMenu} taskId={hostId} />
+      <div className="mt-5 rounded cardoutVisit ">
+        {menu.map((e) => (
+          <div className="textCardOutVisit rounded" key={e.id}>
+            <div className="d-flex rounded justify-content-between m-3 text-center flex-wrap cardCover">
+              <div className="inputMerge">
+                <h4 className="rounded">ชื่ออาหาร</h4>
+                <input className="rounded " placeholder="Name" />
+              </div>
 
-          <div className="d-flex rounded justify-content-between m-3 text-center flex-wrap textCardIn">
+              <div className="inputMerge">
+                <h4 className="rounded">จำนวน</h4>
+                <input className="rounded" placeholder="Amount" />
+              </div>
+
+              <div className="inputMerge">
+                <h4 className="rounded">หมายเหตุ</h4>
+                <input className="rounded" placeholder="Comment" />
+              </div>
+            </div>
+
+            {/* <div className="d-flex rounded justify-content-between m-3 text-center flex-wrap textCardIn">
             <input className="rounded " placeholder="Name" />
             <input className="rounded"  placeholder="Amount" />
             <input className="rounded" placeholder="Comment" />
-            <IoCloseSharp size={30} className="IconVisitHost"/>
-          </div>
+   
+          </div> */}
 
-          <div className="d-flex gap-3 justify-content-center">
-            <button className="rounded btnSubmitVisit " type="submit">ยืนยัน</button>
+            <div className="d-flex gap-3 justify-content-center">
+              <button className="rounded btnSubmitVisitS " type="submit">ยืนยัน</button>
+              <button className="rounded btnSubmitVisitD " type="delete">ยกเลิก</button>
+            </div>
+
           </div>
-          
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
 
-);
+  );
 };
 
 export default VisitHost;

@@ -5,47 +5,70 @@
     min-height: 150vh;
 }  
 
-.cardout{
-    background-color: #ff8066;
-    height: 254px;
-    width: 60%;
+.cardoutVisit{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.textCardOut h4{
+.textCardOutVisit{
+    background-color: #ff8066;
+    height: fit-content;
+    width: 90%;
+    padding: 10px;
+
+}
+.textCardOutVisit h4{
     align-items: center;
     font-size: 18px;
-    width: 30%;
+    width: 32%;
     height: auto;
     padding: 5px;
     background-color: white;
 }
 
+.cardCover{
+    
+}
+
 .textCardIn input{
     font-size: 16px;
-    width: 30%;
+    width: 32%;
     height: 30px;
 }
 
-.iconVisit{
-    font-size: 30px;
-    background-color: red;
-    color: white
+.inputMerge{
+    display: flex;
+    flex-direction: column;
 }
-
 .submitVisit{
     font-size: 18px;
     width: 10%;
     align-content:center ;
 }
 
-.IconVisitHost{
-    background-color: red;
-    color: white;
+.btnSubmitVisitS:hover{
+    background-color: rgb(85, 230, 37);
+}
+.btnSubmitVisitD:hover{
+    background-color: rgb(255, 8, 8);
 }
 
-.btnSubmitVisit{
+.btnSubmitVisitS, .btnSubmitVisitD{
     background-color: white;
     margin-top: 5px;
     font-size: 16px;
     padding: 5px 20px 5px 20px;
+}
+
+
+@media (max-width:400px) {
+    .cardoutVisit{
+        width: 90vw;
+    }
+    .inputMerge{
+        flex-direction: row;
+    }
 }

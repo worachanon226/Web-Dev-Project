@@ -37,6 +37,16 @@
     height: 30px;
 }
 
+.cardHostDe{
+    border-radius: 5px;
+    width: 50px;
+    min-height: 30px;
+    margin-bottom: 30px;
+    height: 30px;
+    color: #bf0000;
+    text-decoration: underline;
+}
+
 
 .iconMenuModal {
     position: absolute;

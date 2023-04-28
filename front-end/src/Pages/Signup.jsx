@@ -7,6 +7,7 @@ function Signup() {
   let navigate = useNavigate();
   let { setUser } = useUserContext();
   return (
+    <div className="Background w-100">
     <div className="fromCard">
       <form
         onSubmit={(event) => {
@@ -122,6 +123,7 @@ function Signup() {
           Login
         </a>
       </div>
+    </div>
     </div>
   );
 }
