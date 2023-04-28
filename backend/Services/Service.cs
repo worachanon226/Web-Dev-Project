@@ -22,7 +22,6 @@ public class DatabaseService
     public async Task<bool> IsExist(string id) =>
         await _userCollection.Find(x => x.Id == id).AnyAsync();
 
-
     //User Service
     public async Task<List<Models.User>> GetUsers() =>
         await _userCollection.Find(_ => true).ToListAsync();

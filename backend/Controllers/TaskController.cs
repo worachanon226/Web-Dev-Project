@@ -44,9 +44,9 @@ public class TaskController : ControllerBase
         return Ok("Task is set " + b + ".");
     }
     [HttpPost("setConfirmMenu")]
-    public async Task<ActionResult> SetAvailableMenu(string TaskId,string MenuId, bool b)
+    public async Task<ActionResult> SetAvailableMenu(string TaskId, string MenuId, bool b)
     {
-        await _service.SetMenuAvailable(TaskId,MenuId, b);
+        await _service.SetMenuAvailable(TaskId, MenuId, b);
         return Ok("Menu is set to " + b + ".");
     }
 
@@ -68,6 +68,18 @@ public class TaskController : ControllerBase
     public async Task<ActionResult<List<Models.Task>>> GetTasks()
     {
         List<Models.Task> tasks = await _service.GetTasks();
+        return Ok(tasks);
+    }
+
+    [HttpGet("getTasksExceptID")]
+    public async Task<ActionResult<List<Models.Task>>> GetTasksExceptID(string userID)
+    {
+        List<Models.Task> tasks = await _service.GetTasks();
+
+        for (int i = 0; i < tasks.Count; i++)
+            if (tasks[i].UserId == userID)
+                tasks.Remove(tasks[i]);
+
         return Ok(tasks);
     }
 

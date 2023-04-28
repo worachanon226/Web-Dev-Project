@@ -2,12 +2,9 @@ import { submitLogin } from "../Controller/AuthController";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { useUserContext } from "../userContext";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import "./style/Login.css";
-import { useEffect } from "react";
-import $ from "jquery";
 
 function Login() {
   let { setUser } = useUserContext();
@@ -77,3 +74,5 @@ function Login() {
 }
 
 export default Login;
+
+// background-color: #fa807247;

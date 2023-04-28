@@ -37,10 +37,10 @@ namespace backend.Controllers
                 Phone = request.Phone,
             };
 
-            if (!_service.IsExist(user.Id).Result)
+            if (!_service.IsExist(request.Id).Result)
                 await _service.CreateAsync(user);
             else
-                return BadRequest("This user is already registed.");
+                return Ok("This user is already registed.");
 
 
             var usage = new Models.Usage()
@@ -61,7 +61,7 @@ namespace backend.Controllers
                 return BadRequest("User not found.");
 
             if (!VertifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-                return BadRequest("Wrong password.");
+                return Ok("Wrong password.");
 
             var usage = new Models.Usage()
             {

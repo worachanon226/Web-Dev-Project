@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getTask } from "../../Controller/HostController";
 import List from "./List";
-import './style/ManageHost.css'
 const ManageHost = () => {
   let [task, setTask] = useState();
   let { hostId } = useParams();
