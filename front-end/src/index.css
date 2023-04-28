@@ -20,6 +20,9 @@ body,html,#root {
   height: 100vh;
 } 
 
+body{
+  overflow-y: scroll;
+}
 *{
   font-family: 'Hind', sans-serif;
   font-family: 'Signika', sans-serif;
