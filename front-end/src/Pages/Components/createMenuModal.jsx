@@ -40,7 +40,7 @@ function AddMenuModal({ callback, taskId }) {
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        className='customStyles d-flex flex-column justify-content-around'
+        className='customStylesMenuModal d-flex flex-column justify-content-around'
         contentLabel="Example Modal"
       >
         <div className="d-flex justify-content-end">

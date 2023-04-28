@@ -1,23 +1,22 @@
 .bgHome{
   background-color: #fa807247;
   min-height: 92vh;
-
 }
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 1000px;
   margin-bottom: 60px;
   margin-top: 5%;
+
 
 } 
 
 .container .card {
   position: relative;
-  min-width: 320px;
-  height: 340px;
+  min-width: 270px;
+  height: 300px;
   box-shadow: inset 5px 5px 5px rgba(246, 161, 152, 0.523),
     inset -5px -5px 15px rgba(252, 220, 116, 0.1),
     5px 5px 15px rgba(240, 171, 9, 0.3), -5px -5px 15px rgb(253, 169, 143);
@@ -107,4 +106,10 @@ body .container .card .box2 .content a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
   background: #fff;
   color: #000;
+}
+
+@media (max-width: 400px){
+  .card {
+      width: 80%;
+  }
 }

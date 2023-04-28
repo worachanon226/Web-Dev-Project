@@ -30,7 +30,7 @@ function AddHostModal({ callback }) {
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        className='customStylesModal'
+        className='customStylesHostModal'
         contentLabel="Example Modal"
       >
         <div className="d-flex flex-wrap justify-content-end ">

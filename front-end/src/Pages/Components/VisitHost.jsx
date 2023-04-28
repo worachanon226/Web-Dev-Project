@@ -37,8 +37,8 @@ const VisitHost = () => {
             </div>
 
             <div className="d-flex gap-3 justify-content-center">
-              <button className="rounded btnSubmitVisitS " type="submit">ยืนยัน</button>
-              <button className="rounded btnSubmitVisitD " type="delete">ยกเลิก</button>
+              <button className="rounded btnSubmitVisitS" type="submit">ยืนยัน</button>
+              <button className="rounded btnSubmitVisitD"  type="delete">ยกเลิก</button>
             </div>
 
           </div>
