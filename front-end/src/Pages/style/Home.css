@@ -1,5 +1,7 @@
 .bgHome{
   background-color: #fa807247;
+  min-height: 92vh;
+
 }
 .container {
   display: flex;
@@ -8,6 +10,7 @@
   flex-wrap: wrap;
   max-width: 1000px;
   margin-bottom: 60px;
+  margin-top: 5%;
 
 } 
 
@@ -24,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .content{

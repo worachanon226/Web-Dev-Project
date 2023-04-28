@@ -1,16 +1,23 @@
+.bgVisitHost{
+    background-color: #fa807247;
+    padding: 50px 0 15px 0;
+    height: fit-content;
+    min-height: 150vh;
+}  
+
 .cardout{
     background-color: #ff8066;
     height: 254px;
     width: 60%;
-   
 }
 
 .textCardOut h4{
     align-items: center;
-    font-size: 16px;
+    font-size: 18px;
     width: 30%;
-    height: 3vh;
-
+    height: auto;
+    padding: 5px;
+    background-color: white;
 }
 
 .textCardIn input{
@@ -34,4 +41,11 @@
 .IconVisitHost{
     background-color: red;
     color: white;
+}
+
+.btnSubmitVisit{
+    background-color: white;
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 5px 20px 5px 20px;
 }

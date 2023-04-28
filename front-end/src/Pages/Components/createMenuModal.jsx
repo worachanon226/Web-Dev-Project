@@ -50,7 +50,7 @@ function AddMenuModal({ callback, taskId }) {
         <h2 class='d-flex justify-content-center textMenu'>Add</h2>
 
         <form onSubmit={handleSubmit}>
-          <div class=" row gap-3 mb-3 textMenuModal">
+          <div class=" row gap-3 mb-3 textMenuModal ">
             <input className="col w-auto rounded"  placeholder="Store" />
             <input className="col align-self w-auto rounded" placeholder="Menu" />
           </div>
