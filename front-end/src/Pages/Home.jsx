@@ -4,7 +4,7 @@ import "./style/Home.css";
 
 function Home() {
   return (
-    <div className="d-flex flex-column align-center-center justify-content-center w-100 h-">
+    <div className="d-flex flex-column align-center-center justify-content-center w-100 h-100">
       <div className="d-flex flex-row justiify-content-between h-75 w-100 ">
         <div className="container">
           <div className="card">
