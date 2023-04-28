@@ -1,64 +1,63 @@
 import { getTasks, deleteTask } from "../Controller/HostController";
 import { AddHostModal } from "./Components/createHostModal";
-import user from "../Controller/test/User.json"
+import { useUserContext } from "../userContext";
 import React, { useState } from "react";
 import Item from "./Components/Item";
 import './style/Host.css'
 
 function Host() {
+  let { user } = useUserContext();
+
   let [task, setTask] = useState();
   if (task === undefined) {
     getTasks(setTask);
     return <div>Loading</div>;
   }
   return (
-    <div className="containerStyle mt-5">
+    <div className="containerStyle">
       <AddHostModal callback={setTask} />
-      <button className="cardHostRe"
+      <button className="btHostRe"
         onClick={() => {
           getTasks(setTask);
         }}
       >
         refresh
       </button>
+      
       <div className='hostListcontainHost'>
-
         {task.map((e) => {
-          if (e.userId === user[0].id) {
+          if (e.userId === user.id) {
             return (
-              <Item className='' //col-md-4 offset-md-4
+              <Item
                 key={e.id}
                 data={e}
                 control={
                   <Control
                     ownerId={e.userId}
                     id={e.id}
-                    user={user[0]}
+                    user={user}
                     callback={setTask}
                   />
                 }
               />
             );
           }
-          return <></>
+          return <></>;
         })}
       </div>
     </div>
   );
 }
-let Control = ({ ownerId, id, user, callback }) => {
-  if (ownerId === user.id) {
-    return (
-      <button style={{ background: 'red' }}
-        onClick={async () => {
-          await deleteTask(id);
-          getTasks(callback);
-        }}
-      >
-        Delete
-      </button>
-    );
-  }
-  return;
+let Control = ({ id, callback }) => {
+  return (
+    <button className="btHostDe"
+      onClick={async () => {
+        await deleteTask(id);
+        getTasks(callback);
+      }}
+    >
+      Delete
+    </button>
+  );
 };
 export default Host;

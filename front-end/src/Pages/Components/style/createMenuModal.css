@@ -1,4 +1,4 @@
-.customStyles {
+.customStylesMenuModal {
     top: 50%;
     left: 50%;
     position: absolute;
@@ -10,7 +10,6 @@
     border-radius: 30px;
     box-shadow: 1px 2px 20px #f4aab9;
     min-height: 320px;
-
 }
 
 .textMenuModal h2 {

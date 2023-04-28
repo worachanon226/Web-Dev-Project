@@ -1,4 +1,6 @@
 import { addMenu } from "../../Controller/GuestController";
+import user from "../../Controller/test/User.json";
+import { useUserContext } from "../../userContext";
 import { IoCloseSharp } from 'react-icons/io5';
 import React, { useState } from "react";
 import './style/createMenuModal.css';
@@ -6,9 +8,8 @@ import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
 
 
-import user from "../../Controller/test/User.json";
 function AddMenuModal({ callback, taskId }) {
-
+  let { user } = useUserContext()
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let handleSubmit = (event) => {
@@ -20,7 +21,7 @@ function AddMenuModal({ callback, taskId }) {
     ) {
       let data = {
         id: uuidv4(),
-        userId: user[1].id,
+        userId: user.id,
         store: event.target[0].value,
         name: event.target[1].value,
         price: parseInt(event.target[2].value),
@@ -35,22 +36,21 @@ function AddMenuModal({ callback, taskId }) {
   return (
     <div>
       <button className="addBtn" onClick={() => setIsOpen(true)}>ADD</button>
-      <Modal 
+      <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        className='customStyles d-flex flex-column justify-content-around'
+        className='customStylesMenuModal d-flex flex-column justify-content-around'
         contentLabel="Example Modal"
       >
         <div className="d-flex justify-content-end">
-        <button onClick={() => setIsOpen(false)}><IoCloseSharp className='iconMenuModal' size={25}/></button>
+          <button onClick={() => setIsOpen(false)}><IoCloseSharp className='iconMenuModal' size={25} /></button>
         </div>
 
-
         <h2 class='d-flex justify-content-center textMenu'>Add</h2>
-        
+
         <form onSubmit={handleSubmit}>
-          <div class=" row gap-3 mb-3 textMenuModal">
+          <div class=" row gap-3 mb-3 textMenuModal ">
             <input className="col w-auto rounded"  placeholder="Store" />
             <input className="col align-self w-auto rounded" placeholder="Menu" />
           </div>

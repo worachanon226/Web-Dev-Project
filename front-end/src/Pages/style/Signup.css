@@ -1,25 +1,22 @@
-
 .fromCard{
-    height: 630px;
-    width: 400px;
-    background-color: rgba(185, 185, 185, 0.023);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 55%;
-    left: 50%;
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+    max-width: 400px;
+    width: 50vw;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 15px rgba(8,7,16,0.6);
     padding: 20px 35px;
-} 
-.fromCard {
-    font-family: 'Poppins',sans-serif;
     color: #000000;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
-}
+} 
+
 .fromCard h3{
     font-size: 32px;
     font-weight: 500;
@@ -68,4 +65,21 @@
 
 .btnbgsignup .btn{
     margin-bottom: 10px;
+}
+
+@media (max-width:500px) {
+    .fromCard{
+        width: 90vw;
+    }
+}
+
+
+.Background{
+    padding-top: 2.5%;
+    display: flex;
+    min-height: 100vh;
+    height: fit-content;
+    justify-content: center;
+    background-color: #fa807247;
+    padding-bottom: 2.5%;
 }

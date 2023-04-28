@@ -1,4 +1,4 @@
-.customStylesModal {
+.customStylesHostModal {
     top: 50%;
     left: 50%;
     position: absolute;
@@ -10,12 +10,12 @@
     box-shadow: 1px 2px 9px #e54f3e;
 }
 @media (max-width: 720px){
-    .customStylesModal {
+    .customStylesHostModal {
         width: 80%;
     }
 }
 @media (max-width: 1080px){
-    .customStylesModal {
+    .customStylesHostModal {
         width: 60%;
     }
 }
@@ -28,11 +28,11 @@
     width: 100px;
     margin-bottom: 30px;
     height: 30px;
+    margin-top: 30px;
    
 }
 
 .textMenuModal input{
     font-size: 18px;
     flex-flow: wrap;
- 
 }

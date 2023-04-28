@@ -10,6 +10,7 @@
     border-radius: 6px;
     margin-top: 20px;
     flex-basis: 25%;
+    
 }
 @media (max-width: 1080px) {
     .boxStyle {
@@ -24,7 +25,7 @@
 
 .boxStyle p {
     font-size: 16px;
-    margin-top: 22px;
+    margin-top: 13px;
     align-content: center;
 }
 
@@ -34,4 +35,19 @@
     margin-top: 10px;
     border-radius: 6px;
     text-decoration: none;
+}
+
+.btJoin{
+    background-color: #fff;
+    padding: 0.5rem;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: rgb(28, 102, 4);
+}
+
+.btJoin:hover{
+    background-color: rgb(85, 230, 37);
+    color: black;
+
 }
