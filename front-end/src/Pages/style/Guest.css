@@ -9,12 +9,12 @@
 }
 
 .hostListcontain{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 200px;
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
     justify-items: center;
-    min-height: 70%;
+    justify-content: center;
+    min-height: 50%;
     height: fit-content;
     width: 80%;
     border-radius: 20px;

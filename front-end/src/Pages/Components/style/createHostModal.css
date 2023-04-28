@@ -1,16 +1,23 @@
-.customStyles {
+.customStylesModal {
     top: 50%;
     left: 50%;
-    right: auto;
-    bottom: auto;
-    height: 200px;
-    /* transform: translate(120%,120%); */
+    position: absolute;
+    transform: translate(-50%, -50%);
     border-radius: 15px;
-    height: 220px;
-    width: 30%;
+    height: 210px;
+    width: 35%;
     background-color: #FA8072;
     box-shadow: 1px 2px 9px #e54f3e;
-    min-width: 400px;
+}
+@media (max-width: 720px){
+    .customStylesModal {
+        width: 80%;
+    }
+}
+@media (max-width: 1080px){
+    .customStylesModal {
+        width: 60%;
+    }
 }
 
 .btAdd {
@@ -21,18 +28,11 @@
     width: 100px;
     margin-bottom: 30px;
     height: 30px;
+   
 }
 
- h2 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
-    margin-right: 30px;
-}
-
-.fromInput{
+.textMenuModal input{
     font-size: 18px;
     flex-flow: wrap;
+ 
 }

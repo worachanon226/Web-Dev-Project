@@ -14,7 +14,7 @@ const VisitHost = () => {
     return <div>Loading</div>;
   }
   return (
-    <div className=" d-flex flex-column align-items-center w-100 h-100 flex-wrap">
+    <div className="mt-5 d-flex flex-column align-items-center w-100 h-100 flex-wrap">
       <AddMenuModal class='textadd'callback={setMenu} taskId={hostId} />
       <div className="m-5 rounded cardout">
       <div className="d-flex align-self w-auto rounded justify-content-between m-3 text-center flex-wrap textCardOut">
@@ -30,14 +30,14 @@ const VisitHost = () => {
               <input className="rounded " placeholder="Name" />
               <input className="rounded"  placeholder="Amount" />
               <input className="rounded" placeholder="Comment" />
-              <IoCloseSharp size={30} style={{ background: 'red', color: 'white' }} />
+              <IoCloseSharp size={30} className="IconVisitHost"/>
             </div>
 
             <div className="d-flex gap-3 justify-content-center">
               <button className="rounded bg-light m-3 submitVisit" type="submit">ยืนยัน</button>
             </div>
 
-            <span style={{ background: 'purple' }}>{JSON.stringify(e)}</span>
+            <span className="text-break" style={{ background: 'purple' }}>{JSON.stringify(e)}</span>
             <button
               className="d-flex gap-3 justify-content-center"
               onClick={async () => {

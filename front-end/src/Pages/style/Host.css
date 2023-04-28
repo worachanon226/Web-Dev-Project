@@ -1,4 +1,11 @@
-.containerStyle{
+.addBtn {
+    box-shadow: 1px 2px 9px #efc1bc;
+    background-color: #FA8072;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.containerStyle {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,24 +13,38 @@
     width: 100%;
     height: 100%;
 }
-.hostListcontain{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 200px;
-    gap: 20px;
+
+.hostListcontainHost {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
     justify-items: center;
+    justify-content: center;
     min-height: 50%;
     height: fit-content;
     width: 80%;
     border-radius: 20px;
+    
 }
 
-.cardHost{
-    
+.cardHostRe {
     box-shadow: 1px 2px 9px #efc1bc;
     background-color: #FA8072;
     border-radius: 5px;
     width: 100px;
+    min-height: 30px;
     margin-bottom: 30px;
     height: 30px;
+
+}
+
+.iconMenuModal {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+}
+@media (max-width: 1080px){
+    .iconMenuModal {
+        right: 4%;
+    }
 }

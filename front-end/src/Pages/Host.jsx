@@ -12,20 +12,21 @@ function Host() {
     return <div>Loading</div>;
   }
   return (
-    <div className="containerStyle">
+    <div className="containerStyle mt-5">
       <AddHostModal callback={setTask} />
-      <button className="cardHost"
+      <button className="cardHostRe"
         onClick={() => {
           getTasks(setTask);
         }}
       >
         refresh
       </button>
-      <div className='hostListcontain' >
+      <div className='hostListcontainHost'>
+
         {task.map((e) => {
           if (e.userId === user[0].id) {
             return (
-              <Item
+              <Item className='' //col-md-4 offset-md-4
                 key={e.id}
                 data={e}
                 control={

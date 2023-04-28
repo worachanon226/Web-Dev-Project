@@ -8,7 +8,7 @@ const List = ({ props, hostId, callback }) => {
   } else color = "yellow";
   return (
     <>
-      <div style={{ background: color }}>{JSON.stringify(props)}</div>
+      <div>{JSON.stringify(props)}</div>
       {props.isConfirm || (
         <button
           onClick={async () => {

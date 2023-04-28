@@ -34,35 +34,35 @@ function AddMenuModal({ callback, taskId }) {
   };
   return (
     <div>
-      <button onClick={() => setIsOpen(true)}>ADD</button>
-      <Modal
+      <button className="addBtn" onClick={() => setIsOpen(true)}>ADD</button>
+      <Modal 
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        className='customStyles'
+        className='customStyles d-flex flex-column justify-content-around'
         contentLabel="Example Modal"
       >
         <div className="d-flex justify-content-end">
-        <button onClick={() => setIsOpen(false)}><IoCloseSharp size={35}/></button>
+        <button onClick={() => setIsOpen(false)}><IoCloseSharp className='iconMenuModal' size={25}/></button>
         </div>
 
 
-        <h2 class='textMune'>Add</h2>
+        <h2 class='d-flex justify-content-center textMenu'>Add</h2>
         
         <form onSubmit={handleSubmit}>
-          <div class="row gap-3 mb-3">
-            <input className="col w-auto rounded" style={{ fontSize: '18px' }} placeholder="Store" />
-            <input className="col align-self w-auto rounded" style={{ fontSize: '18px' }} placeholder="Menu" />
+          <div class=" row gap-3 mb-3 textMenuModal">
+            <input className="col w-auto rounded"  placeholder="Store" />
+            <input className="col align-self w-auto rounded" placeholder="Menu" />
           </div>
 
-          <div class="row gap-3 mb-3">
-            <input className="col align-self w-auto rounded" style={{ fontSize: '18px' }} type="number" placeholder="Price" />
-            <input className="col w-auto rounded" style={{ fontSize: '18px' }} type="number" placeholder="Amount" />
-            <input className="rounded w-full" style={{ fontSize: '18px' }} placeholder="Comment" />
+          <div class="row gap-3 mb-3 textMenuModal">
+            <input className="col align-self w-auto rounded"  type="number" placeholder="Price" />
+            <input className="col w-auto rounded"  type="number" placeholder="Amount" />
+            <input className="rounded w-full"  placeholder="Comment" />
           </div>
 
           <div className="d-flex gap-3 justify-content-center">
-            <button className="rounded bg-light w-25" style={{fontSize:'18px'}} type="submit">ADD</button>
+            <button className="rounded bg-light w-25" type="submit">ADD</button>
           </div>
         </form>
 
