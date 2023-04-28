@@ -16,7 +16,7 @@ function Host() {
   return (
     <div className="containerStyle">
       <AddHostModal callback={setTask} />
-      <button className="cardHostRe"
+      <button className="btHostRe"
         onClick={() => {
           getTasks(setTask);
         }}
@@ -50,7 +50,7 @@ function Host() {
 }
 let Control = ({ id, callback }) => {
   return (
-    <button className="cardHostDe"
+    <button className="btHostDe"
       onClick={async () => {
         await deleteTask(id);
         getTasks(callback);

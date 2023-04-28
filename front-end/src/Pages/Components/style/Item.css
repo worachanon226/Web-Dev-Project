@@ -36,3 +36,18 @@
     border-radius: 6px;
     text-decoration: none;
 }
+
+.btJoin{
+    background-color: #fff;
+    padding: 0.5rem;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: rgb(28, 102, 4);
+}
+
+.btJoin:hover{
+    background-color: rgb(85, 230, 37);
+    color: black;
+
+}

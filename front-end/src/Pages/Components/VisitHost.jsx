@@ -19,7 +19,7 @@ const VisitHost = () => {
       <div className="mt-5 rounded cardoutVisit ">
         {menu.map((e) => (
           <div className="textCardOutVisit rounded" key={e.id}>
-            <div className="d-flex rounded justify-content-between m-3 text-center flex-wrap cardCover">
+            <div className="d-flex rounded justify-content-center m-3 text-center flex-wrap cardCover">
               <div className="inputMerge">
                 <h4 className="rounded">ชื่ออาหาร</h4>
                 <input className="rounded " placeholder="Name" />
@@ -35,13 +35,6 @@ const VisitHost = () => {
                 <input className="rounded" placeholder="Comment" />
               </div>
             </div>
-
-            {/* <div className="d-flex rounded justify-content-between m-3 text-center flex-wrap textCardIn">
-            <input className="rounded " placeholder="Name" />
-            <input className="rounded"  placeholder="Amount" />
-            <input className="rounded" placeholder="Comment" />
-   
-          </div> */}
 
             <div className="d-flex gap-3 justify-content-center">
               <button className="rounded btnSubmitVisitS " type="submit">ยืนยัน</button>
