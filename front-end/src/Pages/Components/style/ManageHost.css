@@ -1,0 +1,25 @@
+.containerM {
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #ff8066;
+    height: 320px;
+    width: 60%;
+    padding: 1.2rem;
+    border-radius: 30px;
+    box-shadow: 1px 2px 20px #f4aab9;
+    min-height: 320px;
+}
+
+.Card{
+    background-color: white;
+    margin-top: 10px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 5px;
+    width: 800px;
+    margin-bottom: 30px;
+    height: 40px;
+}
