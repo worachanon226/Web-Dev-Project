@@ -4,6 +4,7 @@ import { useUserContext } from "../userContext";
 import React, { useState } from "react";
 import Item from "./Components/Item";
 import './style/Host.css'
+import Loading from "./Components/Loading";
 
 
 
@@ -14,7 +15,7 @@ function Host() {
   let [task, setTask] = useState();
   if (task === undefined) {
     getTasks(setTask);
-    return <div>Loading</div>;
+    return <Loading/>
   }
   return (
     <div className="containerStyle">
