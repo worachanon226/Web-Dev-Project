@@ -31,10 +31,18 @@ public class TaskController : ControllerBase
             CurrentTasks = 0,
             Available = true,
             TotalPrice = 0,
+            time = DateTime.Now,
         };
 
         await _service.CreateTask(task);
         return Ok(task);
+    }
+
+    [HttpPost("updateTaskMenu")]
+    public async Task<ActionResult> UpdateTaskMenu(string taskID, Models.MenuTask updated)
+    {
+        await _service.UpdateMenu(taskID, updated);
+        return Ok("Updated");
     }
 
     [HttpPost("setAvailable")]
@@ -68,6 +76,12 @@ public class TaskController : ControllerBase
     public async Task<ActionResult<List<Models.Task>>> GetTasks()
     {
         List<Models.Task> tasks = await _service.GetTasks();
+        for (int i = 0; i < tasks.Count; i++)
+        {
+            var diff = DateTime.Now - tasks[i].time;
+            if (diff.Hours >= 1)
+                tasks.Remove(tasks[i]);
+        }
         return Ok(tasks);
     }
 

@@ -78,6 +78,20 @@ public class DatabaseService
         await _taskCollection.ReplaceOneAsync(x => x.Id == id, task);
     }
 
+    public async Task UpdateMenu(string id, Models.MenuTask menu)
+    {
+        var task = await _taskCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        if (task == null)
+            return;
+
+        for (int i = 0; i < task.Menus.Count; i++)
+        {
+            if (task.Menus[i].Id == menu.Id)
+                task.Menus[i] = menu;
+        }
+        await _taskCollection.ReplaceOneAsync(x => x.Id == id, task);
+    }
+
     public async Task DeleteMenu(string Taskid, string Menuid)
     {
         var task = await _taskCollection.Find(x => x.Id == Taskid).FirstOrDefaultAsync();

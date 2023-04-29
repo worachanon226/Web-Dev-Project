@@ -10,4 +10,5 @@ public class Task
     public int CurrentTasks { get; set; } = 0;
     public bool Available { get; set; } = true;
     public int TotalPrice { get; set; } = 0;
+    public DateTime time { get; set; } = new DateTime();
 }
