@@ -17,12 +17,12 @@ const Nav = () => {
     var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
     var itemPosNewAnimTop = activeItemNewAnim.position();
     var itemPosNewAnimLeft = activeItemNewAnim.position();
-    // $(".hori-selector").css({
-    //   top: itemPosNewAnimTop.top + "px",
-    //   left: itemPosNewAnimLeft.left + "px",
-    //   height: activeWidthNewAnimHeight + "px",
-    //   width: activeWidthNewAnimWidth + "px",
-    // });
+    $(".hori-selector").css({
+      top: itemPosNewAnimTop.top + "px",
+      left: itemPosNewAnimLeft.left + "px",
+      height: activeWidthNewAnimHeight + "px",
+      width: activeWidthNewAnimWidth + "px",
+    });
     $("#navbarSupportedContent").on("click", "ul li", function (e) {
       $("#navbarSupportedContent ul li").removeClass("active");
       $(this).addClass("active");
@@ -30,12 +30,12 @@ const Nav = () => {
       var activeWidthNewAnimWidth = $(this).innerWidth();
       var itemPosNewAnimTop = $(this).position();
       var itemPosNewAnimLeft = $(this).position();
-      // $(".hori-selector").css({
-      //   top: itemPosNewAnimTop.top + "px",
-      //   left: itemPosNewAnimLeft.left + "px",
-      //   height: activeWidthNewAnimHeight + "px",
-      //   width: activeWidthNewAnimWidth + "px",
-      // });
+      $(".hori-selector").css({
+        top: itemPosNewAnimTop.top + "px",
+        left: itemPosNewAnimLeft.left + "px",
+        height: activeWidthNewAnimHeight + "px",
+        width: activeWidthNewAnimWidth + "px",
+      });
     });
   }
 
@@ -64,7 +64,7 @@ const Nav = () => {
           <div className="left"></div>
           <div className="right"></div>
         </div>
-        <li className="nav-item  active"  id='homeBtn'>
+        <li className="nav-item  active" id='homeBtn'>
           <Link className="nav-link d-flex" to="/">
             <i className="fas fa-tachometer-al m-1">
               <AiFillHome />

@@ -113,3 +113,27 @@ body .container .card .box2 .content a:hover {
       width: 80%;
   }
 }
+
+ .picture{
+  height: 350px;
+  width: 1570px; 
+} 
+
+.head-text {
+  position: relative;
+}
+.text-on-image {
+  
+  font-size: 50px;
+  position: absolute;
+  right: 30%;
+  left: 10%;
+  bottom: 20%;
+  color: #ffffff;
+}
+
+@media (max-width:400px) {
+  .picture {
+      width: 80vw;
+  }
+}
