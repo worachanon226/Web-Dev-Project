@@ -83,7 +83,7 @@ i {
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #fa807247;
+  background-color: #fff;
   bottom: 10px;
 }
 .hori-selector .right {
@@ -120,10 +120,7 @@ i {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
   }
-  .hori-selector .left,
-  .hori-selector .right {
-    right: 10px;
-  }
+
   .hori-selector .left {
     top: -25px;
     left: auto;

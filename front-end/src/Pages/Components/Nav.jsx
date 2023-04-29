@@ -56,10 +56,6 @@ const Nav = () => {
   let set1 = () => {
     return (
       <>
-        <div className="hori-selector">
-          <div className="left"></div>
-          <div className="right"></div>
-        </div>
         <li className="nav-item  active">
           <Link className="nav-link d-flex" to="/">
             <i className="fas fa-tachometer-al m-1">
@@ -106,10 +102,6 @@ const Nav = () => {
   let set2 = () => {
     return (
       <>
-        <div className="hori-selector">
-          <div className="left"></div>
-          <div className="right"></div>
-        </div>
         <li className="nav-item  active">
           <Link className="nav-link d-flex" to="/">
             <i className="fas fa-tachometer-al m-1">
@@ -168,6 +160,10 @@ const Nav = () => {
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
+          <div className="hori-selector">
+            <div className="left"></div>
+            <div className="right"></div>
+          </div>
           <ul className="navbar-nav ml-auto">{user ? set1() : set2()}</ul>
         </div>
       </nav>
