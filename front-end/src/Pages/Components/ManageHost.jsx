@@ -13,11 +13,15 @@ const ManageHost = () => {
   return (
     <div>
       <h1>Menu</h1>
+
+      <div className="Container">
+        {!task.menus.length && <h3>Waiting for request Menu</h3>}
       {task.menus &&
         task.menus.map((e) => (
           <List key={e.id} props={e} callback={setTask} hostId={hostId}></List>
         ))}
-      {task.menus === [] && <h3>Waiting for request Menu</h3>}
+      
+      </div>
     </div>
   );
 };

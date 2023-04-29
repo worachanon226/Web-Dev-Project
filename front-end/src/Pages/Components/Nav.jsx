@@ -52,9 +52,6 @@ const Nav = () => {
       }, 100);
     });
   }, []);
-  let l = {
-    width: "135px",
-  };
 
   let set1 = () => {
     return (
