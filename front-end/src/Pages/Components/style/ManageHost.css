@@ -1,32 +1,82 @@
-.containerM {
-    top: 50%;
+.bgManage {
+    background-color: #fa807247;
+    padding: 50px 0 15px 0;
+    height: fit-content;
+    min-height: 150vh;
+
+}
+.cardoutManage{
+    height: fit-content;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    background-color: #ff8066;
-    height: 320px;
-    width: 70%;
-    padding: 1.2rem;
-    border-radius: 30px;
-    box-shadow: 1px 2px 20px #f4aab9;
-    min-height: 320px;
+    gap: 20px;
+    
 }
 
-.Card{
+.textCardManage{
+    background-color: #ff8066;
+    height: fit-content;
+    width: 65%;
+    padding: 10px;
+}
+.textCardManage h4 {
+
+    align-items: center;
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+    padding: 2px;
     background-color: white;
-    margin-top: 10px;
-    padding: 5px 20px 5px 20px;
-    border-radius: 5px;
-    width: 940px;
-    margin-bottom: 30px;
-    height: 1500px;
+}
+
+.cardManage{
+    display: flex;
+    gap: 20px;
 }
 
 .inputManage{
-    
     display: flex;
     flex-direction: column;
     flex-basis: 25%;
+}
+
+.btnSubmitManageS:hover {
+    background-color: rgb(85, 230, 37);
+}
+
+.btnSubmitManageD:hover {
+    background-color: rgb(255, 8, 8);
+}
+
+.btnSubmitMS,
+.btnSubmitMD {
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    color:#000
+}
+
+@media (max-width:400px) {
+    .cardoutManage {
+        width: 90vw;
+    }
+
+    .inputManage {
+        flex-direction: row;
+    }
+}
+
+
+@media (max-width:300px) {
+    .cardoutManage {
+        width: 90vw;
+    }
+
+    .inputManage {
+        flex-direction: column;
+    }
 }
