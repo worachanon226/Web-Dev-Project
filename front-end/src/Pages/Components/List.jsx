@@ -2,14 +2,24 @@ import { acceptMenu,denyMenu, getTask } from "../../Controller/HostController";
 import React, { useState } from "react";
 
 const List = ({ props, hostId, callback }) => {
-  let color;
+  let color={bg:"",bd:""};
   if (props.isConfirm) {
-    color = "green";
-  } else color = "yellow";
+    color.bg = "#a3ff9e";
+    color.bd = "#23ff17";
+  } else color.bg = "yellow";
   return (
-    <>
-      <div>{JSON.stringify(props)}</div>
-      {props.isConfirm || (
+    <div style={{width:"80%",background:color.bg,border:"2px solid",borderColor:color.bd}} className="d-flex row gap-4 ">
+      <div className="bg-orange-600 d-flex gap-5 ">
+        <div className="">Menu:  {props.name}</div>
+        <div>Price: {props.price}</div>
+        <div> {props.name}</div>
+      </div>
+      <div className="bg-orange-600 d-flex gap-5">
+        <div>{props.store}</div>
+        <div>{props.comment}</div>
+      </div>
+    <div>{JSON.stringify(props)}</div>
+    {/* {props.isConfirm || (
         <button
           onClick={async () => {
             await acceptMenu(hostId, props.id);
@@ -22,8 +32,8 @@ const List = ({ props, hostId, callback }) => {
       {props.isConfirm && <button onClick={async () => {
             await denyMenu(hostId, props.id);
             getTask(hostId, callback);
-          }}>Deny</button>}
-    </>
+          }}>Deny</button>} */}
+    </div>
   );
 };
 
