@@ -1,5 +1,5 @@
 .bgHome {
-  background-color: #fa807247;
+  background-color: #FEE8DB;
   min-height: 92vh;
 }
 
@@ -158,7 +158,7 @@ body .container .card .box2 .content a:hover {
 
 .home-text h1 {
   font-size: 70px;
-  color: #fdfdfd;
+  color: #B34136;
   
 }
 
@@ -168,7 +168,9 @@ body .container .card .box2 .content a:hover {
 }
 
 .btnhome {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 20px;
   background-color: #ffa500;
   color: #fff;
