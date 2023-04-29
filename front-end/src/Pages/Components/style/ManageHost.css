@@ -7,7 +7,7 @@
     transform: translate(-50%, -50%);
     background-color: #ff8066;
     height: 320px;
-    width: 60%;
+    width: 70%;
     padding: 1.2rem;
     border-radius: 30px;
     box-shadow: 1px 2px 20px #f4aab9;
@@ -19,7 +19,14 @@
     margin-top: 10px;
     padding: 5px 20px 5px 20px;
     border-radius: 5px;
-    width: 800px;
+    width: 940px;
     margin-bottom: 30px;
-    height: 40px;
+    height: 1500px;
+}
+
+.inputManage{
+    
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
 }

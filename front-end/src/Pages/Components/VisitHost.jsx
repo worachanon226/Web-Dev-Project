@@ -2,6 +2,7 @@ import { deleteMenu, getTask } from "../../Controller/GuestController";
 import { useUserContext } from "../../userContext";
 import { AddMenuModal } from "./createMenuModal";
 import { useParams } from "react-router-dom";
+import {GrFormAdd} from 'react-icons/gr';
 import React, { useState } from "react";
 import "./style/VisitHost.css";
 
@@ -35,6 +36,15 @@ const VisitHost = () => {
                 <input className="rounded" placeholder="Comment" />
               </div>
             </div>
+
+            <div className="d-flex gap-3 justify-content-center">
+              <button className="rounded IconAddVi" type="submit"><GrFormAdd/></button>
+            
+            </div>
+
+              {/* <div className="IconAddVi d-flex gap-3 justify-content-center">
+                <GrFormAdd/>
+              </div> */}
 
             <div className="d-flex gap-3 justify-content-center">
               <button className="rounded btnSubmitVisitS" type="submit">ยืนยัน</button>
