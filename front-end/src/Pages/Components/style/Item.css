@@ -6,17 +6,19 @@
     justify-items: center;
     align-items: center;
     background-color: #ff8066;
-    box-shadow: 1px 2px 4px #55494c;
+    box-shadow: 0 0 15px rgba(8, 7, 16, 0.6);
     border-radius: 6px;
     margin-top: 20px;
     flex-basis: 25%;
-    
+
 }
+
 @media (max-width: 1080px) {
     .boxStyle {
         flex-basis: 40%;
     }
 }
+
 @media (max-width: 720px) {
     .boxStyle {
         flex-basis: 100%;
@@ -37,17 +39,31 @@
     text-decoration: none;
 }
 
-.btJoin{
+.btJoin {
     background-color: #fff;
     padding: 0.5rem;
     margin-top: 10px;
     border-radius: 6px;
     text-decoration: none;
     color: rgb(28, 102, 4);
+
 }
 
-.btJoin:hover{
+.btJoin:hover {
     background-color: rgb(85, 230, 37);
-    color: black;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    transform: translateY(-7px);
 
+}
+
+.canteenname {
+    color: #FFF;
+    padding: 0.2rem;
+    margin-top: 5px;
+
+}
+
+.sum {
+    color: #FFF;
 }
