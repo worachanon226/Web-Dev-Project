@@ -17,25 +17,22 @@ function Home() {
 
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center  w-100 bgHome">
-      <div className="section">
+    <div className="d-flex flex-column align-items-center justify-content-center h-fit bgHome">
+      <div className="section h-fit">
+        
         <div className="home">
           <div className="home-text">
             <h1>Hew-Hew</h1>
             <h2>Food The  Most Precious Things</h2>
             <div className="d-flex flex-row gap-5">
-              <Link to="Host">
+              <Link className="text-decoration-none" to="Host">
                 <div className="btnhome">
-                  <div className="content">
-                    <h4>HOST</h4>
-                  </div>
+                    <h4 className="m-1">HOST</h4>
                 </div>
               </Link>
-              <Link to="Guest ">
+              <Link className="text-decoration-none" to="Guest ">
                 <div className="btnhome">
-                  <div className="content">
-                    <h4>JOIN</h4>
-                  </div>
+                    <h4 className="m-1" >JOIN</h4>
                 </div>
               </Link>
             </div>

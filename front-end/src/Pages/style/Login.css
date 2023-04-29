@@ -1,5 +1,5 @@
 .fromcard{
-    max-height: 420px;
+    max-height: 80%;
     max-width: 400px;
     width: 50vw;
     background-color: rgb(255, 254, 254);
@@ -45,7 +45,7 @@
 
 .btn{
     align-items: center;
-    margin-top: 30px;
+    margin-top: 5px;
     width: 100%;
     background-color: #ffffff;
     color: #2e13fd;

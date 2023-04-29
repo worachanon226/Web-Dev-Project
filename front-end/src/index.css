@@ -22,6 +22,8 @@ body,html,#root {
 
 body{
   overflow-y: scroll;
+  min-width: 375px;
+  overflow-x:auto ;
 }
 *{
   font-family: 'Hind', sans-serif;
