@@ -27,6 +27,9 @@ namespace backend.Controllers
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
+            if (_service.IsExist(request.Id).Result)
+                return Ok(new Models.Usage());
+
             Models.User user = new Models.User()
             {
                 Id = request.Id,
@@ -37,11 +40,7 @@ namespace backend.Controllers
                 Phone = request.Phone,
             };
 
-            if (!_service.IsExist(request.Id).Result)
-                await _service.CreateAsync(user);
-            else
-                return Ok("This user is already registed.");
-
+            await _service.CreateAsync(user);
 
             var usage = new Models.Usage()
             {
@@ -49,6 +48,7 @@ namespace backend.Controllers
                 Name = user.Name,
                 Lastname = user.Lastname,
                 Phone = user.Phone,
+                Message = true,
             };
             return Ok(usage);
         }
@@ -56,12 +56,13 @@ namespace backend.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<Models.Usage>> Login(Models.UserLogin request)
         {
+            if (!_service.IsExist(request.Id).Result)
+                return Ok(new Models.Usage());
+
             var user = await _service.GetUserId(request.Id);
-            if (user == null)
-                return BadRequest("User not found.");
 
             if (!VertifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-                return Ok("Wrong password.");
+                return Ok(new Models.Usage());
 
             var usage = new Models.Usage()
             {
@@ -69,6 +70,7 @@ namespace backend.Controllers
                 Name = user.Name,
                 Lastname = user.Lastname,
                 Phone = user.Phone,
+                Message = true,
             };
 
             return Ok(usage);

@@ -23,8 +23,8 @@ public class UserController : ControllerBase
     {
         var user = await _service.GetUserId(id);
 
-        if (user == null)
-            return BadRequest("User Not Found.");
+        if (!_service.IsExist(id).Result)
+            return Ok(new Models.Usage());
 
         var usage = new Models.Usage()
         {
@@ -32,6 +32,7 @@ public class UserController : ControllerBase
             Name = user.Name,
             Lastname = user.Lastname,
             Phone = user.Phone,
+            Message = true,
         };
 
         return Ok(usage);
