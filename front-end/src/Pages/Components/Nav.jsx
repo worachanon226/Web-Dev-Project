@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Outlet, Link } from "react-router-dom";
-import { AiFillHome } from "react-icons/ai";
-import { IoFastFood } from "react-icons/io5";
+import { useUserContext } from "../../userContext";
 import { SiGnuprivacyguard } from "react-icons/si";
+import { Outlet, Link } from "react-router-dom";
+import { IoFastFood } from "react-icons/io5";
+import { AiFillHome } from "react-icons/ai";
+import React, { Component } from "react";
 import { useEffect } from "react";
 import "./style/Nav.css";
 import $ from "jquery";
-import { useUserContext } from "../../userContext";
 
 const Nav = () => {
   let { user, setUser } = useUserContext();
@@ -64,21 +64,14 @@ const Nav = () => {
             <h5 className="text-center">Home</h5>
           </Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link d-flex" to="/service">
+
+
+        <li className="nav-item" id='orderBtn'>
+          <Link className="nav-link d-flex" to="/order">
             <i className="far fa-tachometer-alt m-1">
               <IoFastFood />
             </i>
-            <h5 className="text-center">Services</h5>
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link className="nav-link d-flex" to="/profile">
-            <i className="far fa-clone m-1">
-              <IoFastFood />
-            </i>
-            <h5 className="text-center">Profile</h5>
+            <h5 className="text-center">Order</h5>
           </Link>
         </li>
 
@@ -110,7 +103,7 @@ const Nav = () => {
             <h5 className="text-center">Home</h5>
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item" id="LoginBtn">
           <Link className="nav-link d-flex" to="/login">
             <i className="fas far fa-chart-bar m-1">
               <SiGnuprivacyguard />
@@ -118,7 +111,7 @@ const Nav = () => {
             <h5 className="text-center">Sign In</h5>
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item" id='signupBtn'>
           <Link className="nav-link d-flex" to="/signup">
             <i className="fas far fa-chart-bar m-1">
               <SiGnuprivacyguard />

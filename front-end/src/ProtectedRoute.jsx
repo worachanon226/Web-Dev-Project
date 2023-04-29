@@ -20,4 +20,3 @@ export default ProtectedRoute;
 
 
 export {ProtectedRoute,ProtectedRouteLogedin};
-

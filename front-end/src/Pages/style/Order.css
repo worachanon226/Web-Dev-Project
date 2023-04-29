@@ -1,11 +1,11 @@
-.bgVisitHost {
+.bgOrder {
     background-color: #fa807247;
     padding: 50px 0 15px 0;
     height: fit-content;
     min-height: 150vh;
 }
 
-.cardoutVisit {
+.cardoutOrder {
     height: fit-content;
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@
     gap: 20px;
 }
 
-.textCardOutVisit {
+.textCardOutOrder {
     background-color: #ff8066;
     height: fit-content;
     width: 100%;
@@ -29,59 +29,27 @@
     background-color: white;
 }
 
-.textCardIn input {
+/* .textCardIn input {
     font-size: 16px;
     width: 100%;
     height: 30px;
-}
+} */
 
-.cardCover {
+.cardCoverOrder {
     display: flex;
     gap: 15px;
 }
 
-.inputMerge {
+.inputMergeOrder{
+
     display: flex;
     flex-direction: column;
     flex-basis: 25%;
 }
 
-.submitVisit {
-    font-size: 18px;
-    width: 10%;
-    align-content: center;
-}
-
-.btnSubmitVisitS:hover {
-    background-color: rgb(85, 230, 37);
-}
-
-.btnSubmitVisitD:hover {
-    background-color: rgb(255, 8, 8);
-}
-
-.btnSubmitVisitS,
-.btnSubmitVisitD {
-    background-color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 16px;
-    padding: 5px 20px 5px 20px;
-    text-decoration: none;
-    color:#000
-}
-
-.IconAddVi {
-    background-color: white;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    font-size: 27px;
-
-    padding: 1px 15px 1px 15px;
-}
 
 @media (max-width:400px) {
-    .cardoutVisit {
+    .cardoutOrder {
         width: 90vw;
     }
 
@@ -92,7 +60,7 @@
 
 
 @media (max-width:300px) {
-    .cardoutVisit {
+    .cardoutOrder {
         width: 90vw;
     }
 

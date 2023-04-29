@@ -5,10 +5,20 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import "./style/Login.css";
+import { useEffect } from "react";
+import $ from "jquery";
+import { useLocation } from 'react-router-dom';
 
 function Login() {
   let { setUser } = useUserContext();
   let navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    $('#LoginBtn').trigger('click'); 
+  }, [location]);
+
+  
+
   return (
     <>
     <div className="background w-100">
@@ -68,4 +78,3 @@ function Login() {
 
 export default Login;
 
-// background-color: #fa807247;
