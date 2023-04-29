@@ -7,28 +7,29 @@ import { FaUser } from "react-icons/fa";
 import "./style/Login.css";
 import { useEffect } from "react";
 import $ from "jquery";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 function Login() {
   let { setUser } = useUserContext();
   let navigate = useNavigate();
   const location = useLocation();
   useEffect(() => {
-    $('#LoginBtn').trigger('click'); 
+    $("#LoginBtn").trigger("click");
   }, [location]);
-
-  
 
   return (
     <>
-    <div className="background w-100">
+      <div className="background w-100">
         <div className="fromcard">
           <form
-            onSubmit={(event) => {
+            onSubmit={async (event) => {
               event.preventDefault();
               let id = event.target[0].value;
               let password = event.target[1].value;
-              submitLogin(id, password, setUser, navigate);
+              let ok = await submitLogin(id, password, setUser, navigate);
+              if (ok === false) {
+                document.getElementById("promttext").style.visibility = "visible";
+              }
             }}
           >
             <h3>Sign in</h3>
@@ -53,7 +54,15 @@ function Login() {
               </div>
             </div>
             <div>
-              <input type="password" className="formcontrol" id="floatingInput" />
+              <input
+                type="password"
+                className="formcontrol"
+                id="floatingInput"
+              />
+            </div>
+            
+            <div id = "promttext" className="mt-2 text-danger" style={{visibility:"hidden"}}> 
+              Invalid User ID or Password
             </div>
 
             <div className="btnbg">
@@ -70,11 +79,9 @@ function Login() {
             </div>
           </form>
         </div>
-        </div>
-
+      </div>
     </>
   );
 }
 
 export default Login;
-

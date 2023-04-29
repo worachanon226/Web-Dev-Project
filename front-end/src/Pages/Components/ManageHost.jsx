@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import { getTask } from "../../Controller/HostController";
 import List from "./List";
 import "./style/ManageHost.css";
+import Loading from "./Loading";
 
 const ManageHost = () => {
   let [task, setTask] = useState();
   let { hostId } = useParams();
   if (task === undefined) {
     getTask(hostId, setTask);
-    return <div>Loading</div>;
+    return <Loading></Loading>
   }
   return (
     <div>
@@ -24,7 +25,6 @@ const ManageHost = () => {
       
       </div>
     </div>
-
   );
 };
 

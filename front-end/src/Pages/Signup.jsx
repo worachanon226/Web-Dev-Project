@@ -5,7 +5,7 @@ import { useUserContext } from "../userContext";
 import "./style/Signup.css";
 import { useEffect } from "react";
 import $ from "jquery";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Signup() {
@@ -13,9 +13,8 @@ function Signup() {
   let { setUser } = useUserContext();
   const location = useLocation();
   useEffect(() => {
-    $('#signupBtn').trigger('click'); 
+    $("#signupBtn").trigger("click");
   }, [location]);
-
 
   return (
     <div className="Background w-100">
@@ -23,7 +22,7 @@ function Signup() {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            let [id, name, last, password, cpassword, phone] = event.target
+            let [id, name, last, password, cpassword, phone] = event.target;
 
             submitSignup(
               {
@@ -36,8 +35,7 @@ function Signup() {
               setUser,
               navigate
             );
-          }
-          }
+          }}
         >
           <h3>Sign Up</h3>
           <div className="formfloating">
@@ -49,7 +47,7 @@ function Signup() {
           </div>
 
           <div>
-            <input type="id" className="formControl" />
+            <input type="id" className="formControl" pattern="[0-9]{8}" placeholder="StudentID 64xxxxxx" />
           </div>
 
           <div className="formfloating">
@@ -123,7 +121,12 @@ function Signup() {
           </div>
 
           <div className="btnbgsignup">
-            <button type="submit" className="btn btn-danger" id="submit" disabled>
+            <button
+              type="submit"
+              className="btn btn-danger"
+              id="submit"
+              disabled
+            >
               Submit
             </button>
           </div>
@@ -131,8 +134,8 @@ function Signup() {
         <div>
           <a>Already have an account? </a>
           <Link className="text-decoration" to="/login">
-          Login
-              </Link>
+            Login
+          </Link>
           {/* <a className="text-decoration-none text-primary" href="/login">
             Login
           </a> */}

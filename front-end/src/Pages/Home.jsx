@@ -17,60 +17,33 @@ function Home() {
 
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center  w-100 bgHome">
-      <div>
-        <div className="head-text ">
-          <div class='text-on-image '>
-            <i><p>Hew-Hew</p></i>
+    <div className="d-flex flex-column align-items-center justify-content-center h-fit bgHome">
+      <div className="section h-fit">
+        
+        <div className="home">
+          <div className="home-text">
+            <h1>Hew-Hew</h1>
+            <h2>Food The  Most Precious Things</h2>
+            <div className="d-flex flex-row gap-5">
+              <Link className="text-decoration-none" to="Host">
+                <div className="btnhome">
+                    <h4 className="m-1">HOST</h4>
+                </div>
+              </Link>
+              <Link className="text-decoration-none" to="Guest ">
+                <div className="btnhome">
+                    <h4 className="m-1" >JOIN</h4>
+                </div>
+              </Link>
+            </div>
           </div>
-          <div className="head-image">
-            <img className="picture" src="https://i.pinimg.com/originals/59/b5/19/59b519204588defc11c64853504644c1.jpg" alt="hew" />
+          <div className="home-img ">
+            <img className="picture" src="https://th.bing.com/th/id/R.a959ce9211765aae57111ea75a1d8ba2?rik=b7c4VlFKhP24PQ&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-food-clipart%2ftransparent-food-clipart-10.png&ehk=h6J2VFGpq1VH%2fLgtQ%2fAbt2LWfl1Sz2bORmWjqD9s8dM%3d&risl=&pid=ImgRaw&r=0" alt="hew" />
           </div>
-
         </div>
       </div>
 
-
-
-
-
-      <div className="d-flex flex-row justify-content-between h-50 w-100">
-        <div className="container">
-          <div className="card">
-            <Link to="Host">
-              <div className="box1">
-                <div className="content">
-                  <h4>HOST</h4>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          <div className="card">
-            <Link to="Guest">
-              <div className="box2">
-                <div className="content">
-                  <h4>JOIN</h4>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p class="col-md-4 mb-0 text-muted">© 2022 WebdevProject</p>
-
-          <a href="/"
-            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <svg class="bi me-2" width="800" height="100">
-
-            </svg>
-          </a>
-
-        </footer>
-        <p class="text-center"><a href="#" class="link-dark">Back to top</a></p>
-      </div>
+      
     </div>
 
 

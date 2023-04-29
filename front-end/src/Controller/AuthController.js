@@ -1,8 +1,7 @@
 import API from "./API";
 
 let { endpoint, path } = API;
-let submitLogin = async (id,password,setUserCtx,callback) => {
-  
+let submitLogin = async (id, password, setUserCtx, callback) => {
   let res = await fetch(endpoint.concat(path.login), {
     headers: { "Content-Type": "application/json" },
     method: "POST",
@@ -10,12 +9,17 @@ let submitLogin = async (id,password,setUserCtx,callback) => {
   });
   if (res.ok) {
     res = await res.json();
-    setUserCtx(res)
-    callback("/",{replace:true})
+    if (res.message) {
+      setUserCtx(res);
+      callback("/", { replace: true });
+    }
+    else{
+      return res.message
+    }
   }
 };
 
-let submitSignup = async (data,setUserCtx,callback) => {
+let submitSignup = async (data, setUserCtx, callback) => {
   let res = await fetch(endpoint.concat(path.register), {
     headers: { "Content-Type": "application/json" },
     method: "POST",
@@ -24,8 +28,8 @@ let submitSignup = async (data,setUserCtx,callback) => {
   if (res.ok) {
     res = await res.json();
     console.log(res);
-    setUserCtx(res)
-    callback("/",{replace:true})
+    setUserCtx(res);
+    callback("/", { replace: true });
   }
 };
 

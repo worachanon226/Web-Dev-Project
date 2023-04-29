@@ -1,7 +1,8 @@
-.bgHome{
-  background-color: #fa807247;
+.bgHome {
+  background-color: #FEE8DB;
   min-height: 92vh;
 }
+
 .container {
   display: flex;
   justify-content: center;
@@ -11,7 +12,7 @@
   margin-top: 5%;
 
 
-} 
+}
 
 .container .card {
   position: relative;
@@ -29,11 +30,11 @@
 
 }
 
-.content{
-    color: #000;
+.content {
+  color: #000;
 }
 
-.container .card .box1 {
+.section .card .box1 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -48,7 +49,7 @@
   transition: 0.5s;
 }
 
-.container .card .box2 {
+.container .content .box2 {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -63,10 +64,11 @@
   transition: 0.5s;
 }
 
-.container .card .box1:hover {
+.section .content .box1:hover {
   transform: translateY(-50px);
 }
-.container .card .box1:before {
+
+.section .content .box1:before {
   content: "";
   position: absolute;
   top: 0;
@@ -77,10 +79,11 @@
 }
 
 
-.container .card .box2:hover {
+.container .content .box2:hover {
   transform: translateY(-50px);
 }
-.container .card .box2:before {
+
+.container .content .box2:before {
   content: "";
   position: absolute;
   top: 0;
@@ -108,22 +111,23 @@ body .container .card .box2 .content a:hover {
   color: #000;
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
   .card {
-      width: 80%;
+    width: 80%;
   }
 }
 
- .picture{
+.picture {
   height: 350px;
-  width: 1570px; 
-} 
+  width: 1570px;
+}
 
 .head-text {
   position: relative;
 }
+
 .text-on-image {
-  
+
   font-size: 50px;
   position: absolute;
   right: 30%;
@@ -132,8 +136,51 @@ body .container .card .box2 .content a:hover {
   color: #ffffff;
 }
 
-@media (max-width:400px) {
-  .picture {
-      width: 80vw;
-  }
+.section {
+  padding: auto 17%;
+}
+
+.home {
+  width: 100%;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  align-items: center;
+}
+
+.home-img img {
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+  
+}
+
+.home-text h1 {
+  font-size: 70px;
+  color: #B34136;
+  
+}
+
+.home-text h2 {
+  font-size: 40px;
+  margin: 1rem 0 2rem;
+}
+
+.btnhome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffa500;
+  color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: inset 5px 5px 5px rgba(246, 161, 152, 0.523),
+    inset -5px -5px 15px rgba(252, 220, 116, 0.1),
+    5px 5px 15px rgba(240, 171, 9, 0.3), -5px -5px 15px rgb(253, 169, 143);
+
+}
+.btnhome:hover {
+  transform: scale(1.2) translateY(10px);
+  transition: 4.s;
 }
