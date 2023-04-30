@@ -46,12 +46,12 @@ function AddHostModal({ callback }) {
         <form onSubmit={handleSubmit}>
           <div className="d-flex flex-wrap gap-3 justify-content-center p-3 fromInput">
             <label for="canteen">Choose the Canteen:</label>
-            <select name="canteen" id="canteen">
+            <select name="canteen" className="canteen-box" id="canteen">
               {item && item.map((e)=>
                 <option value={e}>{e}</option>
               )}
             </select>
-            <input className="d-flex w-auto rounded w-25" type="number" min="0" oninput="validity.valid||(value='')"  placeholder="Max Tasks: 3" />
+            <input className="d-flex w-auto rounded w-25 task-inp" type="number" min="0" oninput="validity.valid||(value='')"  placeholder="Max Tasks: 3" />
           </div>
 
           <div className="d-flex gap-3 justify-content-center p-3">

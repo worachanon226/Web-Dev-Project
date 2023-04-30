@@ -5,10 +5,11 @@
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 15px;
-    height:30%;
+    min-height:35%;
     width: 35%;
     background-color: #FA8072;
     box-shadow: 0 0 15px rgba(8,7,16,0.6);
+    border: 7px solid #ffffff;
 }
 @media (max-width: 720px){
     .customStylesHostModal {
@@ -56,4 +57,14 @@ h2.textHostModal{
     margin:  0 30%;
     line-height:150%;
     border-radius: 30px;
+}
+.fromInput{
+    margin-top: 10%;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.task-inp ,.canteen-box{
+    border:3px solid #FA8072;
+    border-radius: 5px;
+    padding: 3px;
 }
