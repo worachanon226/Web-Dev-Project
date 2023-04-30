@@ -14,7 +14,7 @@ i {
 }
 
 .navbar-mainbg {
-  background-color: #FA8072;
+  background-color: #ff9e93;
   height: 72px;
   padding: 0px;
 }
@@ -138,8 +138,10 @@ i {
   }
 }
 
-.picturboxlayerNav{
-  width: 30px;
-  height: 30px;
-
+.logoNav{
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 20px;
 }
+

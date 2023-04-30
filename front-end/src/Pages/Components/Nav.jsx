@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import "./style/Nav.css";
 import $ from "jquery";
 
+
 const Nav = () => {
   let { user, setUser } = useUserContext();
   function animation() {
@@ -146,7 +147,7 @@ const Nav = () => {
 
         <Link className="nav-link d-flex" to='/'>
           <i className="fas far fa-chart-bar m-1">
-            <img className="picturboxlayerNav" src=''  />
+          <img className="logoNav" src="https://cdn.discordapp.com/attachments/1067613078163820554/1102185039233560667/395ec107171e462e62310e6c9b1b0fa2.png" />
           </i>
           <h3 className="text-center">Hew-Hew</h3>
         </Link>
