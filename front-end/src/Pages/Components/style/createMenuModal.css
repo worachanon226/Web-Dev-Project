@@ -10,6 +10,7 @@
     border-radius: 30px;
     box-shadow: 1px 2px 20px #f4aab9;
     min-height: 320px; 
+    border: 7px solid #ffffff;
 }
 .boxMenuModal {
     background-color: #ffF;
@@ -29,4 +30,8 @@
 
 .textMenu {
     margin-top: -15px;
+}
+
+.iconMenuModal {
+    
 }

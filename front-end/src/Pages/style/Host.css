@@ -40,6 +40,7 @@
     border-radius: 20px;
     background-color: #f8ddd2;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+    margin-top: 20px;
 }
 
 .btHostRe,.btAdd {
@@ -100,6 +101,7 @@
 .btnContainer {
     width: 90%;
     padding: 15px 0;
+    
 }
 
 
@@ -109,10 +111,12 @@
     background-color: #fff;
     border-radius: 45px;
     padding: 7px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
 }
 .btnContainer-in{
     background-color: #ff9e93;
     margin: 0 0 ;
     padding: 0 15px;
     border-radius: 45px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
 }
