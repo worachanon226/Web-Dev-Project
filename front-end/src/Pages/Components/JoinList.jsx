@@ -2,10 +2,11 @@ import {deleteMenu ,getTask} from "../../Controller/GuestController";
 import React, { useState } from "react";
 
 const JoinList = ({ props, hostId, callback }) => {
-
-  
+let [color,setColor] = useState("white")
+  //  if(props.is)
+  console.log(props);
   return (
-    <div className="border border-danger rounded d-flex row mb-3 mt-3 text-center">
+    <div style={{backgroud:color}} className="border border-danger rounded d-flex row mb-3 mt-3 text-center">
       <div className="col ">
         <div className="m-1">Canteen: {props.store}</div>
         <div className="m-1">Menu: {props.comment}</div>

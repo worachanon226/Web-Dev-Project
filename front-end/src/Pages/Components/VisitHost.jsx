@@ -28,7 +28,7 @@ const VisitHost = () => {
       <div className='cardoutVisit'>
         {menu.map((e) => (
           e.userId === user.id && (
-          <div className="w-50">
+          <div className=" ccc">
             <JoinList
               key={e.id}
               props={e}
@@ -37,10 +37,6 @@ const VisitHost = () => {
               hostId={hostId}
             ></JoinList>
           </div>
-
-
-                
-
         )))}
 
       </div>
