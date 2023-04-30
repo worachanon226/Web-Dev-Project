@@ -4,6 +4,7 @@ import { finishTask, getTask } from "../../Controller/HostController";
 import List from "./List";
 import "./style/ManageHost.css";
 import Loading from "./Loading";
+import LoadingTask from "./LoadingTask";
 
 const ManageHost = () => {
   let [task, setTask] = useState();
@@ -36,11 +37,7 @@ const ManageHost = () => {
 
       <div className="Container d-flex row justify-content-center">
         {!task.menus.length && (
-          <img id="clock"
-            className="picturwait"
-            src="https://cdn.dribbble.com/users/1478651/screenshots/9683496/media/b921a805a76e70f0c36f0410310be009.gif"
-            alt="hew"
-          />
+          <LoadingTask/>
         )}
         {task.menus &&
           task.menus.map((e) => (
