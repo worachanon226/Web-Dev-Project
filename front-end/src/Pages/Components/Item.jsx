@@ -18,9 +18,9 @@ let Item = ({ data, control }) => {
           src="https://cdn.dribbble.com/users/2063527/screenshots/11467383/media/c1ad5d2ebbdebb25282247869816cc9c.gif"
           alt="hew"
         />
-        <h4 className="canteenname">Canteen:{data.canteen}</h4>
-        <p className="sum">Total:{data.totalPrice}</p>
-        <p className="">Available:{data.currentTasks}/{data.maxTasks}</p>
+        <h4 className="canteenname"><b>Canteen:</b>{data.canteen}</h4>
+        <p className="sum"><b>Total:</b>{data.totalPrice}</p>
+        <p className=""><b>Available:</b>{data.currentTasks}/{data.maxTasks}</p>
         {userInfo && (
           <div className="quota">
             <h5>Owner Contact</h5>
