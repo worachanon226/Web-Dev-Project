@@ -6,6 +6,7 @@
 }
 
 .cardoutVisit {
+    border:7px solid #FA8072;
     height: fit-content;
     width: 60%;
     min-height: 150px;
