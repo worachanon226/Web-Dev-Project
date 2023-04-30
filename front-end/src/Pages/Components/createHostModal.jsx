@@ -5,12 +5,15 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
 import "./style/createHostModal.css";
-
+import { getCanteenData } from "../../Controller/HostController";
 
 function AddHostModal({ callback }) {
   let {user} = useUserContext()
+  let [item,setItem] = useState()
   const [modalIsOpen, setIsOpen] = useState(false);
-
+  if(item === undefined){
+    getCanteenData().then((res)=>setItem(res))
+  }
   let handleSubmit = (event) => { 
     if (event.target[0].value !== "" && event.target[1].value !== "") {
       let data = {
@@ -42,7 +45,12 @@ function AddHostModal({ callback }) {
 
         <form onSubmit={handleSubmit}>
           <div className="d-flex flex-wrap gap-3 justify-content-center p-3 fromInput">
-            <input className="d-flex w-auto rounded w-25"  placeholder="Canteen" />
+            <label for="canteen">Choose the Canteen:</label>
+            <input type="select" name="canteen" id="canteen">
+              {item.map((e)=>{
+                <option value={e}>{e}</option>
+              })}
+            </input>
             <input className="d-flex w-auto rounded w-25"  placeholder="Max Tasks" />
           </div>
 

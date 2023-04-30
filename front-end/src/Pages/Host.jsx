@@ -1,4 +1,4 @@
-import { getTasks, deleteTask } from "../Controller/HostController";
+import { getTasks, deleteTask, getCanteenData } from "../Controller/HostController";
 import { AddHostModal } from "./Components/createHostModal";
 import { useUserContext } from "../userContext";
 import React, { useState } from "react";
@@ -13,9 +13,9 @@ import { FaUser } from "react-icons/fa";
 
 function Host() {
   let { user } = useUserContext();
-
+  let [item,setItem] = useState()
   let [task, setTask] = useState();
-  if (task === undefined) {
+  if (task === undefined || item === undefined) {
     getTasks(setTask);
     return <Loading/>
   }
@@ -30,9 +30,7 @@ function Host() {
       REFRESH
       </button>
       <div className='hostListcontainHost p-4'>
-        
         {task.map((e) => {
-          console.log(e);
           if (e.userId === user.id) {
             return (
               <Item

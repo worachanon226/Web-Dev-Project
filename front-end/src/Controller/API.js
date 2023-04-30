@@ -1,5 +1,5 @@
 let API = {
-    endpoint: "http://api.paleumm.com",
+    endpoint: "http://api2.paleumm.com",
     path: {
         register: "/Auth/register",
         login: "/Auth/login",
@@ -12,6 +12,7 @@ let API = {
         getMenus:"/Task/getMenusTask",
         deleteMenu: "/Task/deleteMenu",
         deleteTask:"/Task/deleteTask",
+        getCanteenData:"/Canteen/getCanteensData"
     }
 }
 export default API

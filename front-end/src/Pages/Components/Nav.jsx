@@ -53,10 +53,6 @@ const Nav = () => {
     });
   }, []);
 
-  let l = {
-    width: "135px",
-  };
-
   let set1 = () => {
     return (
       <>
@@ -158,7 +154,7 @@ const Nav = () => {
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         <div
