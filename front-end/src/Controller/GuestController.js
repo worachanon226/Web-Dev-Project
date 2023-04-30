@@ -6,14 +6,13 @@ let getTask = async (id, callback) => {
   });
   let response = await res.json();
   callback(response.menus);
-  return response.available
+  return {taskAvailable:response.available,taskCanteen:response.canteen}
 };
 let getTasks = async (callback) => {
   let res = await fetch(endpoint.concat(path.getTasks), {
     method: "GET",
   });
   let response = await res.json();
-  console.log(response);
   callback(response);
 };
 let getMenus = async (id, callback) => {
@@ -47,4 +46,13 @@ let getUserInfo = async (id) => {
     return res;
   }
 };
-export {getTask,getTasks,addMenu,getMenus,deleteMenu,getUserInfo};
+let getCanteenData = async (canteen) => {
+  let res = await fetch(endpoint.concat(path.getCanteenData));
+  if (res.ok) {
+    res = await res.json();
+    res = await res.filter((e)=>e.name === canteen)
+    return res[0].stores || {stores:""}
+  }
+  return []
+};
+export {getTask,getTasks,addMenu,getMenus,deleteMenu,getUserInfo,getCanteenData};

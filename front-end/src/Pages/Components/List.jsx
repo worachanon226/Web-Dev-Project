@@ -7,8 +7,7 @@ const List = ({ props, hostId, callback }) => {
     color.bg = "#a3ff9e";
     color.bd = "#23ff17";
   } else color.bg = "yellow";
-
-  
+  console.log(props);
   return (
     <div className="border border-danger rounded d-flex row mb-3 mt-3 text-center">
       <div className="col ">

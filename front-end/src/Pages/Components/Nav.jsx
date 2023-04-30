@@ -71,14 +71,14 @@ const Nav = () => {
         </li>
 
 
-        <li className="nav-item" id='orderBtn'>
+        {/* <li className="nav-item" id='orderBtn'>
           <Link className="nav-link d-flex" to="/order">
             <i className="far fa-tachometer-alt m-1">
               <IoFastFood />
             </i>
             <h5 className="text-center">Order</h5>
           </Link>
-        </li>
+        </li> */}
 
         <li className="nav-item">
           <Link

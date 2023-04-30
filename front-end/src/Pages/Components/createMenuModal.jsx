@@ -1,15 +1,14 @@
 import { addMenu } from "../../Controller/GuestController";
-import user from "../../Controller/test/User.json";
 import { useUserContext } from "../../userContext";
-import { IoCloseSharp } from 'react-icons/io5';
+import { IoCloseSharp } from "react-icons/io5";
 import React, { useState } from "react";
-import './style/createMenuModal.css';
+import "./style/createMenuModal.css";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "react-modal";
+import { getCanteenData } from "../../Controller/GuestController";
 
-
-function AddMenuModal({ callback, taskId }) {
-  let { user } = useUserContext()
+function AddMenuModal({ callback, taskId, canteen }) {
+  let { user } = useUserContext();
   const [modalIsOpen, setIsOpen] = useState(false);
 
   let handleSubmit = (event) => {
@@ -33,18 +32,31 @@ function AddMenuModal({ callback, taskId }) {
       setIsOpen(false);
     }
   };
+  let [item, setItem] = useState();
+  let [storeSelected, setStore] = useState("");
+  if (item === undefined) {
+    getCanteenData(canteen).then((res) => {
+
+      setItem(res);
+    });
+  }
+
   return (
     <div>
-      <button className="addBtn" onClick={() => setIsOpen(true)}>ADD</button>
+      <button className="addBtn" onClick={() => setIsOpen(true)}>
+        ADD
+      </button>
       <Modal
         isOpen={modalIsOpen}
         ariaHideApp={false}
         onRequestClose={() => setIsOpen(false)}
-        className='customStylesMenuModal d-flex flex-column justify-content-around'
+        className="customStylesMenuModal d-flex flex-column justify-content-around"
         contentLabel="Example Modal"
       >
         <div className="d-flex justify-content-end">
-          <button onClick={() => setIsOpen(false)}><IoCloseSharp className='iconMenuModal' size={25} /></button>
+          <button onClick={() => setIsOpen(false)}>
+            <IoCloseSharp className="iconMenuModal" size={25} />
+          </button>
         </div>
 
 
@@ -53,18 +65,52 @@ function AddMenuModal({ callback, taskId }) {
         
         <form onSubmit={handleSubmit}>
           <div class=" row gap-3 mb-3 textMenuModal ">
-            <input className="col w-auto rounded"  placeholder="Store" />
+            <label for="store">Choose Store:</label>
+            <select
+              name="store"
+              id="store"
+              onChange={() => {
+                let x = document.getElementById("store").value;
+                
+                setStore(x);
+              }}
+            >
+              <option value={"ร้านเทคโนลาดกระบัง"}>Choose store</option>
+              {item &&
+                item
+                  .map((e) => e.name)
+                  .map((e) => <option value={e}>{e}</option>)}
+            </select>
+
+            {/* <label for="menu">Choose Menu:</label>
+            <select name="menu" id="menu">
+              {storeSelected &&
+                item
+                  .filter((e) => e.name === storeSelected)
+                  .map((e) => e.menus)
+                  .map((e) => e.name)}
+            </select> */}
             <input className="col align-self w-auto rounded" placeholder="Menu" />
           </div>
 
           <div class="row gap-3 mb-3 textMenuModal">
-            <input className="col align-self w-auto rounded"  type="number" placeholder="Price" />
-            <input className="col w-auto rounded"  type="number" placeholder="Amount" />
-            <input className="rounded w-full"  placeholder="Comment" />
+            <input
+              className="col align-self w-auto rounded"
+              type="number"
+              placeholder="Price"
+            />
+            <input
+              className="col w-auto rounded"
+              type="number"
+              placeholder="Amount"
+            />
+            <input className="rounded w-full" placeholder="Comment" />
           </div>
 
           <div className="d-flex gap-3 justify-content-center">
-            <button className="rounded bg-light w-25" type="submit">ADD</button>
+            <button className="rounded bg-light w-25" type="submit">
+              ADD
+            </button>
           </div>
         </form>
         
