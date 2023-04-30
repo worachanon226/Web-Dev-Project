@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import React, { useState } from "react";
 import "./style/VisitHost.css";
 import List from "./List"
+import JoinList from "./JoinList"
 import Loading from "./Loading";
 const VisitHost = () => {
   let [TaskAvailable,setTaskAvailable] = useState(true)
@@ -27,29 +28,15 @@ const VisitHost = () => {
       <div className='cardoutVisit'>
         {menu.map((e) => (
           e.userId === user.id && (
-          <div className="w-50">
-            <List
+          <div className=" ccc">
+            <JoinList
               key={e.id}
               props={e}
               userId={user.id}
               callback={setMenu}
               hostId={hostId}
-            ></List>
-            
-
-            {
-                <button className="btdevisit"
-                  onClick={async () => {
-                    await deleteMenu(hostId, e.id);
-                    getTask(hostId, setMenu);
-                  }}
-                >
-                  Delete
-                </button>
-
-             
-            } </div>
-
+            ></JoinList>
+          </div>
         )))}
 
       </div>

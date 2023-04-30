@@ -7,7 +7,7 @@
 
 .cardoutVisit {
     height: fit-content;
-    width: 450px;
+    width: 60%;
     min-height: 150px;
     display: flex;
     align-items: center;
@@ -135,4 +135,7 @@
     .inputMerge {
         flex-direction: column;
     }
+}
+.ccc{
+    width: 80%;
 }
