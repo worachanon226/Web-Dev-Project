@@ -38,7 +38,7 @@
     height: 60%;
     width: 90%;
     border-radius: 20px;
-    background-color: #f8ddd2;
+    background-color: #f5d0c2;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
     margin-top: 20px;
 }
@@ -107,11 +107,11 @@
 
  .textheader{
     font-family: Monospace;
-    margin: 0 20px;
     background-color: #fff;
     border-radius: 45px;
     padding: 7px;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+    padding: 0 20px;
 }
 .btnContainer-in{
     background-color: #ff9e93;

@@ -6,6 +6,7 @@
     transform: translate(-50%, -50%);
     border-radius: 15px;
     min-height:35%;
+    min-height: 320px; 
     width: 35%;
     background-color: #FA8072;
     box-shadow: 0 0 15px rgba(8,7,16,0.6);
@@ -59,7 +60,7 @@ h2.textHostModal{
     border-radius: 30px;
 }
 .fromInput{
-    margin-top: 10%;
+    margin-top: 20px;
     background-color: #fff;
     border-radius: 15px;
 }

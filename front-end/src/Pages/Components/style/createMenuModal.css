@@ -4,7 +4,8 @@
     position: absolute;
     transform: translate(-50%, -50%);
     background-color: #ff8066;
-    height: 320px;
+    min-height:35%;
+    
     width: 60%;
     padding: 1.2rem;
     border-radius: 30px;
@@ -13,8 +14,10 @@
     border: 7px solid #ffffff;
 }
 .boxMenuModal {
-    background-color: #ffF;
+    background-color: #ffffff;
     height: 320px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 
 }
 
@@ -32,6 +35,16 @@
     margin-top: -15px;
 }
 
-.iconMenuModal {
-    
+
+
+.iconMenuModal{
+    padding: auto;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.task-inp ,.roundedbox{
+    border:3px solid #FA8072;
+    border-radius: 5px;
+    padding: 3px;
 }

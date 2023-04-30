@@ -60,62 +60,54 @@ function AddMenuModal({ callback, taskId, canteen }) {
         </div>
 
 
-
+     
         <h2 class='d-flex justify-content-center textMenu'>Add</h2>
-
+        
         <form onSubmit={handleSubmit}>
-            <div>
-            <div class=" row gap-3 mb-3 textMenuModal ">
-              <label for="store">Choose Store:</label>
-              <select
-                name="store"
-                id="store"
-                onChange={() => {
-                  let x = document.getElementById("store").value;
-
-                  setStore(x);
-                }}
-              >
-                <option value={"ร้านเทคโนลาดกระบัง"}>Choose store</option>
-                {item &&
-                  item
-                    .map((e) => e.name)
-                    .map((e) => <option value={e}>{e}</option>)}
-              </select>
-
-              {/* <label for="menu">Choose Menu:</label>
-            <select name="menu" id="menu">
-              {storeSelected &&
+        <div class="d-flex flex-wrap gap-3 justify-content-center p-3 boxMenuModal">
+          <div class=" row gap-3 mb-3 textMenuModal ">
+            <label for="store">Choose Store:</label>
+            <select className="roundedbox"
+              name="store"
+              id="store"
+              onChange={() => {
+                let x = document.getElementById("store").value;
+                
+                setStore(x);
+              }}
+            >
+              <option  value={"ร้านเทคโนลาดกระบัง"}>Choose store</option>
+              {item &&
                 item
-                  .filter((e) => e.name === storeSelected)
-                  .map((e) => e.menus)
-                  .map((e) => e.name)}
-            </select> */}
-              <input className="col align-self w-auto rounded" placeholder="Menu" />
-            </div>
+                  .map((e) => e.name)
+                  .map((e) => <option value={e}>{e}</option>)}
+            </select>
 
-            <div class="row gap-3 mb-3 textMenuModal">
-              <input
-                className="col align-self w-auto rounded"
-                type="number"
-                placeholder="Price"
-              />
-              <input
-                className="col w-auto rounded"
-                type="number"
-                placeholder="Amount"
-              />
-              <input className="rounded w-full" placeholder="Comment" />
-            </div>
+            <input className="col align-self w-auto rounded roundedbox" placeholder="Menu" />
+          </div>
 
-            <div className="d-flex gap-3 justify-content-center">
-              <button className="rounded bg-light w-25" type="submit">
-                ADD
-              </button>
-            </div>
-            </div>
+          <div class="row gap-3 mb-3 textMenuModal">
+            <input
+              className="col align-self w-auto rounded roundedbox"
+              type="number"
+              placeholder="Price"
+            />
+            <input
+              className="col w-auto rounded roundedbox"
+              type="number"
+              placeholder="Amount"
+            />
+            <input className="rounded w-full roundedbox" placeholder="Comment" />
+          </div>
+          </div>
+          <div className="d-flex gap-3 justify-content-center p-3">
+            <button className="rounded bg-light btsumit" type="submit">
+              ADD
+            </button>
+          </div>
+          
         </form>
-
+        
 
       </Modal>
     </div>
