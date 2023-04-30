@@ -46,7 +46,7 @@ public class DatabaseService
     public async Task<Models.Task> GetTask(string id) =>
         await _taskCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
     public async Task<List<Models.Task>> GetTasks() =>
-        await _taskCollection.Find(x => x.Available == true).ToListAsync();
+        await _taskCollection.Find(_ => true).ToListAsync();
     public async Task CreateTask(Models.Task newTask) =>
         await _taskCollection.InsertOneAsync(newTask);
 
