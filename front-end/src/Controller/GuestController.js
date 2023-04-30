@@ -13,6 +13,7 @@ let getTasks = async (callback) => {
     method: "GET",
   });
   let response = await res.json();
+  console.log(response);
   callback(response);
 };
 let getMenus = async (id, callback) => {

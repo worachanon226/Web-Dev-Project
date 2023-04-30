@@ -7,19 +7,21 @@ import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./style/VisitHost.css";
 import List from "./List"
+import Loading from "./Loading";
 const VisitHost = () => {
-  let available = true
+  let TaskAvailable = true
   let { user } = useUserContext();
   let [menu, setMenu] = useState();
   let { hostId } = useParams();
   if (menu === undefined) {
-    available = getTask(hostId, setMenu);
-    return <div>Loading</div>;
+    TaskAvailable = getTask(hostId, setMenu);
+    return <Loading/>
   }
   
+  console.log(TaskAvailable);
   return (
     <div className="d-flex flex-column align-items-center flex-wrap bgVisitHost">
-      {available && <AddMenuModal callback={setMenu} taskId={hostId} />}
+      {TaskAvailable && <AddMenuModal callback={setMenu} taskId={hostId} />}
       <div className="mt-5 rounded cardoutVisit ">
         
         {menu.map((e) => (
