@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Item from "./Components/Item";
 import './style/Guest.css'
 import Loading from "./Components/Loading";
-
+import { useUserContext } from "../userContext";
 function Host() {
-
+  let {user} = useUserContext()
   let [task, setTask] = useState();
   if (task === undefined) {
     getTasks(setTask);
@@ -21,7 +21,7 @@ function Host() {
         REFRESH
       </button>
       <div className="flex-row hostListcontainGuest">
-        {task.map((e) => (
+        {task.filter(e=>e.userId !== user.id).map((e) => (
           <Item
             key={e.id}
             data={e}

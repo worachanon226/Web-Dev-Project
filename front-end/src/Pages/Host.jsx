@@ -19,6 +19,7 @@ function Host() {
     getTasks(setTask);
     return <Loading />;
   }
+  task = task.filter((e) => e.userId === user.id);
   return (
     <div className="containerStyle">
       <div className="d-flex  justify-content-end  btnContainer">
@@ -37,9 +38,10 @@ function Host() {
       <div className="d-flex  justify-content-end gap-3 btnContainer-in p-2">
         <h1 className="textheader m-auto">Your Host</h1>
       </div>
-      <div className="hostListcontainHost p-4 ">
-        {task.map((e) => {
-          if (e.userId === user.id) {
+      {task && task.length > 0 && (
+        <div className="hostListcontainHost p-4 ">
+          {task.map((e) => {
+            // if (e.userId === user.id) {
             return (
               <Item
                 key={e.id}
@@ -54,10 +56,10 @@ function Host() {
                 }
               />
             );
-          }
-          return <></>;
-        })}
-      </div>
+            // }
+          })}
+        </div>
+      )}
     </div>
   );
 }
