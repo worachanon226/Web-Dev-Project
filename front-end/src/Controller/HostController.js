@@ -6,7 +6,6 @@ let getTasks = async (callback) => {
     method: "GET",
   });
   let response = await res.json();
-  console.log(response);
   callback(response);
 };
 let getTask = async (id, callback) => {
