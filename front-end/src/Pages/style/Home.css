@@ -184,3 +184,24 @@ body .container .card .box2 .content a:hover {
   transform: scale(1.2) translateY(10px);
   transition: 4.s;
 }
+
+@media (max-width:400px) {
+  .home-img {
+      width: 90vw;
+  }
+
+  .inputManage {
+      flex-direction: row;
+  }
+}
+
+
+@media (max-width:300px) {
+  .home-img {
+      width: 90vw;
+  }
+
+  .inputManage {
+      flex-direction: column;
+  }
+}

@@ -33,6 +33,7 @@ function AddHostModal({ callback }) {
         className='customStylesHostModal'
         contentLabel="Example Modal"
       >
+      
         <div className="d-flex flex-wrap justify-content-end ">
           <button onClick={() => setIsOpen(false)}><IoCloseSharp size={25} /></button>
         </div>
@@ -49,6 +50,7 @@ function AddHostModal({ callback }) {
             <button className="rounded bg-light w-25" type="submit">ADD</button>
           </div>
         </form>
+
       </Modal>
     </div>
   );

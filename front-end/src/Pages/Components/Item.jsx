@@ -4,13 +4,15 @@ import './style/Item.css'
 
 let Item = ({data,control}) => {
   return (
+
     <div className='boxStyle'>
-      <p>โรงอาหาร:{data.canteen}</p>
-      <p>รวม:{data.totalPrice}</p>
+    
+      <h4 className="canteenname">โรงอาหาร:{data.canteen}</h4>
+      <p className="sum">รวม:{data.totalPrice}</p>
       <Link className="btJoin" to={data.id}>JOIN</Link>
       {control}
-      
     </div>
+
   );
 };
 

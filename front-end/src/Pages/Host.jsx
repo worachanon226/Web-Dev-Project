@@ -2,9 +2,11 @@ import { getTasks, deleteTask } from "../Controller/HostController";
 import { AddHostModal } from "./Components/createHostModal";
 import { useUserContext } from "../userContext";
 import React, { useState } from "react";
+import {MdDelete} from 'react-icons/md'
 import Item from "./Components/Item";
 import './style/Host.css'
 import Loading from "./Components/Loading";
+import { FaUser } from "react-icons/fa";
 
 
 
@@ -27,8 +29,8 @@ function Host() {
       >
         refresh
       </button>
-      
       <div className='hostListcontainHost'>
+   
         {task.map((e) => {
           if (e.userId === user.id) {
             return (
@@ -48,10 +50,12 @@ function Host() {
           }
           return <></>;
         })}
-      </div>
+        </div>
+      
     </div>
   );
 }
+
 let Control = ({ id, callback }) => {
   return (
     <button className="btHostDe"
@@ -60,7 +64,9 @@ let Control = ({ id, callback }) => {
         getTasks(callback);
       }}
     >
-      Delete
+       <div className="d-flex flex-wrap justify-content-end ">
+          <MdDelete classname='iconMenuHost' size={25} />
+        </div>
     </button>
   );
 };
