@@ -87,6 +87,10 @@
     background-color: #ff9e93;
     margin: 0 0 ;
     padding: 0 15px;
+    /* position: relative;
+    left:50%;
+    width: fit-content;
+    transform: translate(-50%); */
     border-radius: 45px;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
 }

@@ -12,17 +12,20 @@ const ManageHost = () => {
     getTask(hostId, setTask);
     return <Loading></Loading>;
   }
-var startDate = new Date();
-var endDate   = new Date();
-var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
+  var startDate = new Date();
+  var endDate = new Date();
+  var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
   return (
-    <div className="bgManage">
+    <div className="containerStyle">
       <div className="d-flex  justify-content-end  btnContainer">
         <div className="d-flex  justify-content-end gap-3 btnContainer-in">
-          <button className="btHostRe" onClick={async () => {
-            await finishTask(task.id,false)
-            getTask(hostId, setTask);
-          }}>
+          <button
+            className="btHostRe"
+            onClick={async () => {
+              await finishTask(task.id, false);
+              getTask(hostId, setTask);
+            }}
+          >
             Finish
           </button>
         </div>
@@ -31,22 +34,23 @@ var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
         <h1 className="textheader m-auto">Menu</h1>
       </div>
 
-      <div className="Container d-flex justify-content-center">
-        <div className="CardMH">
-          <div className="MHCard">
-            {!task.menus.length && <img className="picturwait"src="https://cdn.dribbble.com/users/1478651/screenshots/9683496/media/b921a805a76e70f0c36f0410310be009.gif"alt="hew"
-        />}
-            {task.menus &&
-              task.menus.map((e) => (
-                <List
-                  key={e.id}
-                  props={e}
-                  callback={setTask}
-                  hostId={hostId}
-                ></List>
-              ))}
-          </div>
-        </div>
+      <div className="Container d-flex row justify-content-center">
+        {!task.menus.length && (
+          <img
+            className="picturwait"
+            src="https://cdn.dribbble.com/users/1478651/screenshots/9683496/media/b921a805a76e70f0c36f0410310be009.gif"
+            alt="hew"
+          />
+        )}
+        {task.menus &&
+          task.menus.map((e) => (
+            <List
+              key={e.id}
+              props={e}
+              callback={setTask}
+              hostId={hostId}
+            ></List>
+          ))}
       </div>
     </div>
   );
