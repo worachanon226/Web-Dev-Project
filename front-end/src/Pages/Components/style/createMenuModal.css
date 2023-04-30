@@ -17,7 +17,9 @@
     background-color: #ffffff;
     height: 320px;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+
+
 
 }
 
@@ -47,4 +49,18 @@
     border:3px solid #FA8072;
     border-radius: 5px;
     padding: 3px;
+}
+
+.btsumit {
+    width: 100px;
+    height: 35px;
+    margin-top: 20px;
+}
+
+h2.textHostMenu{
+    background-color: #fff;
+    
+    margin:  0 40%;
+    line-height:150%;
+    border-radius: 30px;
 }

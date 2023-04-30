@@ -61,7 +61,7 @@ function AddMenuModal({ callback, taskId, canteen }) {
 
 
      
-        <h2 class='d-flex justify-content-center textMenu'>Add</h2>
+        <h2 class='d-flex justify-content-center textHostMenu'>Add</h2>
         
         <form onSubmit={handleSubmit}>
         <div class="d-flex flex-wrap gap-3 justify-content-center p-3 boxMenuModal">
@@ -100,7 +100,7 @@ function AddMenuModal({ callback, taskId, canteen }) {
             <input className="rounded w-full roundedbox" placeholder="Comment" />
           </div>
           </div>
-          <div className="d-flex gap-3 justify-content-center p-3">
+          <div className="d-flex gap-3 justify-content-center">
             <button className="rounded bg-light btsumit" type="submit">
               ADD
             </button>
