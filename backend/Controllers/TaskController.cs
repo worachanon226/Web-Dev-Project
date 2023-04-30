@@ -61,6 +61,10 @@ public class TaskController : ControllerBase
     [HttpPost("addMenu")]
     public async Task<ActionResult> AddMenu(string id, Models.MenuTask menu)
     {
+        var task = await _service.GetTask(id);
+        if (task.CurrentTasks + 1 >= task.MaxTasks)
+            await _service.SetTaskAvailable(id, false);
+
         await _service.AddMenu(id, menu);
         return Ok("Menu is already added.");
     }
@@ -82,6 +86,13 @@ public class TaskController : ControllerBase
             if (diff.Hours >= 1)
                 tasks.Remove(tasks[i]);
         }
+        return Ok(tasks);
+    }
+
+    [HttpGet("getAllTasks")]
+    public async Task<ActionResult<List<Models.Task>>> GetAllTasks()
+    {
+        List<Models.Task> tasks = await _service.GetTasks();
         return Ok(tasks);
     }
 

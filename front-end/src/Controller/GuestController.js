@@ -6,6 +6,7 @@ let getTask = async (id, callback) => {
   });
   let response = await res.json();
   callback(response.menus);
+  return response.available
 };
 let getTasks = async (callback) => {
   let res = await fetch(endpoint.concat(path.getTasks), {
