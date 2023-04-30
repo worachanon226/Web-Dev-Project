@@ -20,7 +20,7 @@ function Host() {
       >
         refresh
       </button>
-      <div className="flex-row hostListcontain">
+      <div className="flex-row hostListcontainGuest">
         {task.map((e) => (
           <Item
             key={e.id}
