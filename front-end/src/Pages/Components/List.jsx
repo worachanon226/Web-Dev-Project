@@ -4,16 +4,21 @@ import React, { useState } from "react";
 const List = ({ props, hostId, callback }) => {
   let color = { bg: "", bd: "" };
   if (props.isConfirm) {
-    color.bg = rgba(102, 255, 30, 0.49);
-    color.bd = rgba(102, 255, 30, 1);
+    color.bg = "rgba(102, 255, 30, 0.49)";
+    color.bd = "rgba(102, 255, 30, 1)";
   } else {
+<<<<<<< HEAD
     color.bg = rgba(246, 255, 74, 0.67);
     color.bd = rgba(246, 255, 84, 1);
+=======
+    color.bg = "rgba(253, 255, 216, 1)";
+    color.bd = "rgba(246, 255, 84, 1)"
+>>>>>>> fe8c5dc19476e465a80895e9ce2569cf9a1c21b5
   }
   return (
     <div
-      style={{ background: color.bg }}
-      className="border border-danger rounded d-flex row mb-3 mt-3 text-center"
+      style={{ background: color.bg ,borderColor: color.bd}}
+      className="border-10 rounded d-flex row mb-3 mt-3 text-center"
     >
       <div className="col ">
         <div className="m-1">Canteen: {props.store}</div>

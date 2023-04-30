@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./style/Item.css";
 import { getUserInfo } from "../../Controller/GuestController";
-let Item = ({ data, control }) => {
+let Item = ({ data, control ,disabled}) => {
   let [userInfo, setUserinfo] = useState();
   if (userInfo === undefined) {
     getUserInfo(data.userId).then((res) => {
       setUserinfo(res);
     });
   }
-
+// console.log();
   return (
     <div className="boxStyle">
       <div className="boxStyleyer2">
@@ -18,9 +18,15 @@ let Item = ({ data, control }) => {
           src="https://cdn.dribbble.com/users/2063527/screenshots/11467383/media/c1ad5d2ebbdebb25282247869816cc9c.gif"
           alt="hew"
         />
+<<<<<<< HEAD
         <h4 className="canteenname"><b>Canteen:</b>{data.canteen}</h4>
         <p className="sum"><b>Total:</b>{data.totalPrice}</p>
         <p className=""><b>Available:</b>{data.currentTasks}/{data.maxTasks}</p>
+=======
+        <h4 className="canteenname">Canteen:{data.canteen}</h4>
+        <p className="sum">Total:{data.menus.map(e=>e.price).reduce((a,b)=>a+b,0)}</p>
+        <p className="">Available:{data.currentTasks}/{data.maxTasks}</p>
+>>>>>>> fe8c5dc19476e465a80895e9ce2569cf9a1c21b5
         {userInfo && (
           <div className="quota">
             <h5>Owner Contact</h5>
@@ -33,9 +39,9 @@ let Item = ({ data, control }) => {
           </div>
         )}
       </div>
-      <Link className="btJoin" to={data.id}>
+      {disabled || <Link className="btJoin" to={data.id}>
         JOIN
-      </Link>
+      </Link>}
       <div>
       {control}
       </div>
