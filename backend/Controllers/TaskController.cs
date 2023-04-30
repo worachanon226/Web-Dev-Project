@@ -38,12 +38,25 @@ public class TaskController : ControllerBase
         return Ok(task);
     }
 
-    [HttpPost("updateTaskMenu")]
-    public async Task<ActionResult> UpdateTaskMenu(string taskID, Models.MenuTask updated)
+    [HttpPost("update")]
+    public async Task<ActionResult> Update(Models.Task request)
     {
-        await _service.UpdateMenu(taskID, updated);
-        return Ok("Updated");
+        Models.Task task = new Models.Task()
+        {
+            UserId = request.UserId,
+            Canteen = request.Canteen,
+            Menus = new List<Models.MenuTask>(),
+            MaxTasks = request.MaxTasks,
+            CurrentTasks = 0,
+            Available = true,
+            TotalPrice = 0,
+            time = DateTime.Now,
+        };
+
+        await _service.CreateTask(task);
+        return Ok(task);
     }
+
 
     [HttpPost("setAvailable")]
     public async Task<ActionResult> SetAvailableTask(string id, bool b)
@@ -62,13 +75,17 @@ public class TaskController : ControllerBase
     public async Task<ActionResult> AddMenu(string id, Models.MenuTask menu)
     {
         var task = await _service.GetTask(id);
-        task.CurrentTasks += 1;
+        if (task.CurrentTasks < task.MaxTasks)
+        {
+            task.CurrentTasks += 1;
+            await _service.SetTaskCount(id, task.CurrentTasks);
+            await _service.AddMenu(id, menu);
+            return Ok("Menu is already added.");
+        }
 
-        if (task.CurrentTasks >= task.MaxTasks)
-            await _service.SetTaskAvailable(id, false);
+        await _service.SetTaskAvailable(id, false);
+        return Ok("Task's full");
 
-        await _service.AddMenu(id, menu);
-        return Ok("Menu is already added.");
     }
 
     [HttpGet("getTask")]
