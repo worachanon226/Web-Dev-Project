@@ -1,60 +1,48 @@
 .bgManage {
-    background-color: #fa807247;
+    background-color: #FEE8DB;
     padding: 50px 0 15px 0;
     height: fit-content;
     min-height: 150vh;
 
 }
-/* .cardoutManage{
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    
-} */
 
-.textCardManage{
-    background-color: #ff8066;
-    height: fit-content;
-    width: 65%;
-    padding: 10px;
-}
-.textCardManage h4 {
-
-    align-items: center;
-    font-size: 18px;
-    width: 100%;
-    height: auto;
-    padding: 2px;
-    background-color: white;
-}
 
 .CardMH{
-    background-color: aqua;
-    width: 60%;
+    height: fit-content;
+    width: 450px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: #FFF;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(8, 7, 16, 0.6);
+    padding: 3px;
 }  
 
 
-.cardManage{
+
+/* .cardManage{
     display: flex;
     gap: 20px;
-}
+} */
 
-.inputManage{
+/* .inputManage{
     display: flex;
     flex-direction: column;
     flex-basis: 25%;
-}
+} */
 
-.btnSubmitManageS:hover {
+/* .btnSubmitManageS:hover {
     background-color: rgb(85, 230, 37);
 }
 
 .btnSubmitManageD:hover {
     background-color: rgb(255, 8, 8);
-}
+} */
 
-.btnSubmitMS,
+/* .btnSubmitMS,
 .btnSubmitMD {
     background-color: white;
     margin-top: 5px;
@@ -63,7 +51,7 @@
     padding: 5px 20px 5px 20px;
     text-decoration: none;
     color:#000
-}
+} */
 
 @media (max-width:400px) {
     .cardoutManage {

@@ -14,9 +14,11 @@ const ManageHost = () => {
   }
   return (
     <div className="bgManage">
-      <h1>Menu</h1>
+      <h1 className="text-center">Menu</h1>
+
       <div className="Container d-flex justify-content-center" >
         <div className="CardMH">
+          <div className="MHCard">
 
 
 
@@ -25,6 +27,7 @@ const ManageHost = () => {
             task.menus.map((e) => (
               <List key={e.id} props={e} callback={setTask} hostId={hostId}></List>
             ))}
+            </div>
         </div>
       </div>
     </div>

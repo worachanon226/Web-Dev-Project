@@ -48,7 +48,7 @@ function AddMenuModal({ callback, taskId }) {
         </div>
 
 
-        <div className="boxMenuModal">
+        <div className="">
         <h2 class='d-flex justify-content-center textMenu'>Add</h2>
 
         <form onSubmit={handleSubmit}>

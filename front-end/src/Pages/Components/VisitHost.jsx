@@ -22,29 +22,21 @@ const VisitHost = () => {
   return (
     <div className="d-flex flex-column align-items-center flex-wrap bgVisitHost">
       {TaskAvailable && <AddMenuModal callback={setMenu} taskId={hostId} />}
-      <div className="mt-5 rounded cardoutVisit ">
-        
+      <div className='cardoutVisit'>
         {menu.map((e) => (
-
-          
           e.userId === user.id && (
           <div>
-            {/* <List
+            <List
               key={e.id}
               props={e}
               userId={user.id}
               callback={setMenu}
               hostId={hostId}
-            ></List> */}
-            <div class="boxVisit"key={e.id}> 
-              asdasdassadasdasd
-              </div>
-
-
+            ></List>
+            
 
             {
-                <button
-                  style={{ marginLeft: "auto", background: "green" }}
+                <button className="btdevisit"
                   onClick={async () => {
                     await deleteMenu(hostId, e.id);
                     getTask(hostId, setMenu);
