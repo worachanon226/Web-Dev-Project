@@ -19,7 +19,7 @@ const VisitHost = () => {
     <div className="d-flex flex-column align-items-center flex-wrap bgVisitHost">
       <AddMenuModal callback={setMenu} taskId={hostId} />
       <div className="mt-5 rounded cardoutVisit ">
-        {/* {menu.map((e) => (
+        {menu.map((e) => (
           <List
           key={e.id}
           props={e}
@@ -28,7 +28,7 @@ const VisitHost = () => {
           hostId={hostId}
         ></List>
         // {add delete Button}
-        ))} */}
+        ))}
         
       </div>
     </div>

@@ -15,7 +15,6 @@ function Home() {
 
 
 
-
   return (
     <div className="d-flex flex-column align-items-center justify-content-center h-fit bgHome">
       <div className="section h-fit">

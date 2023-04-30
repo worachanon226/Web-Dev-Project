@@ -20,11 +20,11 @@ function Signup() {
     <div className="Background w-100">
       <div className="fromCard">
         <form
-          onSubmit={(event) => {
+          onSubmit={async (event) => {
             event.preventDefault();
             let [id, name, last, password, cpassword, phone] = event.target;
 
-            submitSignup(
+            let ok = await submitSignup(
               {
                 id: id.value,
                 name: name.value,
@@ -35,6 +35,11 @@ function Signup() {
               setUser,
               navigate
             );
+            if (!ok) {
+              document.getElementById("UserIdInput").style.border =
+                "2px solid red";
+              document.getElementById("promptId").style.visibility = "visible";
+            }
           }}
         >
           <h3>Sign Up</h3>
@@ -47,7 +52,21 @@ function Signup() {
           </div>
 
           <div>
-            <input type="id" className="formControl" pattern="[0-9]{8}" placeholder="StudentID 64xxxxxx" />
+            <input
+              type="id"
+              id="UserIdInput"
+              className="formControl m-0"
+              pattern="[0-9]{8}"
+              placeholder="StudentID 64xxxxxx"
+              required
+            />
+            <div
+              id="promptId"
+              className="text-danger "
+              style={{ visibility: "hidden", fontSize: 12 }}
+            >
+              Invalid User ID or Password
+            </div>
           </div>
 
           <div className="formfloating">
@@ -58,7 +77,7 @@ function Signup() {
             </div>
           </div>
           <div>
-            <input type="input" className="formControl" />
+            <input type="input" required id="fnInput" className="formControl" />
           </div>
 
           <div className="formfloating">
@@ -69,7 +88,7 @@ function Signup() {
             </div>
           </div>
           <div>
-            <input type="input" className="formControl" />
+            <input type="input" required id="lnInput" className="formControl" />
           </div>
           <div className="formfloating">
             <div>
@@ -81,6 +100,7 @@ function Signup() {
           <div>
             <input
               onKeyUp={verifyPassword}
+              required
               type="password"
               className="formControl"
               id="pass"
@@ -98,9 +118,17 @@ function Signup() {
             <input
               onKeyUp={verifyPassword}
               type="password"
-              className="formControl"
+              className="formControl m-0"
               id="cpass"
+              required
             />
+            <div
+              id="pmtPass"
+              className="text-danger "
+              style={{ visibility: "hidden", fontSize: 12 }}
+            >
+              Password is not match
+            </div>
           </div>
 
           <div className="formfloating">
