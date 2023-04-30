@@ -71,8 +71,7 @@ function AddMenuModal({ callback, taskId, canteen }) {
               id="store"
               onChange={() => {
                 let x = document.getElementById("store").value;
-                console.log(storeSelected);
-                console.log(x);
+                
                 setStore(x);
               }}
             >
