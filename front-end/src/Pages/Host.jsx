@@ -1,7 +1,6 @@
 import {
   getTasks,
   deleteTask,
-  getCanteenData,
 } from "../Controller/HostController";
 import { AddHostModal } from "./Components/createHostModal";
 import { useUserContext } from "../userContext";
@@ -10,7 +9,6 @@ import { MdDelete } from "react-icons/md";
 import Item from "./Components/Item";
 import "./style/Host.css";
 import Loading from "./Components/Loading";
-import { FaUser } from "react-icons/fa";
 
 function Host() {
   let { user } = useUserContext();
@@ -41,7 +39,6 @@ function Host() {
       {task && task.length > 0 && (
         <div className="hostListcontainHost p-4 ">
           {task.map((e) => {
-            // if (e.userId === user.id) {
             return (
               <Item
                 key={e.id}
@@ -56,7 +53,6 @@ function Host() {
                 }
               />
             );
-            // }
           })}
         </div>
       )}
