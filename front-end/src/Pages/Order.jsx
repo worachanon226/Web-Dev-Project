@@ -1,42 +1,68 @@
+import {
+  getTasks,
+  deleteTask,
+  getCanteenData,
+} from "../Controller/HostController";
+import { AddHostModal } from "./Components/createHostModal";
+import { useUserContext } from "../userContext";
+import React, { useState } from "react";
+import { MdDelete } from "react-icons/md";
+import Item from "./Components/Item";
+import "./style/Host.css";
+import Loading from "./Components/Loading";
+import { FaUser } from "react-icons/fa";
 
-import { useLocation } from 'react-router-dom';
-import React, { Component } from "react";
-import { useEffect } from "react";
-import "./style/Order.css";
-import $ from "jquery";
-
-
-
-const Service = () => {
-
-  const location = useLocation();
-
+function Order() {
+  let { user } = useUserContext();
+  let [task, setTask] = useState();
+  if (task === undefined) {
+    getTasks(setTask);
+    return <Loading />;
+  }
   return (
-    <div className="d-flex flex-column align-items-center flex-wrap bgOrder">
-      <div className="mt-5 rounded cardoutOrder ">
-        <div className="textCardOutOrder rounded">
-          <div className="d-flex rounded justify-content-center m-3 text-center flex-wrap cardCoverOrder">
-            <div className="inputMergeOrder">
-              <h4 className="rounded">ชื่ออาหาร</h4>
-              <input className="rounded " placeholder="Name" />
-            </div>
-
-            <div className="inputMergeOrder">
-              <h4 className="rounded">จำนวน</h4>
-              <input className="rounded " placeholder="Name" />
-            </div>
-
-            <div className="inputMergeOrder">
-              <h4 className="rounded">หมายเหตุ</h4>
-              <input className="rounded " placeholder="Name" />
-            </div>
-
-          </div>
-        </div>
+    <div className="containerStyle">
+      <div className="d-flex  justify-content-end gap-4 btnContainer">
+        <AddHostModal callback={setTask} />
+        <button
+          className="btHostRe"
+          onClick={() => {
+            getTasks(setTask);
+          }}
+        >
+          REFRESH
+        </button>
+      </div>
+      <h1 className="textheader mb-4">Your Host</h1>
+      <div className="hostListcontainHost p-4 ">
+        {task.map((e) => {
+          if (e.userId === user.id) {
+            return <Item key={e.id} data={e} />;
+          }
+          return <></>;
+        })}
+      </div>
+      <div className="d-flex  justify-content-end gap-4 btnContainer">
+        <AddHostModal callback={setTask} />
+        <button
+          className="btHostRe"
+          onClick={() => {
+            getTasks(setTask);
+          }}
+        >
+          REFRESH
+        </button>
+      </div>
+      <h1 className="textheader mb-4">Your Host</h1>
+      <div className="hostListcontainHost p-4 ">
+        {task.map((e) => {
+          if (e.userId != user.id) {
+            return <Item key={e.id} data={e} />;
+          }
+          return <></>;
+        })}
       </div>
     </div>
-
   );
 }
 
-export default Service
+export default Order;
