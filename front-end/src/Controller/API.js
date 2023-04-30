@@ -1,5 +1,5 @@
 let API = {
-  endpoint: "http://api2.paleumm.com",
+  endpoint: "https://api2.paleumm.com",
   path: {
     register: "/Auth/register",
     login: "/Auth/login",
