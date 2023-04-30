@@ -9,8 +9,8 @@ import { getCanteenData } from "../../Controller/HostController";
 
 function AddHostModal({ callback }) {
   let {user} = useUserContext()
-  let [item,setItem] = useState()
   const [modalIsOpen, setIsOpen] = useState(false);
+  let [item,setItem] = useState()
   if(item === undefined){
     getCanteenData().then((res)=>setItem(res))
   }

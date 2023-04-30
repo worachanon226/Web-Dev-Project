@@ -2,28 +2,29 @@ import { deleteMenu, getTask } from "../../Controller/GuestController";
 import { useUserContext } from "../../userContext";
 import { AddMenuModal } from "./createMenuModal";
 import { useParams } from "react-router-dom";
-import { GrFormAdd } from 'react-icons/gr';
 import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
 import "./style/VisitHost.css";
 import List from "./List"
 import Loading from "./Loading";
 const VisitHost = () => {
-  let TaskAvailable = true
+  let [TaskAvailable,setTaskAvailable] = useState(true)
+  let [TaskCanteen,setTaskCanteen] = useState({})
   let { user } = useUserContext();
   let [menu, setMenu] = useState();
   let { hostId } = useParams();
   if (menu === undefined) {
-    TaskAvailable = getTask(hostId, setMenu);
+     getTask(hostId, setMenu).then((res)=>{
+      setTaskAvailable(res.taskAvailable)
+      setTaskCanteen(res.taskCanteen)
+     });
+   
     return <Loading/>
   }
   
-  console.log(TaskAvailable);
   return (
     <div className="d-flex flex-column align-items-center flex-wrap bgVisitHost">
-      {TaskAvailable && <AddMenuModal callback={setMenu} taskId={hostId} />}
+      {TaskAvailable && <AddMenuModal callback={setMenu} taskId={hostId} canteen={TaskCanteen} />}
       <div className="mt-5 rounded cardoutVisit ">
-        
         {menu.map((e) => (
 
           
