@@ -8,7 +8,7 @@ const List = ({ props, hostId, callback }) => {
     color.bd = rgba(102, 255, 30, 1);
   } else {
     color.bg = rgba(246, 255, 74, 0.67);
-    color.bd = rgba(102, 255, 30, 1);
+    color.bd = rgba(246, 255, 84, 1)
   }
   return (
     <div
