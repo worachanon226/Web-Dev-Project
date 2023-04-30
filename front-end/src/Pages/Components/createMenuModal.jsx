@@ -47,6 +47,8 @@ function AddMenuModal({ callback, taskId }) {
           <button onClick={() => setIsOpen(false)}><IoCloseSharp className='iconMenuModal' size={25} /></button>
         </div>
 
+
+        <div className="boxMenuModal">
         <h2 class='d-flex justify-content-center textMenu'>Add</h2>
 
         <form onSubmit={handleSubmit}>
@@ -65,6 +67,7 @@ function AddMenuModal({ callback, taskId }) {
             <button className="rounded bg-light w-25" type="submit">ADD</button>
           </div>
         </form>
+        </div>
 
       </Modal>
     </div>

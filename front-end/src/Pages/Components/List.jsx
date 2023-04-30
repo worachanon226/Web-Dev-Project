@@ -9,14 +9,12 @@ const List = ({ props, hostId, callback }) => {
   } else color.bg = "yellow";
   return (
     <div className="d-flex flex-row align-items-center">
-      <div className="">
-        <div className="">Menu:  {props.name}</div>
-        <div>Price: {props.price}</div>
-        <div> {props.name}</div>
-      </div>
-      <div className="d-flex gap-5">
-        <div>{props.store}</div>
-        <div>{props.comment}</div>
+      <div className="cardLsit">
+        <div>Canteen: {props.store}</div>
+        <div>Menu: {props.comment}</div>
+        <div className="">Price: {props.name}</div>
+        <div className="">Amount: {props.store}</div>
+        <div className="">Note: {props.comment}</div>
       </div>
     <div>{JSON.stringify(props)}</div>
     {props.isConfirm || (
@@ -36,5 +34,6 @@ const List = ({ props, hostId, callback }) => {
     </div>
   );
 };
+
 
 export default List;

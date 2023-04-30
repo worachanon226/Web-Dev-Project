@@ -27,13 +27,17 @@ const VisitHost = () => {
           
           e.userId === user.id && (
           <div>
-            <List
+            {/* <List
               key={e.id}
               props={e}
               userId={user.id}
               callback={setMenu}
               hostId={hostId}
-            ></List>
+            ></List> */}
+            <div class="boxVisit"key={e.id}> 
+              asdasdassadasdasd
+              </div>
+
 
 
             {
