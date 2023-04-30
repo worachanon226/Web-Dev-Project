@@ -23,7 +23,7 @@ const VisitHost = () => {
   
   return (
     <div className="d-flex flex-column align-items-center flex-wrap bgVisitHost">
-      {TaskAvailable && <AddMenuModal callback={setMenu} taskId={hostId} />}
+      {TaskAvailable && <AddMenuModal callback={setMenu} taskId={hostId} canteen={TaskCanteen}/>}
       <div className='cardoutVisit'>
         {menu.map((e) => (
           e.userId === user.id && (

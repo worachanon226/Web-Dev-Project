@@ -50,8 +50,10 @@ let getCanteenData = async (canteen) => {
   let res = await fetch(endpoint.concat(path.getCanteenData));
   if (res.ok) {
     res = await res.json();
+    console.log(canteen);
+    console.log(res);
     res = await res.filter((e)=>e.name === canteen)
-    return res[0].stores
+    return res[0].stores || {stores:""}
   }
   return []
 };

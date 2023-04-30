@@ -83,15 +83,15 @@ function AddMenuModal({ callback, taskId, canteen }) {
                   .map((e) => <option value={e}>{e}</option>)}
             </select>
 
-            <label for="menu">Choose Menu:</label>
+            {/* <label for="menu">Choose Menu:</label>
             <select name="menu" id="menu">
               {storeSelected &&
                 item
                   .filter((e) => e.name === storeSelected)
                   .map((e) => e.menus)
                   .map((e) => e.name)}
-            </select>
-            
+            </select> */}
+            <input className="col align-self w-auto rounded" placeholder="Menu" />
           </div>
 
           <div class="row gap-3 mb-3 textMenuModal">
