@@ -7,6 +7,7 @@ const List = ({ props, hostId, callback }) => {
     color.bg = "#a3ff9e";
     color.bd = "#23ff17";
   } else color.bg = "yellow";
+  console.log(props);
   return (
     <div className="d-flex flex-row align-items-center">
       <div className="">
@@ -18,7 +19,7 @@ const List = ({ props, hostId, callback }) => {
         <div>{props.store}</div>
         <div>{props.comment}</div>
       </div>
-    <div>{JSON.stringify(props)}</div>
+
     {props.isConfirm || (
         <button
           onClick={async () => {
@@ -32,7 +33,7 @@ const List = ({ props, hostId, callback }) => {
       {props.isConfirm && <button onClick={async () => {
             await denyMenu(hostId, props.id);
             getTask(hostId, callback);
-          }}>Deny</button>}
+          }}>Cancle</button>}
     </div>
   );
 };

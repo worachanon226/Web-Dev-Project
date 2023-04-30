@@ -36,12 +36,6 @@ function AddMenuModal({ callback, taskId, canteen }) {
   let [storeSelected, setStore] = useState("");
   if (item === undefined) {
     getCanteenData(canteen).then((res) => {
-      console.log(
-        res
-          .filter((e) => e.name === "")
-          .map((e) => e.menus)
-          .map((e) => e.name)
-      );
 
       setItem(res);
     });
@@ -76,6 +70,7 @@ function AddMenuModal({ callback, taskId, canteen }) {
               onChange={() => {
                 let x = document.getElementById("store").value;
                 console.log(storeSelected);
+                console.log(x);
                 setStore(x);
               }}
             >
@@ -86,15 +81,15 @@ function AddMenuModal({ callback, taskId, canteen }) {
                   .map((e) => <option value={e}>{e}</option>)}
             </select>
 
-            {/* <label for="menu">Choose Menu:</label>
+            <label for="menu">Choose Menu:</label>
             <select name="menu" id="menu">
-              {item &&
+              {storeSelected &&
                 item
                   .filter((e) => e.name === storeSelected)
                   .map((e) => e.menus)
                   .map((e) => e.name)}
-            </select> */}
-            <input className="col align-self w-auto rounded" placeholder="Menu" />
+            </select>
+            
           </div>
 
           <div class="row gap-3 mb-3 textMenuModal">
