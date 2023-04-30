@@ -85,6 +85,13 @@ public class TaskController : ControllerBase
         return Ok(tasks);
     }
 
+    [HttpGet("getAllTasks")]
+    public async Task<ActionResult<List<Models.Task>>> GetAllTasks()
+    {
+        List<Models.Task> tasks = await _service.GetTasks();
+        return Ok(tasks);
+    }
+
     [HttpGet("getTasksExceptID")]
     public async Task<ActionResult<List<Models.Task>>> GetTasksExceptID(string userID)
     {
