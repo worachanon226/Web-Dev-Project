@@ -182,7 +182,7 @@ body .container .card .box2 .content a:hover {
 }
 .btnhome:hover {
   transform: scale(1.2) translateY(10px);
-  transition: 4.s;
+  transition: 0.7s;
 }
 
 @media (max-width:400px) {

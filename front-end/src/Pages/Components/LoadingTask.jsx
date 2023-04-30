@@ -2,7 +2,7 @@ import React from 'react'
 
 const LoadingTask = () => {
   return (
-        <div className="d-flex row justify-center align-item-center w-60
+        <div className="d-flex row justify-content-center 
         ">
         <img id="clock"
           className="picturwait"
@@ -10,7 +10,7 @@ const LoadingTask = () => {
           alt="hew"
         />
         <div>
-        <h2 className='text-center'>Waiting Order...</h2>
+        <h1 className='text-center m-5'><b>Waiting Order...</b></h1>
         </div>
         </div>
   )

@@ -18,15 +18,9 @@ let Item = ({ data, control ,disabled}) => {
           src="https://cdn.dribbble.com/users/2063527/screenshots/11467383/media/c1ad5d2ebbdebb25282247869816cc9c.gif"
           alt="hew"
         />
-<<<<<<< HEAD
-        <h4 className="canteenname"><b>Canteen:</b>{data.canteen}</h4>
-        <p className="sum"><b>Total:</b>{data.totalPrice}</p>
-        <p className=""><b>Available:</b>{data.currentTasks}/{data.maxTasks}</p>
-=======
         <h4 className="canteenname">Canteen:{data.canteen}</h4>
         <p className="sum">Total:{data.menus.map(e=>e.price).reduce((a,b)=>a+b,0)}</p>
         <p className="">Available:{data.currentTasks}/{data.maxTasks}</p>
->>>>>>> fe8c5dc19476e465a80895e9ce2569cf9a1c21b5
         {userInfo && (
           <div className="quota">
             <h5>Owner Contact</h5>

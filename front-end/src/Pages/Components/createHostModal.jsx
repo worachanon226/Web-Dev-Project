@@ -16,6 +16,9 @@ function AddHostModal({ callback }) {
   }
   let handleSubmit = (event) => { 
     if (event.target[0].value !== "" ) {
+      if(event.target[1].value === ""){
+        event.target[1].value = 3
+      }
       let data = {
         id: uuidv4(),
         userId: user.id,
