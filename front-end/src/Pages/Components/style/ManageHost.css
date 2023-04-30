@@ -1,0 +1,75 @@
+.bgManage {
+    background-color: #FEE8DB;
+    padding: 50px 0 15px 0;
+    height: fit-content;
+    min-height: 150vh;
+
+}
+
+
+.CardMH{
+    height: fit-content;
+    width: 60%;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: #FFF;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(8, 7, 16, 0.6);
+    padding: 3px;
+}  
+
+
+
+/* .cardManage{
+    display: flex;
+    gap: 20px;
+} */
+
+/* .inputManage{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+} */
+
+/* .btnSubmitManageS:hover {
+    background-color: rgb(85, 230, 37);
+}
+
+.btnSubmitManageD:hover {
+    background-color: rgb(255, 8, 8);
+} */
+
+/* .btnSubmitMS,
+.btnSubmitMD {
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    color:#000
+} */
+
+@media (max-width:400px) {
+    .cardoutManage {
+        width: 90vw;
+    }
+
+    .inputManage {
+        flex-direction: row;
+    }
+}
+
+
+@media (max-width:300px) {
+    .cardoutManage {
+        width: 90vw;
+    }
+
+    .inputManage {
+        flex-direction: column;
+    }
+}
