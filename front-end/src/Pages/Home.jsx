@@ -6,7 +6,6 @@ import $ from "jquery";
 import { useLocation } from 'react-router-dom';
 import ReactDOM from "react-dom";
 
-
 function Home() {
   const location = useLocation();
   useEffect(() => {
@@ -37,7 +36,7 @@ function Home() {
             </div>
           </div>
           <div className="home-img ">
-            <img className="picture" src="https://th.bing.com/th/id/R.a959ce9211765aae57111ea75a1d8ba2?rik=b7c4VlFKhP24PQ&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-food-clipart%2ftransparent-food-clipart-10.png&ehk=h6J2VFGpq1VH%2fLgtQ%2fAbt2LWfl1Sz2bORmWjqD9s8dM%3d&risl=&pid=ImgRaw&r=0" alt="hew" />
+            <img className="picture" src="Hew-img.png" alt="hew" />
           </div>
         </div>
       </div>
