@@ -9,12 +9,12 @@ const List = ({ props, hostId, callback }) => {
   } else color.bg = "yellow";
   return (
     <div style={{width:"80%",background:color.bg,border:"2px solid",borderColor:color.bd}} className="d-flex row gap-4 ">
-      <div className="bg-orange-600 d-flex gap-5 ">
+      <div className=" d-flex gap-5 ">
         <div className="">Menu:  {props.name}</div>
         <div>Price: {props.price}</div>
         <div> {props.name}</div>
       </div>
-      <div className="bg-orange-600 d-flex gap-5">
+      <div className="d-flex gap-5">
         <div>{props.store}</div>
         <div>{props.comment}</div>
       </div>

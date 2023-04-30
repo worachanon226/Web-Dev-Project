@@ -13,9 +13,8 @@ import { FaUser } from "react-icons/fa";
 
 function Host() {
   let { user } = useUserContext();
-  let [item,setItem] = useState()
   let [task, setTask] = useState();
-  if (task === undefined || item === undefined) {
+  if (task === undefined) {
     getTasks(setTask);
     return <Loading/>
   }
