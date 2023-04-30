@@ -38,7 +38,7 @@ function AddHostModal({ callback }) {
       >
       
         <div className="d-flex flex-wrap justify-content-end ">
-          <button onClick={() => setIsOpen(false)}><IoCloseSharp size={25} /></button>
+          <button className="x-btn" onClick={() => setIsOpen(false)}><IoCloseSharp size={25} /></button>
         </div>
 
         <h2  className="textHostModal justify-content-center d-flex">Add</h2>

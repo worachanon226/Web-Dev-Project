@@ -46,3 +46,14 @@
     font-size: 18px;
     flex-flow: wrap;
 }
+.x-btn {
+    padding: auto;
+    background-color: #fff;
+    border-radius: 50%;
+}
+h2.textHostModal{
+    background-color: #fff;
+    margin:  0 30%;
+    line-height:150%;
+    border-radius: 30px;
+}
