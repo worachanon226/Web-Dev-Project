@@ -142,8 +142,13 @@ i {
 .logoNav{
   width: 50px;
   height: 40px;
-  background: #fff;
-  border-radius: 20px;
-  align-items: center;
+  /* background: #fff;
+    */
+    margin-left: 3px;
+    align-items: center;
+  }
+  
+  .icon-nav{
+    width: 55px;
+  border-radius: 20px; 
 }
-
