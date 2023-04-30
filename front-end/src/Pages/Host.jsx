@@ -1,4 +1,4 @@
-import { getTasks, deleteTask } from "../Controller/HostController";
+import { getTasks, deleteTask, getCanteenData } from "../Controller/HostController";
 import { AddHostModal } from "./Components/createHostModal";
 import { useUserContext } from "../userContext";
 import React, { useState } from "react";
@@ -14,7 +14,6 @@ import { FaUser } from "react-icons/fa";
 
 function Host() {
   let { user } = useUserContext();
-
   let [task, setTask] = useState();
   if (task === undefined) {
     getTasks(setTask);

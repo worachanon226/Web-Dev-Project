@@ -14,7 +14,7 @@ const List = ({ props, hostId, callback }) => {
         <div>Price: {props.price}</div>
         <div> {props.name}</div>
       </div>
-      <div className="bg-orange-600 d-flex gap-5">
+      <div className="d-flex gap-5">
         <div>{props.store}</div>
         <div>{props.comment}</div>
       </div>

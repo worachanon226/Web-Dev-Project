@@ -12,6 +12,7 @@ let API = {
         getMenus:"/Task/getMenusTask",
         deleteMenu: "/Task/deleteMenu",
         deleteTask:"/Task/deleteTask",
+        getCanteenData:"/Canteen/getCanteensData"
     }
 }
 export default API

@@ -18,44 +18,12 @@ public class CanteenController : ControllerBase
         _service = service;
     }
 
-
-    Models.Canteen canteen1 = new Models.Canteen
-    {
-        Id = "001",
-        Name = "Canteen1",
-
-        Stores = new List<Models.Store>
-        {
-            new Models.Store
-            {
-                Id = "001",
-                Name = "Store1",
-                Menus = new List<Models.Menu>()
-                {
-                    new Models.Menu { Id = "001", Name = "Menu A", Price = 40 },
-                    new Models.Menu { Id = "002", Name = "Menu B", Price = 45 }
-                }
-            },
-            new Models.Store
-            {
-                Id = "002",
-                Name = "Store2",
-                Menus = new List<Models.Menu>()
-                {
-                    new Models.Menu { Id = "001", Name = "Menu A", Price = 40 },
-                    new Models.Menu { Id = "002", Name = "Menu B", Price = 45 },
-                    new Models.Menu { Id = "003", Name = "Menu C", Price = 50 }
-                }
-            }
-        }
-    };
-
     [HttpPost("register")]
     public async Task<ActionResult<Models.Canteen>> Register(Models.Canteen request)
     {
-        List<Models.Canteen> canteens = new List<Models.Canteen>();
+        List<Models.Canteen> canteens = await _service.GetCanteens();
 
-        canteens.Add(canteen1);
+        canteens.Add(request);
 
         for (var i = 0; i < canteens.Count; i++)
         {
