@@ -10,24 +10,33 @@ const ManageHost = () => {
   let { hostId } = useParams();
   if (task === undefined) {
     getTask(hostId, setTask);
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
   return (
     <div className="bgManage">
-      <h1 className=" textheaderManage">Menu</h1>
+      <div className="d-flex  justify-content-end  btnContainer">
+        <div className="d-flex  justify-content-end gap-3 btnContainer-in">
+          <button className="btHostRe" onClick={() => {}}>
+            Finish
+          </button>
+        </div>
+      </div>
+      <h1 className="text-center">Menu</h1>
 
-      <div className="Container d-flex justify-content-center" >
+      <div className="Container d-flex justify-content-center">
         <div className="CardMH">
           <div className="MHCard">
-
- 
-
-          {!task.menus.length && <h3>Waiting for request Menu</h3>}
-          {task.menus &&
-            task.menus.map((e) => (
-              <List key={e.id} props={e} callback={setTask} hostId={hostId}></List>
-            ))}
-            </div>
+            {!task.menus.length && <h3>Waiting for request Menu</h3>}
+            {task.menus &&
+              task.menus.map((e) => (
+                <List
+                  key={e.id}
+                  props={e}
+                  callback={setTask}
+                  hostId={hostId}
+                ></List>
+              ))}
+          </div>
         </div>
       </div>
     </div>
