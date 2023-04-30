@@ -10,13 +10,6 @@ import $ from "jquery";
 const Service = () => {
 
   const location = useLocation();
-  // useEffect(() => {
-  // }, [location]);
-  // $('#orderBtn').trigger('click');
-  // if (menu === undefined) {
-  //   getTask(hostId, setMenu);
-  //   return <div>Loading</div>;
-  // }
 
   return (
     <div className="d-flex flex-column align-items-center flex-wrap bgOrder">
