@@ -9,7 +9,6 @@ let Item = ({ data, control }) => {
       setUserinfo(res);
     });
   }
-  console.log(data);
 
   return (
     <div className="boxStyle">
