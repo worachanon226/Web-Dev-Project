@@ -50,6 +50,13 @@ public class DatabaseService
     public async Task CreateTask(Models.Task newTask) =>
         await _taskCollection.InsertOneAsync(newTask);
 
+    public async Task SetTaskCount(string id, int n)
+    {
+        var filter = Builders<Models.Task>.Filter.Eq(x => x.Id, id);
+        var update = Builders<Models.Task>.Update.Set(x => x.CurrentTasks, n);
+        await _taskCollection.UpdateOneAsync(filter, update);
+    }
+
     public async Task SetTaskAvailable(string id, bool b)
     {
         var filter = Builders<Models.Task>.Filter.Eq(x => x.Id, id);
