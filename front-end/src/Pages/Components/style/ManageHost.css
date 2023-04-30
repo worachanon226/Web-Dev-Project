@@ -21,8 +21,25 @@
     box-shadow: 0 0 15px rgba(8, 7, 16, 0.6);
     padding: 3px;
 }  
-
-
+.textheader{
+    font-family: Monospace;
+    background-color: #fff;
+    border-radius: 45px;
+    padding: 7px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+.btnContainer-in{
+    background-color: #ff9e93;
+    margin: 0 0 ;
+    width: fit-content;
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+    padding: 0 15px;
+    border-radius: 45px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+}
 
 /* .cardManage{
     display: flex;

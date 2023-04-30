@@ -12,6 +12,9 @@ const ManageHost = () => {
     getTask(hostId, setTask);
     return <Loading></Loading>;
   }
+var startDate = new Date();
+var endDate   = new Date();
+var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
   return (
     <div className="bgManage">
       <div className="d-flex  justify-content-end  btnContainer">
@@ -24,7 +27,9 @@ const ManageHost = () => {
           </button>
         </div>
       </div>
-      <h1 className="text-center">Menu</h1>
+      <div className="d-flex  justify-content-end gap-3 btnContainer-in p-2">
+        <h1 className="textheader m-auto">Menu</h1>
+      </div>
 
       <div className="Container d-flex justify-content-center">
         <div className="CardMH">

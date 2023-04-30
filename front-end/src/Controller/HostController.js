@@ -50,7 +50,9 @@ let finishTask = async (taskId, val) => {
     {
       method: "POST",
     }
-  );
+    );
+    res =  await res.text()
+    console.log(res);
 };
 let denyMenu = async (taskId, menuId) => {
   let res = await fetch(
