@@ -65,7 +65,7 @@ function Host() {
 let Control = ({ id, callback }) => {
   return (
     <button
-      className="btHostDe"
+      className="btHostDe "
       onClick={async () => {
         await deleteTask(id);
         getTasks(callback);
