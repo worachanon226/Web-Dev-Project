@@ -35,12 +35,12 @@
     gap: 2rem;
     justify-content: center;
     min-height: 60%;
-    height: fit-content;
+    height: 60%;
     width: 90%;
     border-radius: 20px;
     background-color: #f8ddd2;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
-    
+    min-height: 60%;
     
     
 }
