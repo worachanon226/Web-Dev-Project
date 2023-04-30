@@ -59,7 +59,9 @@ function AddMenuModal({ callback, taskId, canteen }) {
           </button>
         </div>
 
-        <h2 class="d-flex justify-content-center textMenu">Add</h2>
+
+        <div className="">
+        <h2 class='d-flex justify-content-center textMenu'>Add</h2>
 
         <form onSubmit={handleSubmit}>
           <div class=" row gap-3 mb-3 textMenuModal ">
@@ -112,6 +114,8 @@ function AddMenuModal({ callback, taskId, canteen }) {
             </button>
           </div>
         </form>
+        </div>
+
       </Modal>
     </div>
   );
