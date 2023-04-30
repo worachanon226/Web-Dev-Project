@@ -9,6 +9,7 @@
 
 
 .CardMH{
+    border:7px solid #FA8072;
     height: fit-content;
     width: 60%;
     min-height: 350px;
@@ -20,56 +21,8 @@
     border-radius: 6px;
     box-shadow: 0 0 15px rgba(8, 7, 16, 0.6);
     padding: 3px;
+    margin-top: 30px;
 }  
-.textheader{
-    font-family: Monospace;
-    background-color: #fff;
-    border-radius: 45px;
-    padding: 7px;
-    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
-    padding: 0 20px;
-}
-.btnContainer-in{
-    background-color: #ff9e93;
-    margin: 0 0 ;
-    width: fit-content;
-    position: relative;
-    left:50%;
-    transform: translate(-50%);
-    padding: 0 15px;
-    border-radius: 45px;
-    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
-}
-
-/* .cardManage{
-    display: flex;
-    gap: 20px;
-} */
-
-/* .inputManage{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 25%;
-} */
-
-/* .btnSubmitManageS:hover {
-    background-color: rgb(85, 230, 37);
-}
-
-.btnSubmitManageD:hover {
-    background-color: rgb(255, 8, 8);
-} */
-
-/* .btnSubmitMS,
-.btnSubmitMD {
-    background-color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 16px;
-    padding: 5px 20px 5px 20px;
-    text-decoration: none;
-    color:#000
-} */
 
 @media (max-width:400px) {
     .cardoutManage {
@@ -91,15 +44,49 @@
         flex-direction: column;
     }
 }
-
-.textheaderManage{
-    font-family: Monospace;
-    width: 150px;
+.bgheaderManage {
+    justify-content: center;
+    display: flex;
+    text-align: center;
     background-color: #fff;
+    width: 150px;
+    font-family: Monospace;
     border-radius: 45px;
     padding: 7px;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
     padding: 0 1px;
+
 }
 
 
+.textheaderMenu{
+    font-family: Monospace;
+    background-color: #fff;
+    border-radius: 45px;
+    padding: 7px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+
+.picturwait{
+    display: flex;
+    justify-content: center;
+}
+
+
+.textheader{
+    font-family: Monospace;
+    background-color: #fff;
+    width: 2;
+    border-radius: 45px;
+    padding: 7px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+.btnContainer-in{
+    background-color: #ff9e93;
+    margin: 0 0 ;
+    padding: 0 15px;
+    border-radius: 45px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+}

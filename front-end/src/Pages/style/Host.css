@@ -108,6 +108,7 @@
  .textheader{
     font-family: Monospace;
     background-color: #fff;
+    width: 2;
     border-radius: 45px;
     padding: 7px;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
