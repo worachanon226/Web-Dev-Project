@@ -10,7 +10,6 @@ import { MdDelete } from "react-icons/md";
 import Item from "./Components/Item";
 import "./style/Host.css";
 import Loading from "./Components/Loading";
-import { FaUser } from "react-icons/fa";
 
 function Host() {
   let { user } = useUserContext();
@@ -37,13 +36,38 @@ function Host() {
       <div className="d-flex  justify-content-end gap-3 btnContainer-in p-2">
         <h1 className="textheader m-auto">Your Host</h1>
       </div>
-      <div className="hostListcontainHost p-4 ">
+      <div className="hostListcontainHost p-4 mb-5">
         {task.map((e) => {
-          if (e.userId === user.id) {
+          if (e.userId === user.id && e.available) {
             return (
               <Item
                 key={e.id}
                 data={e}
+                control={
+                  <Control
+                    ownerId={e.userId}
+                    id={e.id}
+                    user={user}
+                    callback={setTask}
+                  />
+                }
+              />
+            );
+          }
+          return <></>;
+        })}
+      </div>
+      <div className="d-flex  justify-content-end gap-3 btnContainer-in p-2">
+        <h1 className="textheader m-auto ">Your Finished Host</h1>
+      </div>
+      <div className="hostListcontainHost p-4 ">
+        {task.map((e) => {
+          if (e.userId === user.id && !e.available) {
+            return (
+              <Item
+                key={e.id}
+                data={e}
+                disabled={true}
                 control={
                   <Control
                     ownerId={e.userId}

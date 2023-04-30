@@ -2,7 +2,7 @@ import React from 'react'
 
 const LoadingTask = () => {
   return (
-        <div className="d-flex row justify-center align-item-center w-100
+        <div className="d-flex row justify-center align-item-center w-60
         ">
         <img id="clock"
           className="picturwait"

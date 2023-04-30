@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./style/Item.css";
 import { getUserInfo } from "../../Controller/GuestController";
-let Item = ({ data, control }) => {
+let Item = ({ data, control ,disabled}) => {
   let [userInfo, setUserinfo] = useState();
   if (userInfo === undefined) {
     getUserInfo(data.userId).then((res) => {
       setUserinfo(res);
     });
   }
-
+// console.log();
   return (
     <div className="boxStyle">
       <div className="boxStyleyer2">
@@ -19,7 +19,7 @@ let Item = ({ data, control }) => {
           alt="hew"
         />
         <h4 className="canteenname">Canteen:{data.canteen}</h4>
-        <p className="sum">Total:{data.totalPrice}</p>
+        <p className="sum">Total:{data.menus.map(e=>e.price).reduce((a,b)=>a+b,0)}</p>
         <p className="">Available:{data.currentTasks}/{data.maxTasks}</p>
         {userInfo && (
           <div className="quota">
@@ -33,9 +33,9 @@ let Item = ({ data, control }) => {
           </div>
         )}
       </div>
-      <Link className="btJoin" to={data.id}>
+      {disabled || <Link className="btJoin" to={data.id}>
         JOIN
-      </Link>
+      </Link>}
       <div>
       {control}
       </div>
