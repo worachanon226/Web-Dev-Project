@@ -19,8 +19,7 @@ let getMenus = async (id, callback) => {
   let res = await fetch(endpoint.concat(path.getMenus) + "?id=" + id, {
     method: "GET",
   });
-  let response = await res.json();
-  console.log(response);
+  let response = await res.json()
   callback(response);
 };
 let addMenu = async (TaskID, data, callback) => {
@@ -40,4 +39,11 @@ let deleteMenu = async (taskId,menuId) => {
     method: "DELETE",
   });
 }
-export {getTask,getTasks,addMenu,getMenus,deleteMenu};
+let getUserInfo = async (id) => {
+  let res = await fetch(endpoint.concat(path.getUserInfo) +"?id="+ id);
+  if (res.ok) {
+    res = await res.json();
+    return res;
+  }
+};
+export {getTask,getTasks,addMenu,getMenus,deleteMenu,getUserInfo};
