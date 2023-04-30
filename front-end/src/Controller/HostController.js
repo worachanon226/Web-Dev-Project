@@ -44,6 +44,14 @@ let acceptMenu = async (taskId, menuId) => {
     }
   );
 };
+let finishTask = async (taskId, val) => {
+  let res = await fetch(
+    endpoint.concat(path.setAvailable) + "?id=" + taskId + "&b=" + val,
+    {
+      method: "POST",
+    }
+  );
+};
 let denyMenu = async (taskId, menuId) => {
   let res = await fetch(
     endpoint.concat(path.setConfirmMenu) +
@@ -62,9 +70,18 @@ let getCanteenData = async () => {
   let res = await fetch(endpoint.concat(path.getCanteenData));
   if (res.ok) {
     res = await res.json();
-    res = res.map((e)=>e.name)
-    return res
+    res = res.map((e) => e.name);
+    return res;
   }
-  return []
+  return [];
 };
-export { createTask, getTask, getTasks, deleteTask, acceptMenu, denyMenu,getCanteenData };
+export {
+  createTask,
+  getTask,
+  getTasks,
+  deleteTask,
+  acceptMenu,
+  denyMenu,
+  getCanteenData,
+  finishTask,
+};

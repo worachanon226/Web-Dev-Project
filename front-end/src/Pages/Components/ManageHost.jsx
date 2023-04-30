@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { getTask } from "../../Controller/HostController";
+import { finishTask, getTask } from "../../Controller/HostController";
 import List from "./List";
 import "./style/ManageHost.css";
 import Loading from "./Loading";
@@ -16,7 +16,10 @@ const ManageHost = () => {
     <div className="bgManage">
       <div className="d-flex  justify-content-end  btnContainer">
         <div className="d-flex  justify-content-end gap-3 btnContainer-in">
-          <button className="btHostRe" onClick={() => {}}>
+          <button className="btHostRe" onClick={async () => {
+            await finishTask(task.id,false)
+            getTask(hostId, setTask);
+          }}>
             Finish
           </button>
         </div>

@@ -70,7 +70,7 @@ let Control = ({ id, callback }) => {
       }}
     >
       <div className="d-flex flex-wrap justify-content-end ">
-        <MdDelete classname="iconMenuHost" size={25} />
+        <MdDelete className="iconMenuHost" size={25} />
       </div>
     </button>
   );
