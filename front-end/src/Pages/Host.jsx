@@ -29,7 +29,7 @@ function Host() {
             onClick={() => {
               getTasks(setTask);
             }}
-          >
+          > 
             REFRESH
           </button>
         </div>

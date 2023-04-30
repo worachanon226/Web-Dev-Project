@@ -14,13 +14,13 @@ const ManageHost = () => {
   }
   return (
     <div className="bgManage">
-      <h1 className="text-center">Menu</h1>
+      <h1 className=" textheaderManage">Menu</h1>
 
       <div className="Container d-flex justify-content-center" >
         <div className="CardMH">
           <div className="MHCard">
 
-
+ 
 
           {!task.menus.length && <h3>Waiting for request Menu</h3>}
           {task.menus &&

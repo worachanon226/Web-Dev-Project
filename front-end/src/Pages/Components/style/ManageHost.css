@@ -7,6 +7,7 @@
 }
 
 
+
 .CardMH{
     height: fit-content;
     width: 60%;
@@ -73,3 +74,15 @@
         flex-direction: column;
     }
 }
+
+.textheaderManage{
+    font-family: Monospace;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 45px;
+    padding: 7px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
+    padding: 0 1px;
+}
+
+
