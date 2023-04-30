@@ -143,9 +143,14 @@ const Nav = () => {
       ></script>
 
       <nav className="navbar navbar-expand-lg navbar-mainbg">
-        <Link className="text" to="/" exact>
-          Hew-Hew
+
+        <Link className="nav-link d-flex" to='/'>
+          <i className="fas far fa-chart-bar m-1">
+            <img className="picturboxlayerNav" src=''  />
+          </i>
+          <h3 className="text-center">Hew-Hew</h3>
         </Link>
+
 
         <button
           className="navbar-toggler collapsed border-0"

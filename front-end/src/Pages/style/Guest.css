@@ -8,7 +8,6 @@
     height: fit-content;
     background-color: #fa807247;
     padding: 50px 0px 15px 0px;
-    
 }
 
 .hostListcontainGuest{
@@ -22,17 +21,8 @@
     height: fit-content;
     width: 80%;
     border-radius: 20px;
-    margin-top: 30px;
+    margin: 30px;
 }
-
-/* .btnRefresh{
-    box-shadow: 1px 2px 9px #efc1bc;
-    background-color: #FA8072;
-    border-radius: 5px;
-    width: 100px;
-    margin-bottom: 30px;
-    height: 30px;
-} */
 
 .btnRefresh {
     width: 140px;

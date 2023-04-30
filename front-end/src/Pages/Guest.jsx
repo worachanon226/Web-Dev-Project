@@ -18,7 +18,7 @@ function Host() {
           getTasks(setTask);
         }}
       >
-        refresh
+        REFRESH
       </button>
       <div className="flex-row hostListcontainGuest">
         {task.map((e) => (

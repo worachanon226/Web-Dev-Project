@@ -13,6 +13,12 @@
 
 }
 
+
+.boxStyle:hover {
+    transform: scale(1.2) translateY(10px);
+    transition: 4.s;
+  }
+
  .boxStyleyer2
  {
     min-height: 207px;
@@ -28,6 +34,9 @@
  }
 
   .picturboxlayer {
+    padding: 2px;
+    border-radius: 10%;
+    border: #fff solid 4px;
     width: 50%;
     height: 100%;
   }
@@ -66,7 +75,7 @@
     align-items: center;
     background-color: #ffbf00;
     padding: 0.5rem;
-    margin-top: 10px;
+    margin: 10px;
     border-radius: 6px;
     text-decoration: none;
     width: 95%;
