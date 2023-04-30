@@ -8,8 +8,8 @@ const List = ({ props, hostId, callback }) => {
     color.bd = "#23ff17";
   } else color.bg = "yellow";
   return (
-    <div style={{width:"80%",background:color.bg,border:"2px solid",borderColor:color.bd}} className="d-flex row gap-4 ">
-      <div className="bg-orange-600 d-flex gap-5 ">
+    <div className="d-flex flex-row align-items-center">
+      <div className="">
         <div className="">Menu:  {props.name}</div>
         <div>Price: {props.price}</div>
         <div> {props.name}</div>

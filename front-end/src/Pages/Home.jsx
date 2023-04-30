@@ -21,7 +21,7 @@ function Home() {
         <div className="home">
           <div className="home-text">
             <h1>Hew-Hew</h1>
-            <h2>Food The  Most Precious Things</h2>
+            <h2>Hew the food to you when you Hew.</h2>
             <div className="d-flex flex-row gap-5">
               <Link className="text-decoration-none" to="Host">
                 <div className="btnhome">

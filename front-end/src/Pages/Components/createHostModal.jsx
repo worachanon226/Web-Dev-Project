@@ -39,7 +39,7 @@ function AddHostModal({ callback }) {
         </div>
 
         <h2  className="textHostModal justify-content-center d-flex">Add</h2>
-
+        
         <form onSubmit={handleSubmit}>
           <div className="d-flex flex-wrap gap-3 justify-content-center p-3 fromInput">
             <input className="d-flex w-auto rounded w-25"  placeholder="Canteen" />

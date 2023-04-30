@@ -13,16 +13,19 @@ const ManageHost = () => {
     return <Loading></Loading>
   }
   return (
-    <div>
+    <div className="bgManage">
       <h1>Menu</h1>
+      <div className="Container d-flex justify-content-center" >
+        <div className="CardMH">
 
-      <div className="Container" style{{backgroundColor}}>
-        {!task.menus.length && <h3>Waiting for request Menu</h3>}
-      {task.menus &&
-        task.menus.map((e) => (
-          <List key={e.id} props={e} callback={setTask} hostId={hostId}></List>
-        ))}
-      
+
+
+          {!task.menus.length && <h3>Waiting for request Menu</h3>}
+          {task.menus &&
+            task.menus.map((e) => (
+              <List key={e.id} props={e} callback={setTask} hostId={hostId}></List>
+            ))}
+        </div>
       </div>
     </div>
   );

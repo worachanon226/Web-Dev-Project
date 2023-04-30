@@ -17,7 +17,7 @@ const VisitHost = () => {
   }
   
   return (
-    <div className="d-flex flex-column align-items-center flex-wrap bgVisitHost">
+    <div className="d-flex  align-items-center flex-wrap bgVisitHost">
       <AddMenuModal callback={setMenu} taskId={hostId} />
       <div className="mt-5 rounded cardoutVisit ">
         
