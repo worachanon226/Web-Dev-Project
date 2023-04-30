@@ -16,7 +16,7 @@ const ManageHost = () => {
     <div>
       <h1>Menu</h1>
 
-      <div className="Container">
+      <div className="Container" style{{backgroundColor}}>
         {!task.menus.length && <h3>Waiting for request Menu</h3>}
       {task.menus &&
         task.menus.map((e) => (

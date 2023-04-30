@@ -19,7 +19,7 @@ const List = ({ props, hostId, callback }) => {
         <div>{props.comment}</div>
       </div>
     <div>{JSON.stringify(props)}</div>
-    {/* {props.isConfirm || (
+    {props.isConfirm || (
         <button
           onClick={async () => {
             await acceptMenu(hostId, props.id);
@@ -32,7 +32,7 @@ const List = ({ props, hostId, callback }) => {
       {props.isConfirm && <button onClick={async () => {
             await denyMenu(hostId, props.id);
             getTask(hostId, callback);
-          }}>Deny</button>} */}
+          }}>Deny</button>}
     </div>
   );
 };

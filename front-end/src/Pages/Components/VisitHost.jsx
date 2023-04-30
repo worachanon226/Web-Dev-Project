@@ -22,6 +22,8 @@ const VisitHost = () => {
       <div className="mt-5 rounded cardoutVisit ">
         
         {menu.map((e) => (
+
+          
           e.userId === user.id && (
           <div>
             <List
