@@ -31,10 +31,10 @@ const List = ({ props, hostId, callback }) => {
            Accept
          </button>
        )}
-       {props.isConfirm || <button className="btn btn-danger btn-sm w-25" onClick={async () => {
+       {props.isConfirm && <button className="btn btn-danger btn-sm w-25" onClick={async () => {
              await denyMenu(hostId, props.id);
              getTask(hostId, callback);
-           }}>Deny</button>}
+           }}>Cancel</button>}
            </div>
      </div>
   );

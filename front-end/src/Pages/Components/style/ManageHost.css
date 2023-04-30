@@ -10,7 +10,7 @@
 .CardMH{
     height: fit-content;
     width: 450px;
-    min-height: 300px;
+    min-height: 350px;
     display: flex;
     align-items: center;
     flex-direction: column;

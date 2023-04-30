@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./style/VisitHost.css";
 import List from "./List"
+import JoinList from "./JoinList"
 import Loading from "./Loading";
 const VisitHost = () => {
   let TaskAvailable = true
@@ -26,27 +27,17 @@ const VisitHost = () => {
         {menu.map((e) => (
           e.userId === user.id && (
           <div>
-            <List
+            <JoinList
               key={e.id}
               props={e}
               userId={user.id}
               callback={setMenu}
               hostId={hostId}
-            ></List>
-            
+            ></JoinList>
+          </div>
 
-            {
-                <button className="btdevisit"
-                  onClick={async () => {
-                    await deleteMenu(hostId, e.id);
-                    getTask(hostId, setMenu);
-                  }}
-                >
-                  Delete
-                </button>
 
-             
-            } </div>
+                
 
         )))}
 
