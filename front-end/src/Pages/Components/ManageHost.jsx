@@ -21,12 +21,17 @@ const ManageHost = () => {
           </button>
         </div>
       </div>
-      <h1 className="text-center">Menu</h1>
+
+      
+
+
+
 
       <div className="Container d-flex justify-content-center">
         <div className="CardMH">
           <div className="MHCard">
-            {!task.menus.length && <h3>Waiting for request Menu</h3>}
+            {!task.menus.length && <img className="picturwait"src="https://cdn.dribbble.com/users/1478651/screenshots/9683496/media/b921a805a76e70f0c36f0410310be009.gif"alt="hew"
+        />}
             {task.menus &&
               task.menus.map((e) => (
                 <List
