@@ -145,11 +145,11 @@ const Nav = () => {
           <i className="fas far fa-chart-bar m-1">
           <img className="logoNav" src="https://cdn.discordapp.com/attachments/1067613078163820554/1102185039233560667/395ec107171e462e62310e6c9b1b0fa2.png" />
           </i>
-          <h3 className="text-center">Hew-Hew</h3>
+          <h3 className="text-center text">Hew-Hew</h3>
         </Link>
 
 
-        <button
+        { <button
           className="navbar-toggler collapsed border-0"
           onClick={function () {
             setTimeout(function () {
@@ -160,9 +160,9 @@ const Nav = () => {
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
+          <span class="navbar-toggler-icon"></span>
+        </button> 
+        } 
         <div
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
