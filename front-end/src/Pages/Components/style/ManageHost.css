@@ -94,3 +94,8 @@
     border-radius: 45px;
     box-shadow: 6px 8px 20px rgba(0,0,0,0.1);
 }
+#clock{
+    margin-top: 10% ;
+    width: 50vw;
+    border-radius: 50%;
+}
