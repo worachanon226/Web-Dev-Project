@@ -137,8 +137,16 @@ public class TaskController : ControllerBase
     [HttpDelete("deleteMenu")]
     public async Task<ActionResult> DeleteMenu(string TaskId, string MenuId)
     {
-        await _service.DeleteMenu(TaskId, MenuId);
-        return Ok("Deleted.");
+        var task = await _service.GetTask(TaskId);
+        if (task.CurrentTasks > 0)
+        {
+            await _service.SetTaskAvailable(TaskId, true);
+            await _service.DeleteMenu(TaskId, MenuId);
+            task.CurrentTasks -= 1;
+            await _service.SetTaskCount(TaskId, task.CurrentTasks);
+            return Ok("Menu is deleted.");
+        }
+        return Ok("Don't have any menu in Task.");
     }
 
     [HttpDelete("deleteTask")]
