@@ -11,7 +11,8 @@
     
 }
 
-.hostListcontain{
+.hostListcontainGuest{
+    background-color: #FBD2C2;
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
@@ -21,6 +22,7 @@
     height: fit-content;
     width: 80%;
     border-radius: 20px;
+    margin-top: 30px;
 }
 
 /* .btnRefresh{

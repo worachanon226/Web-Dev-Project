@@ -71,7 +71,7 @@ function Login() {
               </button>
             </div>
 
-            <div className="create">
+            <div className="create text-center">
               <span>Don't have an account? </span>
               <Link className="text-decoration" to="/signup">
                 Create

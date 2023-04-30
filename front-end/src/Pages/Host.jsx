@@ -27,11 +27,12 @@ function Host() {
           getTasks(setTask);
         }}
       >
-        refresh
+      REFRESH
       </button>
-      <div className='hostListcontainHost'>
-   
+      <div className='hostListcontainHost p-4'>
+        
         {task.map((e) => {
+          console.log(e);
           if (e.userId === user.id) {
             return (
               <Item

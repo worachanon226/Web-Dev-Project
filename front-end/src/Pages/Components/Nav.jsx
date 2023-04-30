@@ -53,10 +53,18 @@ const Nav = () => {
     });
   }, []);
 
+  let l = {
+    width: "135px",
+  };
+
   let set1 = () => {
     return (
       <>
-        <li className="nav-item  active">
+        <div className="hori-selector">
+          <div className="left"></div>
+          <div className="right"></div>
+        </div>
+        <li className="nav-item  active" id='homeBtn'>
           <Link className="nav-link d-flex" to="/">
             <i className="fas fa-tachometer-al m-1">
               <AiFillHome />
@@ -95,7 +103,11 @@ const Nav = () => {
   let set2 = () => {
     return (
       <>
-        <li className="nav-item  active">
+        <div className="hori-selector">
+          <div className="left"></div>
+          <div className="right"></div>
+        </div>
+        <li className="nav-item  active" id='homeBtn'>
           <Link className="nav-link d-flex" to="/">
             <i className="fas fa-tachometer-al m-1">
               <AiFillHome />
@@ -153,10 +165,6 @@ const Nav = () => {
           className="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
         >
-          <div className="hori-selector">
-            <div className="left"></div>
-            <div className="right"></div>
-          </div>
           <ul className="navbar-nav ml-auto">{user ? set1() : set2()}</ul>
         </div>
       </nav>

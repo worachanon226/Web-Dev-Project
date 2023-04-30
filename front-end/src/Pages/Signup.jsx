@@ -148,7 +148,7 @@ function Signup() {
             />
           </div>
 
-          <div className="btnbgsignup">
+          <div className="btnbgsignup mt-1">
             <button
               type="submit"
               className="btn btn-danger"
@@ -159,14 +159,11 @@ function Signup() {
             </button>
           </div>
         </form>
-        <div>
-          <a>Already have an account? </a>
+        <div className="textSign text-center">
+          <a className="text-decoration-none text-black">Already have an account? </a>
           <Link className="text-decoration" to="/login">
             Login
           </Link>
-          {/* <a className="text-decoration-none text-primary" href="/login">
-            Login
-          </a> */}
         </div>
       </div>
     </div>
