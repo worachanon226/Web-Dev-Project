@@ -78,6 +78,10 @@ public class TaskController : ControllerBase
         if (task.CurrentTasks < task.MaxTasks)
         {
             task.CurrentTasks += 1;
+            if (task.CurrentTasks == task.MaxTasks)
+            {
+                await _service.SetTaskAvailable(id, false);
+            }
             await _service.SetTaskCount(id, task.CurrentTasks);
             await _service.AddMenu(id, menu);
             return Ok("Menu is already added.");
