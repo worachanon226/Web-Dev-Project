@@ -36,7 +36,9 @@ let Item = ({ data, control }) => {
       <Link className="btJoin" to={data.id}>
         JOIN
       </Link>
+      <div>
       {control}
+      </div>
     </div>
   );
 };
