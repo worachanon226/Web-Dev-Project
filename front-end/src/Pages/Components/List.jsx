@@ -13,15 +13,27 @@ const List = ({ props, hostId, callback }) => {
   return (
     <div
       style={{ background: color.bg, borderColor: color.bd }}
-      className="border-10 rounded d-flex row mb-3 mt-3 text-center"
+      className="border-10 rounded d-flex row mb-3 mt-3 align-items-center"
     >
       <div className="col ">
-        <div className="m-1">Canteen: {props.store}</div>
-        <div className="m-1">Menu: {props.comment}</div>
+        <div className="m-1">
+          <b>Canteen: </b>
+          {props.store}
+        </div>
+        <div className="m-1">
+          <b>Menu: </b>
+          {props.name}
+        </div>
       </div>
       <div className="col">
-        <div className="m-1">Price: {props.name}</div>
-        <div className="m-1">Amount: {props.store}</div>
+        <div className="m-1">
+          <b>Price: </b>
+          {props.price}
+        </div>
+        <div className="m-1">
+          <b>Amount: </b>
+          {props.amount}
+        </div>
       </div>
       <div className="m-1 d-flex justify-content-center align-items-center">
         Note: {props.comment}
