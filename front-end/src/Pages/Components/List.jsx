@@ -1,7 +1,7 @@
 import { acceptMenu, denyMenu, getTask } from "../../Controller/HostController";
-import React from "react";
+import React,{useState} from "react";
 import "./style/List.css";
-
+import { getUserInfo } from "../../Controller/GuestController";
 const List = ({ props, hostId, callback, available }) => {
   let color = { bg: "", bd: "" };
   if (props.isConfirm) {
@@ -11,12 +11,29 @@ const List = ({ props, hostId, callback, available }) => {
     color.bg = "rgba(255, 255, 255, 1)";
     color.bd = "rgba(255, 157, 110, 1)";
   }
-
+  let [userInfo, setUserinfo] = useState();
+  if (userInfo === undefined) {
+    getUserInfo(props.userId).then((res) => {
+      setUserinfo(res);
+    });
+  }
+  console.log(userInfo);
   return (
     <div
       style={{ background: color.bg, borderColor: color.bd }}
       className="listBorder d-flex row mb-3 mt-3 align-items-center text-center"
     >
+      {userInfo && (
+          <div className="quota">
+            <h5 className="text-center fw-bold">Owner Contact</h5>
+            <p>
+              <b>Name: </b> {userInfo.name} {userInfo.lastname}
+            </p>
+            <p>
+              <b>Tell:</b> {userInfo.phone}
+            </p>
+          </div>
+        )}
       <div className="col ">
         <div className="m-1">
           <b>Canteen: </b>

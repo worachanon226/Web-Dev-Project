@@ -9,7 +9,6 @@ let Item = ({ data, control, disabled }) => {
       setUserinfo(res);
     });
   }
-  console.log(data);
   return (
     <div className="boxStyle">
       <div className="boxStyleyer2">
