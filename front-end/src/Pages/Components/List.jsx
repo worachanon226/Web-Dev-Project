@@ -36,7 +36,8 @@ const List = ({ props, hostId, callback }) => {
         </div>
       </div>
       <div className="m-1 d-flex justify-content-center align-items-center">
-        Note: {props.comment}
+        <b>Note: </b>
+        {props.comment}
       </div>
       <div className="col w-25 mb-2 d-flex justify-content-evenly">
         {props.isConfirm || (
