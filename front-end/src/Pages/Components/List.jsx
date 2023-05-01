@@ -1,20 +1,21 @@
 import { acceptMenu, denyMenu, getTask } from "../../Controller/HostController";
 import React from "react";
+import "./style/List.css";
 
-const List = ({ props, hostId, callback ,available}) => {
+const List = ({ props, hostId, callback, available }) => {
   let color = { bg: "", bd: "" };
   if (props.isConfirm) {
-    color.bg = "rgba(102, 255, 30, 0.49)";
-    color.bd = "rgba(102, 255, 30, 1)";
+    color.bg = "rgba(255, 255, 255, 1)";
+    color.bd = "rgba(99, 209, 114, 1)";
   } else {
-    color.bg = "rgba(253, 255, 216, 1)";
-    color.bd = "rgba(246, 255, 84, 1)";
+    color.bg = "rgba(255, 255, 255, 1)";
+    color.bd = "rgba(255, 157, 110, 1)";
   }
-  
+
   return (
     <div
       style={{ background: color.bg, borderColor: color.bd }}
-      className="border-10 rounded d-flex row mb-3 mt-3 align-items-center"
+      className="listBorder d-flex row mb-3 mt-3 align-items-center text-center"
     >
       <div className="col ">
         <div className="m-1">
