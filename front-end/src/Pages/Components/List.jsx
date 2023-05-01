@@ -1,7 +1,7 @@
 import { acceptMenu, denyMenu, getTask } from "../../Controller/HostController";
-import React, { useState } from "react";
+import React from "react";
 
-const List = ({ props, hostId, callback }) => {
+const List = ({ props, hostId, callback ,available}) => {
   let color = { bg: "", bd: "" };
   if (props.isConfirm) {
     color.bg = "rgba(102, 255, 30, 0.49)";
@@ -10,6 +10,7 @@ const List = ({ props, hostId, callback }) => {
     color.bg = "rgba(253, 255, 216, 1)";
     color.bd = "rgba(246, 255, 84, 1)";
   }
+  
   return (
     <div
       style={{ background: color.bg, borderColor: color.bd }}
@@ -27,7 +28,7 @@ const List = ({ props, hostId, callback }) => {
         Note: {props.comment}
       </div>
       <div className="col w-25 mb-2 d-flex justify-content-evenly">
-        {props.isConfirm || (
+        {available && !props.isConfirm && (
           <button
             className="btn btn-success btn-sm w-25"
             onClick={async () => {
@@ -38,7 +39,7 @@ const List = ({ props, hostId, callback }) => {
             Accept
           </button>
         )}
-        {props.isConfirm && (
+        {available && props.isConfirm && (
           <button
             className="btn btn-danger btn-sm w-25"
             onClick={async () => {
