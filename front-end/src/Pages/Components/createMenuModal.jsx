@@ -10,7 +10,7 @@ import { getCanteenData } from "../../Controller/GuestController";
 function AddMenuModal({ callback, taskId, canteen }) {
   let { user } = useUserContext();
   const [modalIsOpen, setIsOpen] = useState(false);
-
+  let [listMenu, setListMenu] = useState();
   let handleSubmit = (event) => {
     if (
       event.target[0].value !== "" &&
@@ -33,10 +33,8 @@ function AddMenuModal({ callback, taskId, canteen }) {
     }
   };
   let [item, setItem] = useState();
-  let [storeSelected, setStore] = useState("");
   if (item === undefined) {
     getCanteenData(canteen).then((res) => {
-
       setItem(res);
     });
   }
@@ -59,56 +57,80 @@ function AddMenuModal({ callback, taskId, canteen }) {
           </button>
         </div>
 
+        <h2 class="d-flex justify-content-center textHostMenu">Add</h2>
 
-     
-        <h2 class='d-flex justify-content-center textHostMenu'>Add</h2>
-        
         <form onSubmit={handleSubmit}>
-        <div class="d-flex flex-wrap gap-3 justify-content-center p-3 boxMenuModal">
-          <div class=" row gap-3 mb-3 textMenuModal ">
-            <label for="store">Choose Store:</label>
-            <select className="roundedbox"
-              name="store"
-              id="store"
-              onChange={() => {
-                let x = document.getElementById("store").value;
-                
-                setStore(x);
-              }}
-            >
-              <option  value={"ร้านเทคโนลาดกระบัง"}>Choose store</option>
-              {item &&
-                item
-                  .map((e) => e.name)
-                  .map((e) => <option value={e}>{e}</option>)}
-            </select>
+          <div class="d-flex flex-wrap gap-3 justify-content-center p-3 boxMenuModal">
+            <div class=" row gap-3 mb-3 textMenuModal ">
+              <label for="store">Choose Store:</label>
+              <select
+                className="roundedbox"
+                name="store"
+                id="store"
+                autofocus
+                required
+                onChange={() => {
+                  let x = document.getElementById("store").value;
+                  let m = item
+                    .filter((item) => item.name === x)
+                    .map((e) => e.menus);
+                  setListMenu(m[0]);
+                }}
+              >
+                {" "}
+                <option value="">Select</option>
+                {item &&
+                  item
+                    .map((e) => e.name)
+                    .map((e) => <option value={e}>{e}</option>)}
+              </select>
 
-            <input className="col align-self w-auto rounded roundedbox" placeholder="Menu" />
-          </div>
+              <label for="menu">Choose Menu:</label>
+              <select
+                className="roundedbox"
+                name="menu"
+                id="menu"
+                required
+                onChange={() => {
+                  let x = document.getElementById("menu").value;
+                  let p = document.getElementById("priceBox");
+                  p.value = listMenu.filter((item) => item.name === x)[0].price
+                }}
+              >
+                <option value="">Select</option>
+                {listMenu &&
+                  listMenu.map((e) => {
+                    return <option value={e.name}>{e.name}</option>;
+                  })}
+              </select>
+            </div>
 
-          <div class="row gap-3 mb-3 textMenuModal">
-            <input
-              className="col align-self w-auto rounded roundedbox"
-              type="number"
-              placeholder="Price"
-            />
-            <input
-              className="col w-auto rounded roundedbox"
-              type="number"
-              placeholder="Amount"
-            />
-            <input className="rounded w-full roundedbox" placeholder="Comment" />
-          </div>
+            <div class="row gap-3 mb-3 textMenuModal">
+              <input
+                className="col align-self w-auto rounded roundedbox"
+                type="number"
+                id="priceBox"
+                placeholder="Price"
+                disabled
+              />
+              <input
+                className="col w-auto rounded roundedbox"
+                type="number"
+                required
+                placeholder="Amount"
+              />
+              <input
+                className="rounded w-full roundedbox"
+                placeholder="Comment"
+              />
+            </div>
           </div>
           <div className="d-flex gap-3 justify-content-center">
             <button className="rounded bg-light btsumit" type="submit">
               ADD
             </button>
           </div>
-          
         </form>
-        
-
       </Modal>
     </div>
   );

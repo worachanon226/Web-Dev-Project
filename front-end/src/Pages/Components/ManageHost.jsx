@@ -14,7 +14,6 @@ const ManageHost = () => {
     getTask(hostId, setTask);
     return <Loading></Loading>;
   }
-  console.log(task);
   return (
     <div className="containerStyle">
       <div className="d-flex  justify-content-end  btnContainer">
@@ -23,12 +22,14 @@ const ManageHost = () => {
             <button
               className="btHostRe"
               onClick={async () => {
-                await finishTask(task.id, false);
-                navigate("/Host", { replace: true });
-                // task.menus.filter(e=>!e.isConfirm)
+                let con = task.menus.filter((e) => e.isConfirm).length;
+                if ( con <= task.maxTasks) {
+                  await finishTask(task.id, false);
+                  navigate("/Host", { replace: true });
+                }
               }}
             >
-              Finish
+              Confirm
             </button>
           </div>
         )}

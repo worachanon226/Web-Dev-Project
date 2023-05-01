@@ -9,7 +9,7 @@ let Item = ({ data, control, disabled }) => {
       setUserinfo(res);
     });
   }
-  // console.log();
+  console.log(data);
   return (
     <div className="boxStyle">
       <div className="boxStyleyer2">
@@ -24,7 +24,7 @@ let Item = ({ data, control, disabled }) => {
         </h4>
         <p className="sum">
           <b>Total: </b>
-          {data.menus.map((e) => e.price).reduce((a, b) => a + b, 0)}
+          {data.menus.map((e) => e.price*e.amount).reduce((a, b) => a + b, 0)}
         </p>
         <p className="">
           <b>Available: </b>
