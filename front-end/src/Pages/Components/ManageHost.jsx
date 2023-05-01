@@ -13,9 +13,7 @@ const ManageHost = () => {
     getTask(hostId, setTask);
     return <Loading></Loading>;
   }
-  var startDate = new Date();
-  var endDate = new Date();
-  var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
+  console.log(task);
   return (
     <div className="containerStyle">
       <div className="d-flex  justify-content-end  btnContainer">

@@ -33,9 +33,9 @@ let Item = ({ data, control ,disabled}) => {
           </div>
         )}
       </div>
-      {disabled || <Link className="btJoin" to={data.id}>
+      <Link className="btJoin" to={data.id}>
         JOIN
-      </Link>}
+      </Link>
       <div>
       {control}
       </div>
