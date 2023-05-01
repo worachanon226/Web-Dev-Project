@@ -8,11 +8,11 @@ const List = ({ props, hostId, callback }) => {
     color.bd = "rgba(102, 255, 30, 1)";
   } else {
     color.bg = "rgba(253, 255, 216, 1)";
-    color.bd = "rgba(246, 255, 84, 1)"
+    color.bd = "rgba(246, 255, 84, 1)";
   }
   return (
     <div
-      style={{ background: color.bg ,borderColor: color.bd}}
+      style={{ background: color.bg, borderColor: color.bd }}
       className="border-10 rounded d-flex row mb-3 mt-3 text-center"
     >
       <div className="col ">
