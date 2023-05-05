@@ -16,5 +16,4 @@ let API = {
     getUserInfo: "/User/getUser",
   },
 };
-
 export default API;
